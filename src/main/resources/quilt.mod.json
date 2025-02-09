@@ -1,0 +1,40 @@
+{
+	"schema_version": 1,
+	"quilt_loader": {
+		"group": "io.github.jadimatic",
+		"id": "jadis_mended_progression",
+		"version": "${version}",
+		"metadata": {
+			"name": "Jadi’s Mended Progression",
+			"description": "A mod that overhauls progression and fixes neglected mechanics.",
+			"contributors": {
+				"Your name here": "Jadimatic"
+			},
+			"contact": {
+				"homepage": "https://example.com/",
+				"issues": "https://github.com/QuiltMC/quilt-template-mod/issues",
+				"sources": "https://github.com/QuiltMC/quilt-template-mod"
+			},
+			"icon": "assets/jadis_mended_progression/icon.png"
+		},
+		"intermediate_mappings": "net.fabricmc:intermediary",
+		"entrypoints": {
+			"init": "io.github.jadimatic.jadis_mended_progression.JadisMendedProgression"
+		},
+		"depends": [
+			{
+				"id": "quilt_loader",
+				"versions": ">=0.19.1"
+			},
+			{
+				"id": "quilted_fabric_api",
+				"versions": ">=7.0.2"
+			},
+			{
+				"id": "minecraft",
+				"versions": ">=1.20"
+			}
+		]
+	},
+	"mixin": "jadis_mended_progression.mixins.json"
+}
