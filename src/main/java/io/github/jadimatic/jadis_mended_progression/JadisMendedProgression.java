@@ -2,13 +2,30 @@ package io.github.jadimatic.jadis_mended_progression;
 
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.block.Blocks;
+import net.minecraft.datafixer.fix.ItemRemoveBlockEntityTagFix;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
+import net.minecraft.loot.condition.LootCondition;
+import net.minecraft.loot.condition.LootConditionType;
+import net.minecraft.loot.condition.MatchToolLootCondition;
+import net.minecraft.loot.condition.RandomChanceLootCondition;
+import net.minecraft.loot.context.LootContext;
+import net.minecraft.loot.context.LootContextParameter;
+import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.predicate.item.ItemPredicate;
+import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Hand;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
+import org.quiltmc.qsl.data.callback.api.predicate.AndPredicate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.swing.text.html.HTML;
 
 public class JadisMendedProgression implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -22,9 +39,11 @@ public class JadisMendedProgression implements ModInitializer {
 
 		// in onInitialize
 		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-			if(id.equals(Blocks.GRASS.getLootTableId()))// check key to see if this is the grass loot table
-			{//Don't forget to fix the fact this currently replaces all grass drops.
-				tableBuilder.pool(LootPool.builder().with(ItemEntry.builder(JadisMendedProgressionItems.JADIS_PLANT_FIBER)));// use tableBuilder methods to add a pool
+			if(id.equals(Blocks.GRASS.getLootTableId()))// Check key to see if this is the grass loot table
+			{
+				tableBuilder.pool(LootPool.builder().with(ItemEntry.builder(JadisMendedProgressionItems.JADIS_PLANT_FIBER))//Drop plant fiber if...
+					.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().tag(ItemTags.HOES)))//Player is holding a hoe and...
+					.conditionally(RandomChanceLootCondition.builder(0.64f)));//An RNG check succeeds.
 			}
 		});
 
