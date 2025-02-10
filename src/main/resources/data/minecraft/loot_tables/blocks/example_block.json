@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "jadis_mended_progression:example_block"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "jadis_mended_progression:blocks/example_block"
+}
