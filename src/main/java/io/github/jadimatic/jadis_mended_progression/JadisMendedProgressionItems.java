@@ -19,10 +19,8 @@ public class JadisMendedProgressionItems {
 
 	//Block Fields
 	public static final Block CHARCOAL_BLOCK = new Block(QuiltBlockSettings.create()
-		.requiresTool()
 		.hardness(1.0f));
 	public static final Block EXAMPLE_BLOCK = new Block(QuiltBlockSettings.create()
-		.requiresTool()
 		.hardness(0.5f));
 	//End Of Fields
 
