@@ -1,3 +1,5 @@
 {
-  "item.jadis_mended_progression.plant_fiber": "Plant Fiber"
+  "item.jadis_mended_progression.plant_fiber": "Plant Fiber",
+  "block.jadis_mended_progression.charcoal_block": "Charcoal Block",
+  "block.jadis_mended_progression.example_block": "Example Block"
 }
