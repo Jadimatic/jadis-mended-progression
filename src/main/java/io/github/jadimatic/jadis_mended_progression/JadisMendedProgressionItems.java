@@ -1,5 +1,6 @@
 package io.github.jadimatic.jadis_mended_progression;
 
+import io.github.jadimatic.jadis_mended_progression.item.ModToolMaterials;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -14,7 +15,12 @@ import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 
 public class JadisMendedProgressionItems {
+
+
+
+
 	public static final Item JADIS_PLANT_FIBER = new Item(new QuiltItemSettings());
+	public static final Item FLINT_PICKAXE = new Item(new QuiltItemSettings());
 
 	//Block Fields
 	public static final Block CHARCOAL_BLOCK = new Block(QuiltBlockSettings.create()
@@ -42,6 +48,7 @@ public class JadisMendedProgressionItems {
 
 		//Item Registries
 		Registry.register(Registries.ITEM, new Identifier(mod.metadata().id(), "plant_fiber"), JADIS_PLANT_FIBER);
+		Registry.register(Registries.ITEM, new Identifier(mod.metadata().id(), "flint_pickaxe"), FLINT_PICKAXE);
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
 			entries.addItem(JADIS_PLANT_FIBER);
 		});
