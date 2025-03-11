@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "jadis_mended_progression:block/example_block"
+    "all": "jadis_mended_progression:block/steel_charge_block"
   }
 }

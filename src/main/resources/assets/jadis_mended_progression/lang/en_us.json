@@ -1,5 +1,12 @@
 {
   "item.jadis_mended_progression.plant_fiber": "Plant Fiber",
+  "item.jadis_mended_progression.tin_ingot": "Tin Ingot",
+  "item.jadis_mended_progression.bronze_ingot": "Bronze Ingot",
+  "item.jadis_mended_progression.steel_ingot": "Steel Ingot",
+  "item.jadis_mended_progression.flint_pickaxe": "Flint Pickaxe",
+  "item.jadis_mended_progression.copper_pickaxe": "Copper Pickaxe",
+  "item.jadis_mended_progression.bronze_pickaxe": "Bronze Pickaxe",
+  "item.jadis_mended_progression.steel_pickaxe": "Steel Pickaxe",
   "block.jadis_mended_progression.charcoal_block": "Charcoal Block",
-  "block.jadis_mended_progression.example_block": "Example Block"
+  "block.jadis_mended_progression.steel_charge_block": "Steel Charge Block"
 }

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "jadis_mended_progression:example_block"
+          "name": "jadis_mended_progression:steel_charge_block"
         }
       ],
       "rolls": 1
     }
   ],
-  "random_sequence": "jadis_mended_progression:blocks/example_block"
+  "random_sequence": "jadis_mended_progression:blocks/steel_charge_block"
 }
