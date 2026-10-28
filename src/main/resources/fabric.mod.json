@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "jadis_mended_progression",
+	"version": "${version}",
+	"name": "Jadi's Mended Progression",
+	"description": "This mod seeks is to overhaul Minecraft's progression to flow better and fix features Mojang neglected, while avoiding any major alterations to the game’s quasi-lore.",
+	"authors": [
+		"Jadimatic"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0(fix this later to the proper license)",
+	"icon": "assets/jadis_mended_progression/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "io.github.jadimatic.jadis_mended_progression.JadisMendedProgression"
+		],
+		"client": [
+          "io.github.jadimatic.jadis_mended_progression.client.JadisMendedProgressionClient"
+		],
+		"fabric-datagen": [
+			"io.github.jadimatic.jadis_mended_progression.client.JadisMendedProgressionDataGenerator"
+		]
+	},
+	"mixins": [
+		"jadis_mended_progression.mixins.json",
+		{
+			"config": "jadis_mended_progression.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

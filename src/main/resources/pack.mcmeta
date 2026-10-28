@@ -1,0 +1,18 @@
+{
+  "pack": {
+    "description": "Filters recipes and removes them from the game entirely. Remember to also remove any advancement that calls for the recipe file",
+    "pack_format": 121
+  },
+  "filter": {
+    "block": [
+      {
+        "namespace": "minecraft",
+        "path": "recipe/wooden_axe.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/tools/wooden_axe.json"
+      }
+    ]
+  }
+}

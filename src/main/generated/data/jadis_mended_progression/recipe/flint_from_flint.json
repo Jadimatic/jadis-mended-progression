@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:flint"
+  ],
+  "result": {
+    "id": "minecraft:flint"
+  }
+}

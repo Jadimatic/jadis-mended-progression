@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:stick",
+    "O": "#minecraft:plant_fiber",
+    "X": "minecraft:flint"
+  },
+  "pattern": [
+    "XOX",
+    " # ",
+    " # "
+  ],
+  "result": {
+    "id": "minecraft:stone_pickaxe"
+  }
+}
