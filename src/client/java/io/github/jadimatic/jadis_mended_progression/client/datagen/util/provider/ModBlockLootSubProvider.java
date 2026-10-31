@@ -76,7 +76,6 @@ public abstract class ModBlockLootSubProvider extends FabricBlockLootSubProvider
 
     }
 
-
     public final LootItemCondition.Builder hasItem(final ItemLike item) {//Checks if the player is holding the specified item.
     return MatchTool.toolMatches(ItemPredicate.Builder.item().of(items, item));
     }

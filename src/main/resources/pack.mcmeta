@@ -1,6 +1,6 @@
 {
   "pack": {
-    "description": "Filters recipes and removes them from the game entirely. Remember to also remove any advancement that calls for the recipe file",
+    "description": "Filters files and removes them from the game entirely. Remember to also remove any advancement that calls for a removed recipe file",
     "pack_format": 121
   },
   "filter": {

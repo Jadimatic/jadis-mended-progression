@@ -3,7 +3,7 @@
 	"package": "io.github.jadimatic.jadis_mended_progression.client.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"client": [
-		"ExampleClientMixin"
+		"ModClientMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

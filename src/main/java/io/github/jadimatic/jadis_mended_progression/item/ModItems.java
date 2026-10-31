@@ -1,6 +1,7 @@
 package io.github.jadimatic.jadis_mended_progression.item;
 
 import io.github.jadimatic.jadis_mended_progression.JadisMendedProgression;
+import io.github.jadimatic.jadis_mended_progression.block.ModBlocks;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -33,6 +34,7 @@ public class ModItems {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
 
             output.accept(EXAMPLE_ITEM);
+			output.accept(ModBlocks.CHARCOAL_BLOCK);
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(output -> {

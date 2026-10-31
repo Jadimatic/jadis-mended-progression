@@ -3,7 +3,7 @@
 	"package": "io.github.jadimatic.jadis_mended_progression.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"ExampleMixin"
+      "ModMainMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
