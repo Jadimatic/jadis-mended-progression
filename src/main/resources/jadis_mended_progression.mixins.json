@@ -1,14 +1,15 @@
 {
-	"required": true,
-	"package": "io.github.jadimatic.jadis_mended_progression.mixin",
-	"compatibilityLevel": "JAVA_25",
-	"mixins": [
-      "ModMainMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
+  "required": true,
+  "package": "io.github.jadimatic.jadis_mended_progression.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "ModMainMixin",
+    "world.entity.monster.zombie.ZombieMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
 	}
 }

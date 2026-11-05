@@ -3,8 +3,8 @@
 	"parent": "block/lantern",
 	"display": {
 		"thirdperson_righthand": {
-			"rotation": [0, 0, -2.5],
-			"translation": [0, -5.5, 2],
+			"rotation": [50, 0, -2.5],
+			"translation": [0, -20.5, 0.8],
 			"scale": [0.75, 0.75, 0.75]
 		},
 		"firstperson_righthand": {
