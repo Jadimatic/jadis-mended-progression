@@ -53,9 +53,7 @@ public class ModEvents {
 				BlockState newBlockState = healAnvil(state);
 				if (newBlockState != null) { //Detect if the anvil changes
 					//Deplete Item
-					if (!player.hasInfiniteMaterials()) {
-						itemStack.shrink(1);
-					}
+					itemStack.consume(1, player);
 
 					//Play sound for other players
 					level.setBlock(pos, newBlockState, 2);
