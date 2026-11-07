@@ -76,6 +76,7 @@ public class ModBlockLootTableProvider extends ModBlockLootSubProvider {
 						.add(LootItem.lootTableItem(Items.DIRT))
 				)
 		);
+
 		add(//Since the tool requirements are handled elsewhere for this one, it merely specifies what loot should be dropped.
 				ModBlocks.CHARCOAL_BLOCK,
 				LootTable.lootTable()

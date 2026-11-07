@@ -10,9 +10,12 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.WitchRenderer;
 import net.minecraft.client.renderer.entity.state.WitchRenderState;
+import net.minecraft.client.renderer.item.ItemStackRenderState;
 import net.minecraft.client.resources.model.cuboid.ItemTransform;
+import net.minecraft.world.entity.Display;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.monster.Witch;
+import net.minecraft.world.item.ItemStack;
 import org.joml.Vector3f;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -36,8 +39,12 @@ public abstract class WitchRendererMixin extends MobRenderer<Witch, WitchRenderS
 				new Vector3f(0, -0.24f, -0.12f),//Translation
 				new Vector3f(0.69f, 0.69f, 0.69f)//Scale
 			));
-
 		}
+
+		if(entity.getMainHandItem().isEmpty()){
+			//((ItemStackRenderStateAccessor) state.heldItem).jadismendedprogression$getLayers()[0] = entity.getOffhandItem(Display.RenderState);
+		}
+		state.isHoldingItem = state.isHoldingPotion;//Fixes a bug where the witch's nose moved when holding any item.
 
 
 	}
