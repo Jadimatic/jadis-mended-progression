@@ -7,6 +7,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.AnvilBlock;
 import net.minecraft.world.level.block.FallingBlock;
@@ -14,9 +15,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jspecify.annotations.NonNull;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(AnvilBlock.class)
 public abstract class AnvilMixin extends FallingBlock {
+	@Shadow
+	public static @Nullable BlockState damage(BlockState blockState) {
+		throw new UnsupportedOperationException("Implemented via mixin");
+	}
+
 	protected  AnvilMixin(Properties properties) {
 		super(properties);
 	}
