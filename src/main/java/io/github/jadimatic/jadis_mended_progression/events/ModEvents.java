@@ -50,14 +50,14 @@ public class ModEvents {
 			}
 		} else {
 			if (itemStack.is(tag)) {
-				//Deplete Item
-				if (!player.hasInfiniteMaterials()) {
-					itemStack.shrink(1);
-				}
-
-				//Play sound for other players
 				BlockState newBlockState = healAnvil(state);
-				if (newBlockState != null) {
+				if (newBlockState != null) { //Detect if the anvil changes
+					//Deplete Item
+					if (!player.hasInfiniteMaterials()) {
+						itemStack.shrink(1);
+					}
+
+					//Play sound for other players
 					level.setBlock(pos, newBlockState, 2);
 					level.playSound(null, pos,
 						SoundEvents.ANVIL_LAND, SoundSource.PLAYERS,
