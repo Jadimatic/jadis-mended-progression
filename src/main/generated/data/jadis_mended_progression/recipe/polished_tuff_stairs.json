@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "P": "minecraft:polished_tuff"
+  },
+  "pattern": [
+    "P  ",
+    "PP "
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:polished_tuff_stairs"
+  }
+}
