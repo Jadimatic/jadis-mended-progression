@@ -5,6 +5,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -33,6 +34,7 @@ public class ModEvents {
 		//Open menu if no valid item is detected
 		if (!itemStack.is(tag) || state.is(Blocks.ANVIL)) {
 			player.openMenu(state.getMenuProvider(level, pos));
+			player.awardStat(Stats.INTERACT_WITH_ANVIL);
 			return InteractionResult.SUCCESS;
 		}
 
@@ -47,8 +49,13 @@ public class ModEvents {
 				}
 			}
 		} else {
-			//Play sound for other players
 			if (itemStack.is(tag)) {
+				//Deplete Item
+				if (!player.hasInfiniteMaterials()) {
+					itemStack.shrink(1);
+				}
+
+				//Play sound for other players
 				BlockState newBlockState = healAnvil(state);
 				if (newBlockState != null) {
 					level.setBlock(pos, newBlockState, 2);
