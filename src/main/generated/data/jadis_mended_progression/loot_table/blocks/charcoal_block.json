@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "jadis_mended_progression:charcoal_block"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

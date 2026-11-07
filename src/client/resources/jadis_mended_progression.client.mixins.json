@@ -1,14 +1,26 @@
 {
-	"required": true,
-	"package": "io.github.jadimatic.jadis_mended_progression.client.mixin",
-	"compatibilityLevel": "JAVA_25",
-	"client": [
-		"ExampleClientMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
-	}
+  "required": true,
+  "package": "io.github.jadimatic.jadis_mended_progression.client.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "ItemStackRenderStateAccessor",
+    "ModClientMixin",
+    "model.AnimationUtilsMixin",
+    "model.HumanoidModelMixin",
+    "renderer.entity.AvatarRendererMixin",
+    "renderer.entity.HumanoidMobRendererMixin",
+    "renderer.entity.VillagerRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixinextras": {
+    "minVersion": "0.5.5"
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "mixins": [
+    "renderer.entity.WitchRendererMixin"
+  ]
 }

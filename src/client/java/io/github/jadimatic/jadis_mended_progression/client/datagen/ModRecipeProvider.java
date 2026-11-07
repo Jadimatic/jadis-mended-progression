@@ -1,5 +1,8 @@
 package io.github.jadimatic.jadis_mended_progression.client.datagen;
 
+import io.github.jadimatic.jadis_mended_progression.block.ModBlocks;
+import io.github.jadimatic.jadis_mended_progression.item.ModItems;
+import io.github.jadimatic.jadis_mended_progression.references.ModBlockItemIds;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.advancements.Advancement;
@@ -38,7 +41,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("CC")
                         .define('C', Items.COBBLESTONE)
                         .unlockedBy(getHasName(Items.FLINT), has(Items.FLINT))
-                        .save(output, "flint_from_cobblestone");
+                        .save(output, "flint_from_cobblestone");//This is to test alternate recipes for the same item in the recipe book.
+
+				shaped(RecipeCategory.MISC, ModBlocks.CHARCOAL_BLOCK)
+					.pattern("CCC")
+					.pattern("CCC")
+					.pattern("CCC")
+					.define('C', Items.CHARCOAL)
+					.unlockedBy(getHasName(Items.CHARCOAL), has(Items.CHARCOAL))
+					.save(output, "charcoal_block");
             }
         };
     }

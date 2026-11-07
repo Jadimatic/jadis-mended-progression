@@ -2,7 +2,9 @@ package io.github.jadimatic.jadis_mended_progression.client.datagen;
 
 import com.google.common.collect.ImmutableList;
 import io.github.jadimatic.jadis_mended_progression.JadisMendedProgression;
+import io.github.jadimatic.jadis_mended_progression.block.ModBlocks;
 import io.github.jadimatic.jadis_mended_progression.client.datagen.util.provider.ModBlockLootSubProvider;
+import io.github.jadimatic.jadis_mended_progression.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.advancements.predicates.ItemPredicate;
@@ -45,8 +47,8 @@ public class ModBlockLootTableProvider extends ModBlockLootSubProvider {
     public void generate() {
 
 
-        //Gives gravel a 50% chance to drop itself when not using a shovel, and is always guaranteed to drop 1 flint.
-        add(//Contains the instructions to generate a block loot table.
+
+        add(//Contains instructions to generate a block loot table. This one specifically gives gravel a 10% chance to drop itself when not using a shovel, and is always guaranteed to drop 1 flint.
                 Blocks.GRAVEL,//Assigns the following loot table to this block.
                 LootTable.lootTable()//Creates a loot table.
                         .withPool(
@@ -62,6 +64,26 @@ public class ModBlockLootTableProvider extends ModBlockLootSubProvider {
                                         .add(LootItem.lootTableItem(Items.GRAVEL)).when(randomChance(0.1f))//randomChance randomizes whether this loot will drop.
                         )
         );
+		add(//Makes grass blocks drop themselves when using a shovel and dirt when not.
+			Blocks.GRASS_BLOCK,
+			LootTable.lootTable()
+				.withPool(
+					new LootPool.Builder().when(hasItemTag(ItemTags.SHOVELS))
+						.add(LootItem.lootTableItem(Items.GRASS_BLOCK))
+				)
+				.withPool(
+					new LootPool.Builder().when(hasItemTag(ItemTags.SHOVELS).invert())
+						.add(LootItem.lootTableItem(Items.DIRT))
+				)
+		);
+		add(//Since the tool requirements are handled elsewhere for this one, it merely specifies what loot should be dropped.
+				ModBlocks.CHARCOAL_BLOCK,
+				LootTable.lootTable()
+						.withPool(
+							new LootPool.Builder()
+								.add(LootItem.lootTableItem(ModBlocks.CHARCOAL_BLOCK))
+						)
+		);
 
 
         //The following is just testing stuff, do not include these in the final mod!
