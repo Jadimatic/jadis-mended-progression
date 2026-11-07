@@ -38,7 +38,7 @@ public class ModEvents {
 			return InteractionResult.SUCCESS;
 		}
 
-		//Do clientside effects (sound, swinging hand)
+		//Do clientside effects (particles, swinging hand)
 		if (level.isClientSide()) {
 			if (itemStack.is(tag) && !state.is(Blocks.ANVIL)) {
 				SwingAnimation swingAnimation = player.getItemInHand(hand).getAttackAnimation();
