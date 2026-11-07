@@ -17,11 +17,11 @@ public class ModTags {
 
 	public static class Items {
 		public static final TagKey<Item> LANTERNS = createTag("lanterns");
+
+		public static final TagKey<Item> REPAIRS_IRON_ANVIL = createTag("repairs_iron_anvil");
+
 		private static TagKey<Item> createTag(String name){
 			return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(JadisMendedProgression.MOD_ID, name));
 		}
-
 	}
-
-
 }
