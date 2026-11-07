@@ -1,0 +1,6 @@
+{
+  "parent": "block/grates",
+    "textures": {
+        "all": "block/exposed_copper_grate"
+    }
+}

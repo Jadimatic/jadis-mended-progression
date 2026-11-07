@@ -4,12 +4,13 @@
   "compatibilityLevel": "JAVA_25",
   "mixins": [
     "ModMainMixin",
-    "world.entity.monster.zombie.ZombieMixin"
+    "world.entity.monster.zombie.ZombieMixin",
+    "AnvilMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "overwrites": {
     "requireAnnotations": true
-	}
+  }
 }
