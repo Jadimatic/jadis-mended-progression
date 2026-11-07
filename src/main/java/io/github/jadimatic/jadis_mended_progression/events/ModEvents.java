@@ -1,14 +1,11 @@
 package io.github.jadimatic.jadis_mended_progression.events;
 
-import io.github.jadimatic.jadis_mended_progression.ModTags;
-import io.github.jadimatic.jadis_mended_progression.mixin.AnvilMixin;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.nbt.Tag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.ItemTags;
+import net.minecraft.stats.Stats;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -16,13 +13,10 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.SwingAnimation;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.AnvilBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jspecify.annotations.Nullable;
 
 import static net.minecraft.world.level.block.AnvilBlock.FACING;
 
@@ -40,10 +34,11 @@ public class ModEvents {
 		//Open menu if no valid item is detected
 		if (!itemStack.is(tag) || state.is(Blocks.ANVIL)) {
 			player.openMenu(state.getMenuProvider(level, pos));
+			player.awardStat(Stats.INTERACT_WITH_ANVIL);
 			return InteractionResult.SUCCESS;
 		}
 
-		//Do clientside effects (sound, swinging hand)
+		//Do clientside effects (particles, swinging hand)
 		if (level.isClientSide()) {
 			if (itemStack.is(tag) && !state.is(Blocks.ANVIL)) {
 				SwingAnimation swingAnimation = player.getItemInHand(hand).getAttackAnimation();
@@ -54,10 +49,13 @@ public class ModEvents {
 				}
 			}
 		} else {
-			//Play sound for other players
 			if (itemStack.is(tag)) {
 				BlockState newBlockState = healAnvil(state);
-				if (newBlockState != null) {
+				if (newBlockState != null) { //Detect if the anvil changes
+					//Deplete Item
+					itemStack.consume(1, player);
+
+					//Play sound for other players
 					level.setBlock(pos, newBlockState, 2);
 					level.playSound(null, pos,
 						SoundEvents.ANVIL_LAND, SoundSource.PLAYERS,
