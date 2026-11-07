@@ -1,0 +1,9 @@
+{
+  "pack": {
+    "description": {
+      "translate": "jadis_mended_progression.pack.description"
+    },
+    "max_format": 121,
+    "min_format": 121
+  }
+}

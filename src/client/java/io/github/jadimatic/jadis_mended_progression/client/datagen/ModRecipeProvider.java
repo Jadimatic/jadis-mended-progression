@@ -60,6 +60,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					.unlockedBy(getHasName(Items.OAK_PLANKS), has(Items.OAK_PLANKS))
 					.save(output);//Vanilla recipe filtered out in pack.mcmeta.
 
+				//The following entries are recipes for every other stair block in the game.
 				shaped(RecipeCategory.BUILDING_BLOCKS, Items.SPRUCE_STAIRS, 4)
 					.pattern("P  ")
 					.pattern("PP ")

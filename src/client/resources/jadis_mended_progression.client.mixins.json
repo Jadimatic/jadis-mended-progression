@@ -3,14 +3,14 @@
   "package": "io.github.jadimatic.jadis_mended_progression.client.mixin",
   "compatibilityLevel": "JAVA_25",
   "client": [
-    "ModClientMixin",
-    "model.HumanoidModelMixin",
-    "model.AnimationUtilsMixin",
     "ItemStackRenderStateAccessor",
-    "renderer.entity.WitchRendererMixin",
+    "ModClientMixin",
+    "model.AnimationUtilsMixin",
+    "model.HumanoidModelMixin",
     "renderer.entity.AvatarRendererMixin",
+    "renderer.entity.HumanoidMobRendererMixin",
     "renderer.entity.VillagerRendererMixin",
-    "renderer.entity.HumanoidMobRendererMixin"
+    "renderer.entity.WitchRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
@@ -22,6 +22,6 @@
     "requireAnnotations": true
   },
   "mixins": [
-
+    "IdentifierPatternAccessor"
   ]
 }
