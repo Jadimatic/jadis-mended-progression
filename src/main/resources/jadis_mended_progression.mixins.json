@@ -3,7 +3,8 @@
 	"package": "io.github.jadimatic.jadis_mended_progression.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+    "AnvilMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
