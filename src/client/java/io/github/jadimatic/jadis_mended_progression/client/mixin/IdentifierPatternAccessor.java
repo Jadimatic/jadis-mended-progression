@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 public interface IdentifierPatternAccessor {
 	@SuppressWarnings("OptionalUsedAsFieldOrParameterType")
 	@Invoker("<init>")
-	static IdentifierPattern sturdy_carts_datagen$construct(
+	static IdentifierPattern jadis_mended_progression_datagen$construct(
 		Optional<Pattern> namespacePattern,
 		Optional<Pattern> pathPattern
 	) {
