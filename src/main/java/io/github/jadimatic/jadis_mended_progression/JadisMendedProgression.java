@@ -1,6 +1,7 @@
 package io.github.jadimatic.jadis_mended_progression;
 
 import com.mojang.serialization.DataResult;
+import io.github.jadimatic.jadis_mended_progression.block.ModBlockEntities;
 import io.github.jadimatic.jadis_mended_progression.block.ModBlocks;
 import io.github.jadimatic.jadis_mended_progression.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -49,6 +50,7 @@ public class JadisMendedProgression implements ModInitializer {
 		LOGGER.info("Progression Mending Initialized.");
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModBlockEntities.registerModBlockEntities();
 
 
 		DefaultItemComponentEvents.MODIFY.register(context -> {
