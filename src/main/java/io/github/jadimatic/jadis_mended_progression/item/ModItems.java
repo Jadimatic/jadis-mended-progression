@@ -94,6 +94,10 @@ public class ModItems {
             output.accept(Items.WARPED_BUTTON);
             output.accept(Items.POLISHED_BLACKSTONE_BUTTON);
         });
+
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(output -> {
+			output.insertAfter(Items.BARREL, ModBlocks.ITEM_CUBBY);
+		});
     }
 
 

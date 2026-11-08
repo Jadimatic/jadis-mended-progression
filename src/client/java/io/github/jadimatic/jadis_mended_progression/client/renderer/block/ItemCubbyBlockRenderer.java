@@ -36,9 +36,9 @@ public class ItemCubbyBlockRenderer implements BlockEntityRenderer<ItemCubbyBloc
 
 		state.level = blockEntity.getLevel();
 		state.direction = blockEntity.getDirection();
-		state.dont_draw = (blockEntity.getTheItem().isEmpty()) || blockEntity.getOpened();
+		state.dont_draw = (blockEntity.getFilteredItem().isEmpty()) || blockEntity.getOpened();
 
-		itemModelResolver.updateForTopItem(state.itemStackRenderState,blockEntity.getTheItem(), ItemDisplayContext.FIXED, blockEntity.getLevel(), null, 0);
+		itemModelResolver.updateForTopItem(state.itemStackRenderState,blockEntity.getFilteredItem(), ItemDisplayContext.FIXED, blockEntity.getLevel(), null, 0);
 	}
 
 	@Override
