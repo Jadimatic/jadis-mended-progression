@@ -23,9 +23,9 @@ import static net.minecraft.world.level.block.AnvilBlock.FACING;
 public class ModEvents {
 	public static BlockState healAnvil(final BlockState blockState) {
 		if (blockState.is(Blocks.CHIPPED_ANVIL)) {
-			return (BlockState)Blocks.ANVIL.defaultBlockState().setValue(FACING, (Direction)blockState.getValue(FACING));
+			return Blocks.ANVIL.defaultBlockState().setValue(FACING, blockState.getValue(FACING));
 		} else if (blockState.is(Blocks.DAMAGED_ANVIL)) {
-			return (BlockState)Blocks.CHIPPED_ANVIL.defaultBlockState().setValue(FACING, (Direction)blockState.getValue(FACING));
+			return Blocks.CHIPPED_ANVIL.defaultBlockState().setValue(FACING, blockState.getValue(FACING));
 		} else return null;
 	}
 
@@ -45,7 +45,7 @@ public class ModEvents {
 				player.swing(hand, swingAnimation, false);
 				RandomSource random = level.getRandom();
 				for(int i = 0; i < 8; ++i) {
-					level.addParticle(ParticleTypes.CRIT, (double)pos.getX() + random.nextDouble(), (double)pos.getY() + 1.2, (double)pos.getZ() + random.nextDouble(), (double)0.0F, (double)0.0F, (double)0.0F);
+					level.addParticle(ParticleTypes.CRIT, pos.getX() + random.nextDouble(), pos.getY() + 1.2, pos.getZ() + random.nextDouble(), 0.0F, 0.0F, 0.0F);
 				}
 			}
 		} else {
@@ -58,7 +58,7 @@ public class ModEvents {
 					//Play sound for other players
 					level.setBlock(pos, newBlockState, 2);
 					level.playSound(null, pos,
-						SoundEvents.ANVIL_LAND, SoundSource.PLAYERS,
+						SoundEvents.ANVIL_LAND, SoundSource.BLOCKS,
 						1f, 1.2f);
 				}
 			}

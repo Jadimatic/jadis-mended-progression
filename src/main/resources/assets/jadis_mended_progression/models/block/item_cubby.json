@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "jadis_mended_progression:block/item_cubby_front",
+    "side": "jadis_mended_progression:block/item_cubby_side",
+    "top": "jadis_mended_progression:block/item_cubby_top",
+    "bottom": "jadis_mended_progression:block/item_cubby_bottom"
+  }
+}

@@ -10,4 +10,5 @@ public class ModBlockItemIds {
 		return BlockItemId.create(id, id);
 	}
 	public static final BlockItemId CHARCOAL_BLOCK = create("charcoal_block");
+	public static final BlockItemId ITEM_CUBBY = create("item_cubby");
 }
