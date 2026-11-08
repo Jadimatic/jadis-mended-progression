@@ -60,6 +60,6 @@ public class ModBlocks {
 	}
 
 	public static void registerModBlocks(){
-		JadisMendedProgression.LOGGER.info("Registering blocks for " + JadisMendedProgression.MOD_ID);
+		JadisMendedProgression.LOGGER.info("Registering Mod Blocks for " + JadisMendedProgression.MOD_ID);
 	}
 }

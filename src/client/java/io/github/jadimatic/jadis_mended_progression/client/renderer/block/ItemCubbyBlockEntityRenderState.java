@@ -3,6 +3,9 @@ package io.github.jadimatic.jadis_mended_progression.client.renderer.block;
 import net.minecraft.client.renderer.blockentity.state.BlockEntityRenderState;
 import net.minecraft.client.renderer.item.ItemStackRenderState;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
 public class ItemCubbyBlockEntityRenderState extends BlockEntityRenderState {
