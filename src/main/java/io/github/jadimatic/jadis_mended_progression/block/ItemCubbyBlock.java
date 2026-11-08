@@ -68,6 +68,8 @@ public class ItemCubbyBlock extends BaseEntityBlock  {
 	protected @NonNull InteractionResult useItemOn(final ItemStack itemStack, final BlockState state, final Level level, final BlockPos pos, final Player player, final InteractionHand hand, final BlockHitResult hitResult) {
 		BlockEntity blockentity = level.getBlockEntity(pos);
 
+		JadisMendedProgression.LOGGER.info(String.valueOf(player.isShiftKeyDown()));
+
 		if (blockentity instanceof ItemCubbyBlockEntity itemCubby) {
 			if (level.isClientSide()) {
 				if (checkFrontFace(state, hitResult.getDirection())) {
