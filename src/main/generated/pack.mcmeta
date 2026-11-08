@@ -1,4 +1,744 @@
 {
+  "filter": {
+    "block": [
+      {
+        "namespace": "minecraft",
+        "path": "recipe/wooden_axe.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/tools/wooden_axe.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/oak_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/oak_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/spruce_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/spruce_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/birch_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/birch_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/jungle_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/jungle_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/acacia_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/acacia_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/dark_oak_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/dark_oak_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/mangrove_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/mangrove_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/cherry_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/cherry_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/pale_oak_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/pale_oak_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/poplar_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/poplar_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/bamboo_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/bamboo_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/crimson_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/crimson_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/warped_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/warped_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/bamboo_mosaic_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/bamboo_mosaic_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/stone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/stone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/cobblestone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/cobblestone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/stone_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/stone_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/mossy_stone_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/mossy_stone_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/granite_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/granite_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/polished_granite_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/polished_granite_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/diorite_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/diorite_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/polished_diorite_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/polished_diorite_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/andesite_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/andesite_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/polished_andesite_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/polished_andesite_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/cobbled_deepslate_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/cobbled_deepslate_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/polished_deepslate_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/polished_deepslate_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/deepslate_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/deepslate_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/deepslate_tile_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/deepslate_tile_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/tuff_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/tuff_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/polished_tuff_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/polished_tuff_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/tuff_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/tuff_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/mud_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/mud_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/resin_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/resin_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/sandstone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/sandstone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/smooth_sandstone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/smooth_sandstone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/red_sandstone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/red_sandstone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/smooth_red_sandstone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/smooth_red_sandstone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/cinnabar_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/cinnabar_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/polished_cinnabar_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/polished_cinnabar_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/cinnabar_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/cinnabar_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/sulfur_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/sulfur_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/polished_sulfur_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/polished_sulfur_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/sulfur_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/sulfur_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/prismarine_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/prismarine_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/prismarine_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/prismarine_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/dark_prismarine_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/dark_prismarine_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/nether_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/nether_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/red_nether_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/red_nether_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/blackstone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/blackstone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/polished_blackstone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/polished_blackstone_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/polished_blackstone_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/polished_blackstone_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/end_stone_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/end_stone_brick_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/purpur_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/purpur_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/quartz_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/quartz_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/smooth_quartz_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/smooth_quartz_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/cut_copper_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/cut_copper_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/exposed_cut_copper_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/exposed_cut_copper_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/weathered_cut_copper_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/weathered_cut_copper_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/oxidized_cut_copper_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/oxidized_cut_copper_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/white_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/white_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/light_gray_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/light_gray_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/gray_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/gray_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/black_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/black_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/brown_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/brown_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/red_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/red_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/orange_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/orange_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/yellow_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/yellow_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/lime_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/lime_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/green_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/green_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/cyan_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/cyan_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/light_blue_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/light_blue_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/blue_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/blue_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/purple_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/purple_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/magenta_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/magenta_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/pink_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/pink_wool_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/white_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/white_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/light_gray_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/light_gray_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/gray_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/gray_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/black_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/black_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/brown_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/brown_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/red_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/red_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/orange_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/orange_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/yellow_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/yellow_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/lime_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/lime_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/green_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/green_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/cyan_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/cyan_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/light_blue_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/light_blue_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/purple_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/purple_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/magenta_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/magenta_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "recipe/pink_concrete_stairs.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "advancement/recipes/building_blocks/pink_concrete_stairs.json"
+      }
+    ]
+  },
   "pack": {
     "description": {
       "translate": "jadis_mended_progression.pack.description"
