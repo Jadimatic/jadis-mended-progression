@@ -1,0 +1,5 @@
+// 26.3	-999999999-01-01T00:00:00	Jadi's Mended Progression/Tags for minecraft:block
+9cfc2c3ed67037afe4268edeefe6986037c00912 data/minecraft/tags/block/grows_crops.json
+9939bc2de99759e0e9237e692531bce2ad2be1c9 data/minecraft/tags/block/mineable/pickaxe.json
+9939bc2de99759e0e9237e692531bce2ad2be1c9 data/minecraft/tags/block/needs_stone_tool.json
+9cfc2c3ed67037afe4268edeefe6986037c00912 data/minecraft/tags/block/supports_crops.json

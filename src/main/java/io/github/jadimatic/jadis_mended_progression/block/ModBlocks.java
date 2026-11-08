@@ -6,16 +6,19 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.references.BlockItemId;
+import net.minecraft.references.BlockItemIds;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.CookingFuel;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DecoratedPotBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
@@ -33,6 +36,14 @@ public class ModBlocks {
 				.sound(SoundType.STONE)
 		), properties -> properties//Defines block item properties.
 				.cookingFuel(ContextIntProviders.COOKING_TIME_COAL_BLOCK)
+	);
+
+	public static final Block ITEM_CUBBY = registerBlock(ModBlockItemIds.ITEM_CUBBY,
+		properties -> new ItemCubbyBlock(properties//Defines block properties.
+			.strength(2.0f, 4.0f)
+			.mapColor(MapColor.COLOR_BROWN)
+			.sound(SoundType.WOOD)
+		), properties -> properties//Defines block item properties.
 	);
 
 	///Registers both the block and it's item simultaneously.
