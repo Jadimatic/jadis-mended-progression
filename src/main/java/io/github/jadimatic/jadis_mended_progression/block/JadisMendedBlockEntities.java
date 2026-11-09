@@ -13,6 +13,9 @@ public class JadisMendedBlockEntities {
 	public static final BlockEntityType<ItemCubbyBlockEntity> ITEM_CUBBY_ENTITY =
 		register("item_cubby", ItemCubbyBlockEntity::new, JadisMendedBlocks.ITEM_CUBBY);
 
+	public static final BlockEntityType<VacuumBlockEntity> VACCUUM_ENTITY =
+		register("vacuum", VacuumBlockEntity::new, JadisMendedBlocks.VACUUM);
+
 	private static <T extends BlockEntity> BlockEntityType<T> register(
 		String name,
 		FabricBlockEntityTypeBuilder.Factory<? extends T> entityFactory,

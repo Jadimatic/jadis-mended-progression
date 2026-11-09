@@ -38,6 +38,14 @@ public class JadisMendedBlocks {
 		), properties -> properties//Defines block item properties.
 	);
 
+	public static final Block VACUUM = registerBlock(JadisMendedBlockItemIds.VACUUM,
+		properties -> new ItemCubbyBlock(properties//Defines block properties.
+			.strength(2.0f, 4.0f)
+			.mapColor(MapColor.COLOR_GRAY)
+			.sound(SoundType.IRON)
+		), properties -> properties//Defines block item properties.
+	);
+
 	///Registers both the block and it's item simultaneously.
 	private static Block registerBlock(BlockItemId id, Function<BlockBehaviour.Properties, Block> blockFunction, UnaryOperator<Item.Properties> itemFunction){
 		Block toRegister = blockFunction.apply(BlockBehaviour.Properties.of().setId(id.block()));
