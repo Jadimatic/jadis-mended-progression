@@ -47,7 +47,7 @@ public class VacuumBlockEntity extends BlockEntity implements ImplementedContain
 		return this.getItem(0);
 	}
 
-	private static boolean tryMoveItems(final Level level, final BlockPos pos, final BlockState state, final HopperBlockEntity entity, final BooleanSupplier action) {
+	/*private static boolean tryMoveItems(final Level level, final BlockPos pos, final BlockState state, final HopperBlockEntity entity, final BooleanSupplier action) {
 		if (level.isClientSide()) {
 			return false;
 		} else {
@@ -72,6 +72,37 @@ public class VacuumBlockEntity extends BlockEntity implements ImplementedContain
 		}
 	}
 
+	private static boolean ejectItems(final Level level, final BlockPos blockPos, final HopperBlockEntity self) {
+		Container container = getAttachedContainer(level, blockPos, self);
+		if (container == null) {
+			return false;
+		} else {
+			Direction direction = self.facing.getOpposite();
+			if (isFullContainer(container, direction)) {
+				return false;
+			} else {
+				for(int slot = 0; slot < self.getContainerSize(); ++slot) {
+					ItemStack itemStack = self.getItem(slot);
+					if (!itemStack.isEmpty()) {
+						int originalCount = itemStack.getCount();
+						ItemStack result = addItem(self, container, self.removeItem(slot, 1), direction);
+						if (result.isEmpty()) {
+							container.setChanged();
+							return true;
+						}
+
+						itemStack.setCount(originalCount);
+						if (originalCount == 1) {
+							self.setItem(slot, itemStack);
+						}
+					}
+				}
+
+				return false;
+			}
+		}
+	}
+
 	private static boolean tryTakeInItemFromSlot(final Hopper hopper, final Container container, final int slot, final Direction direction) {
 		ItemStack itemStack = container.getItem(slot);
 		if (!itemStack.isEmpty() && canTakeItemFromContainer(hopper, container, itemStack, slot, direction)) {
@@ -90,7 +121,7 @@ public class VacuumBlockEntity extends BlockEntity implements ImplementedContain
 
 		return false;
 	}
-
+*/
 	@Override
 	protected void loadAdditional(ValueInput input) {
 		super.loadAdditional(input);
