@@ -33,6 +33,7 @@ public class JadisMendedProgression implements ModInitializer {
 		JadisMendedItems.registerMendedItems();
 		JadisMendedBlocks.registerMendedBlocks();
 		JadisMendedBlockEntities.registerMendedBlockEntities();
+		JadisMendedDataComponents.registerMendedDataComponents();
 
 
 		DefaultItemComponentEvents.MODIFY.register(context -> {
@@ -64,7 +65,29 @@ public class JadisMendedProgression implements ModInitializer {
 				)));
 
 			context.modify(Items.COPPER_PICKAXE, builder -> builder
-				.set(JadisMendedDataComponents.REPAIR_AMOUNT, 0.5f)//Should repair half with one ingot if this works
+				.set(JadisMendedDataComponents.REPAIR_AMOUNT, 0.50f)
+			);
+
+			context.modify(Items.WOODEN_SHOVEL, builder -> builder
+				.set(JadisMendedDataComponents.REPAIR_AMOUNT, 1f)
+			);
+			context.modify(Items.STONE_SHOVEL, builder -> builder
+				.set(JadisMendedDataComponents.REPAIR_AMOUNT, 1f)
+			);
+			context.modify(Items.GOLDEN_SHOVEL, builder -> builder
+				.set(JadisMendedDataComponents.REPAIR_AMOUNT, 1f)
+			);
+			context.modify(Items.COPPER_SHOVEL, builder -> builder
+				.set(JadisMendedDataComponents.REPAIR_AMOUNT, 1f)
+			);
+			context.modify(Items.DIAMOND_SHOVEL, builder -> builder
+				.set(JadisMendedDataComponents.REPAIR_AMOUNT, 1f)
+			);
+			context.modify(Items.IRON_SHOVEL, builder -> builder
+				.set(JadisMendedDataComponents.REPAIR_AMOUNT, 1f)
+			);
+			context.modify(Items.NETHERITE_SHOVEL, builder -> builder
+				.set(JadisMendedDataComponents.REPAIR_AMOUNT, 1f)
 			);
 		});
 
