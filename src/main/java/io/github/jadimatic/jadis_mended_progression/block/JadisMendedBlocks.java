@@ -41,7 +41,27 @@ public class JadisMendedBlocks {
 	public static final Block VACUUM = registerBlock(JadisMendedBlockItemIds.VACUUM,
 		properties -> new ItemCubbyBlock(properties//Defines block properties.
 			.strength(2.0f, 4.0f)
-			.mapColor(MapColor.COLOR_GRAY)
+			.mapColor(MapColor.METAL)
+			.sound(SoundType.IRON)
+		), properties -> properties//Defines block item properties.
+	);
+
+	public static final Block CUT_IRON = registerBlock(JadisMendedBlockItemIds.CUT_IRON,
+		properties -> new Block(properties//Defines block properties.
+			.strength(5.0F, 6.0F)
+			.mapColor(MapColor.METAL)
+			.instrument(NoteBlockInstrument.IRON_XYLOPHONE)
+			.requiresCorrectToolForDrops()
+			.sound(SoundType.IRON)
+		), properties -> properties//Defines block item properties.
+	);
+
+	public static final Block CHISELED_IRON = registerBlock(JadisMendedBlockItemIds.CHISELED_IRON,
+		properties -> new Block(properties//Defines block properties.
+			.strength(5.0F, 6.0F)
+			.mapColor(MapColor.METAL)
+			.instrument(NoteBlockInstrument.IRON_XYLOPHONE)
+			.requiresCorrectToolForDrops()
 			.sound(SoundType.IRON)
 		), properties -> properties//Defines block item properties.
 	);

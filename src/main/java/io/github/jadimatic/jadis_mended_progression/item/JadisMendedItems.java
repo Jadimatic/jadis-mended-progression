@@ -96,6 +96,15 @@ public class JadisMendedItems {
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register(output -> {
 			output.insertAfter(Items.BARREL, JadisMendedBlocks.ITEM_CUBBY);
 		});
+
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(output -> {
+			output.insertAfter(Items.BARREL, JadisMendedBlocks.ITEM_CUBBY);
+		});
+
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> {
+			output.insertAfter(Items.IRON_BLOCK, JadisMendedBlocks.CHISELED_IRON);
+			output.insertAfter(JadisMendedBlocks.CHISELED_IRON, JadisMendedBlocks.CUT_IRON);
+		});
     }
 
 

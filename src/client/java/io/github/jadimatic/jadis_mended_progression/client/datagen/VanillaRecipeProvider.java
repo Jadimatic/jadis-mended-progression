@@ -13,9 +13,12 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.WeatheringCopperCollection;
 import org.jspecify.annotations.NonNull;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class VanillaRecipeProvider extends FabricRecipeProvider {
@@ -114,6 +117,22 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 						.define('P', gottenPressurePlateList.get(0))
 						.define('R', Items.REDSTONE)
 						.unlockedBy(getHasName(gottenPressurePlateList.get(0)), has(gottenPressurePlateList.get(0)))
+						.save(output);
+				}
+				//endregion
+
+				//region Generate Cut Copper Recipes
+				List<Item> cutList =  Items.CUT_COPPER.asList();
+				List<Item> blockList =  Items.COPPER_BLOCK.asList();
+				for (int i = 0; i < cutList.size(); ++i) {
+					//Loops through the list and obtains the values from the nested list to fill out the recipe
+					//Index 0 is the INPUT
+					//Index 1 is the OUTPUT
+					shaped(RecipeCategory.BUILDING_BLOCKS, cutList.get(i), 16)
+						.pattern("CC")
+						.pattern("CC")
+						.define('C', blockList.get(i))
+						.unlockedBy(getHasName(blockList.get(i)), has(blockList.get(i)))
 						.save(output);
 				}
 				//endregion

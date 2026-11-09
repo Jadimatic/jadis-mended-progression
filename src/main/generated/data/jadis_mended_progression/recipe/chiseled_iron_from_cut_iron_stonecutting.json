@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "jadis_mended_progression:cut_iron",
+  "result": {
+    "id": "jadis_mended_progression:chiseled_iron"
+  }
+}

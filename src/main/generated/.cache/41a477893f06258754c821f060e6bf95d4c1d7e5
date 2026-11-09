@@ -1,6 +1,7 @@
 // 26.3	-999999999-01-01T00:00:00	Jadi's Mended Progression/Block Loot Tables
 8a4cc9a48e57695003601a5fe8787045a209faab data/jadis_mended_progression/loot_table/blocks/charcoal_block.json
+adb44055cde70b17560c415e19f890cbb6194b92 data/jadis_mended_progression/loot_table/blocks/chiseled_iron.json
+9e2e4eea4535d21083689c32ce196964544676e4 data/jadis_mended_progression/loot_table/blocks/cut_iron.json
 d6abed85ac8f3632a3fa30abcfeb5dd47de983f4 data/jadis_mended_progression/loot_table/blocks/item_cubby.json
 039c8078d53db6248b5154c22680dbc6f053cc89 data/minecraft/loot_table/blocks/grass_block.json
 3b284338c066e5c3bdd44dac91c6b66376eaee94 data/minecraft/loot_table/blocks/gravel.json
-5ccecd8719c42874ead8fc1ce941bee6db4f62d7 data/minecraft/loot_table/blocks/short_grass.json

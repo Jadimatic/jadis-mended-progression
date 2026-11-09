@@ -21,8 +21,11 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
 				.add(JadisMendedBlockItemIds.CHARCOAL_BLOCK.block());
 		builder(BlockTags.NEEDS_STONE_TOOL).add(JadisMendedBlockItemIds.CHARCOAL_BLOCK.block());
 
-		builder(BlockTags.MINEABLE_WITH_PICKAXE).add(JadisMendedBlockItemIds.ITEM_CUBBY.block());
-		builder(BlockTags.MINEABLE_WITH_AXE).add(JadisMendedBlockItemIds.ITEM_CUBBY.block());
+		builder(BlockTags.MINEABLE_WITH_PICKAXE).add(JadisMendedBlockItemIds.CUT_IRON.block());
+		builder(BlockTags.NEEDS_STONE_TOOL).add(JadisMendedBlockItemIds.CUT_IRON.block());
+
+		builder(BlockTags.MINEABLE_WITH_PICKAXE).add(JadisMendedBlockItemIds.CHISELED_IRON.block());
+		builder(BlockTags.NEEDS_STONE_TOOL).add(JadisMendedBlockItemIds.CHISELED_IRON.block());
 
 
         builder(BlockTags.SUPPORTS_CROPS)
