@@ -1,38 +1,20 @@
 package io.github.jadimatic.jadis_mended_progression;
 
-import com.mojang.serialization.DataResult;
-import io.github.jadimatic.jadis_mended_progression.block.ModBlockEntities;
-import io.github.jadimatic.jadis_mended_progression.block.ModBlocks;
-import io.github.jadimatic.jadis_mended_progression.item.ModItems;
+import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlockEntities;
+import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlocks;
+import io.github.jadimatic.jadis_mended_progression.item.JadisMendedItems;
+import io.github.jadimatic.jadis_mended_progression.item.component.JadisMendedDataComponents;
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
-import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.minecraft.advancements.predicates.ItemPredicate;
-import net.minecraft.advancements.predicates.entity.EntityEquipmentPredicate;
-import net.minecraft.advancements.predicates.entity.EntityPredicate;
-import net.minecraft.core.HolderGetter;
-import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.entity.EntityTypes;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.Tool;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.storage.loot.BuiltInLootTables;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.storage.loot.LootPool;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,9 +30,9 @@ public class JadisMendedProgression implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Progression Mending Initialized.");
-		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
-		ModBlockEntities.registerModBlockEntities();
+		JadisMendedItems.registerMendedItems();
+		JadisMendedBlocks.registerMendedBlocks();
+		JadisMendedBlockEntities.registerMendedBlockEntities();
 
 
 		DefaultItemComponentEvents.MODIFY.register(context -> {
@@ -82,7 +64,7 @@ public class JadisMendedProgression implements ModInitializer {
 				)));
 
 			context.modify(Items.COPPER_PICKAXE, builder -> builder
-				.set(REPAIR_COST, 1)
+				.set(JadisMendedDataComponents.REPAIR_AMOUNT, 0.5f)//Should repair half with one ingot if this works
 			);
 		});
 

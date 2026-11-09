@@ -1,6 +1,6 @@
 package io.github.jadimatic.jadis_mended_progression.client.datagen;
 
-import io.github.jadimatic.jadis_mended_progression.ModLootTables;
+import io.github.jadimatic.jadis_mended_progression.JadisMendedLootTables;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableSubProvider;
 import net.minecraft.core.HolderLookup;
@@ -11,7 +11,6 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.providers.number.ints.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.concurrent.CompletableFuture;
@@ -24,7 +23,7 @@ public class ModChestLootTableProvider extends SimpleFabricLootTableSubProvider 
 
     @Override
     public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> lootTableBiConsumer) {
-        lootTableBiConsumer.accept(ModLootTables.TEST_CHEST_LOOT, LootTable.lootTable()
+        lootTableBiConsumer.accept(JadisMendedLootTables.TEST_CHEST_LOOT, LootTable.lootTable()
                 .withPool(LootPool.lootPool() // One pool
                         .setRolls(ContextIntProviders.exactly(2)) // That has two rolls
                         .add(LootItem.lootTableItem(Items.DIAMOND) // With an entry that has diamond(s)

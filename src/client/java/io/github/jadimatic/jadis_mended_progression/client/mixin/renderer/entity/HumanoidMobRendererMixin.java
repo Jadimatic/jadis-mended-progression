@@ -1,7 +1,7 @@
 package io.github.jadimatic.jadis_mended_progression.client.mixin.renderer.entity;
 
 import io.github.jadimatic.jadis_mended_progression.client.JadisMendedProgressionClient;
-import io.github.jadimatic.jadis_mended_progression.references.ModTags;
+import io.github.jadimatic.jadis_mended_progression.references.JadisMendedTags;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.entity.AgeableMobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -28,6 +28,6 @@ public abstract class HumanoidMobRendererMixin <T extends Mob, S extends Humanoi
 	void setLanternRenderState(T entity, S state, float partialTicks, CallbackInfo ci) {
 		state.setData(JadisMendedProgressionClient.HOLDING_LANTERN_IN_RIGHT_ARM, entity
 			.getItemHeldByArm(HumanoidArm.RIGHT)
-			.is(ModTags.Items.LANTERNS));
+			.is(JadisMendedTags.Items.LANTERNS));
 	}
 }

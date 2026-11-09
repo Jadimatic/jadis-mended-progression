@@ -5,10 +5,7 @@ import com.llamalad7.mixinextras.expression.Definition;
 import com.llamalad7.mixinextras.expression.Expression;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
-import io.github.jadimatic.jadis_mended_progression.client.JadisMendedProgressionClient;
-import io.github.jadimatic.jadis_mended_progression.client.datagen.ModBlockTagsProvider;
-import io.github.jadimatic.jadis_mended_progression.client.datagen.ModItemTagsProvider;
-import io.github.jadimatic.jadis_mended_progression.references.ModTags;
+import io.github.jadimatic.jadis_mended_progression.references.JadisMendedTags;
 import net.minecraft.client.model.AnimationUtils;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.entity.state.UndeadRenderState;
@@ -24,6 +21,6 @@ public class AnimationUtilsMixin {
 	@Expression("state.getMainHandItemStack() == EMPTY")
 	@ModifyExpressionValue(method = "animateZombieArms", at = @At("MIXINEXTRAS:EXPRESSION"))
 	private static <T extends UndeadRenderState> boolean animateZombieArms(boolean original, final ModelPart leftArm, final ModelPart rightArm, final boolean aggressive, final T state) {
-		return original || state.getMainHandItemStack().is(ModTags.Items.LANTERNS);
+		return original || state.getMainHandItemStack().is(JadisMendedTags.Items.LANTERNS);
 	}
 }

@@ -2,20 +2,16 @@ package io.github.jadimatic.jadis_mended_progression.client.mixin.renderer.entit
 
 import io.github.jadimatic.jadis_mended_progression.client.JadisMendedProgressionClient;
 import io.github.jadimatic.jadis_mended_progression.client.mixin.ItemStackRenderStateAccessor;
-import io.github.jadimatic.jadis_mended_progression.client.renderer.ReloadVillagerRendererMixinDebug;
 import io.github.jadimatic.jadis_mended_progression.client.renderer.ReloadWitchRendererMixinDebug;
-import io.github.jadimatic.jadis_mended_progression.references.ModTags;
+import io.github.jadimatic.jadis_mended_progression.references.JadisMendedTags;
 import net.minecraft.client.model.monster.witch.WitchModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.WitchRenderer;
 import net.minecraft.client.renderer.entity.state.WitchRenderState;
-import net.minecraft.client.renderer.item.ItemStackRenderState;
 import net.minecraft.client.resources.model.cuboid.ItemTransform;
-import net.minecraft.world.entity.Display;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.monster.Witch;
-import net.minecraft.world.item.ItemStack;
 import org.joml.Vector3f;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -32,7 +28,7 @@ public abstract class WitchRendererMixin extends MobRenderer<Witch, WitchRenderS
 	public void adjustWitchPose (Witch entity, WitchRenderState state, float partialTicks, CallbackInfo ci){
 		ReloadWitchRendererMixinDebug.adjustWitchPoseDebug(entity, state, partialTicks, ci);
 
-		state.setData(JadisMendedProgressionClient.HOLDING_LANTERN_IN_RIGHT_ARM, entity.getItemHeldByArm(HumanoidArm.RIGHT).is(ModTags.Items.LANTERNS));
+		state.setData(JadisMendedProgressionClient.HOLDING_LANTERN_IN_RIGHT_ARM, entity.getItemHeldByArm(HumanoidArm.RIGHT).is(JadisMendedTags.Items.LANTERNS));
 		if(state.getDataOrDefault(JadisMendedProgressionClient.HOLDING_LANTERN_IN_RIGHT_ARM, true)){
 			((ItemStackRenderStateAccessor) state.heldItem).jadismendedprogression$getLayers()[0].setItemTransform(new ItemTransform(
 				new Vector3f(-8, 0, 0),//Rotation

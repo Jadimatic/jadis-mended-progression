@@ -1,7 +1,5 @@
 package io.github.jadimatic.jadis_mended_progression.block;
 
-import com.mojang.serialization.Codec;
-import io.github.jadimatic.jadis_mended_progression.JadisMendedProgression;
 import io.github.jadimatic.jadis_mended_progression.util.ImplementedContainer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,14 +11,10 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -33,7 +27,7 @@ public class ItemCubbyBlockEntity extends BlockEntity implements ImplementedCont
 	private Identifier filter_item;
 
 	public ItemCubbyBlockEntity(BlockPos pos, BlockState state) {
-		super(ModBlockEntities.ITEM_CUBBY_ENTITY, pos, state);
+		super(JadisMendedBlockEntities.ITEM_CUBBY_ENTITY, pos, state);
 		this.filter_item = BuiltInRegistries.ITEM.getKey(Items.AIR);
 	}
 

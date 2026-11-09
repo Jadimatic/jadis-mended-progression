@@ -3,19 +3,16 @@ package io.github.jadimatic.jadis_mended_progression.client.mixin.renderer.entit
 import io.github.jadimatic.jadis_mended_progression.client.JadisMendedProgressionClient;
 import io.github.jadimatic.jadis_mended_progression.client.mixin.ItemStackRenderStateAccessor;
 import io.github.jadimatic.jadis_mended_progression.client.renderer.ReloadVillagerRendererMixinDebug;
-import io.github.jadimatic.jadis_mended_progression.references.ModTags;
+import io.github.jadimatic.jadis_mended_progression.references.JadisMendedTags;
 import net.minecraft.client.model.npc.VillagerModel;
 import net.minecraft.client.renderer.entity.AgeableMobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.VillagerRenderer;
-import net.minecraft.client.renderer.entity.state.HoldingEntityRenderState;
 import net.minecraft.client.renderer.entity.state.VillagerRenderState;
-import net.minecraft.client.renderer.item.ItemStackRenderState;
 import net.minecraft.client.resources.model.cuboid.ItemTransform;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.npc.villager.Villager;
 import org.joml.Vector3f;
-import org.joml.Vector3fc;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -32,7 +29,7 @@ public abstract class VillagerRendererMixin extends AgeableMobRenderer<Villager,
 
 		ReloadVillagerRendererMixinDebug.adjustVillagerPoseDebug(entity, state, partialTicks, ci);
 
-		state.setData(JadisMendedProgressionClient.HOLDING_LANTERN_IN_RIGHT_ARM, entity.getItemHeldByArm(HumanoidArm.RIGHT).is(ModTags.Items.LANTERNS));
+		state.setData(JadisMendedProgressionClient.HOLDING_LANTERN_IN_RIGHT_ARM, entity.getItemHeldByArm(HumanoidArm.RIGHT).is(JadisMendedTags.Items.LANTERNS));
 		if(state.getDataOrDefault(JadisMendedProgressionClient.HOLDING_LANTERN_IN_RIGHT_ARM, true)){
 			((ItemStackRenderStateAccessor) state.heldItem).jadismendedprogression$getLayers()[0].setItemTransform(new ItemTransform(
 				new Vector3f(-8, 0, 0),//Rotation

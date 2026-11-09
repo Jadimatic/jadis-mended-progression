@@ -1,7 +1,7 @@
 package io.github.jadimatic.jadis_mended_progression.client.datagen;
 
-import io.github.jadimatic.jadis_mended_progression.block.ModBlocks;
-import io.github.jadimatic.jadis_mended_progression.item.ModItems;
+import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlocks;
+import io.github.jadimatic.jadis_mended_progression.item.JadisMendedItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
@@ -16,11 +16,11 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(@NonNull BlockModelGenerators blockModelGenerators) {
-		blockModelGenerators.createTrivialCube(ModBlocks.CHARCOAL_BLOCK);
+		blockModelGenerators.createTrivialCube(JadisMendedBlocks.CHARCOAL_BLOCK);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
-        itemModelGenerators.generateFlatItem(ModItems.EXAMPLE_ITEM, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(JadisMendedItems.EXAMPLE_ITEM, ModelTemplates.FLAT_ITEM);
     }
 }

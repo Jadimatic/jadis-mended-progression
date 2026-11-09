@@ -3,10 +3,14 @@
   "package": "io.github.jadimatic.jadis_mended_progression.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
+    "AnvilMixin",
     "ModMainMixin",
     "world.entity.monster.zombie.ZombieMixin",
-    "AnvilMixin"
+    "world.inventory.AnvilMenuMixin"
   ],
+  "mixinextras": {
+    "minVersion": "0.5.5"
+  },
   "injectors": {
     "defaultRequire": 1
   },

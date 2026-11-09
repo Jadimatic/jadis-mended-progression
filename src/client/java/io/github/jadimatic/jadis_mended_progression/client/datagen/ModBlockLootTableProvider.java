@@ -1,37 +1,15 @@
 package io.github.jadimatic.jadis_mended_progression.client.datagen;
 
-import com.google.common.collect.ImmutableList;
-import io.github.jadimatic.jadis_mended_progression.JadisMendedProgression;
-import io.github.jadimatic.jadis_mended_progression.block.ModBlocks;
+import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlocks;
 import io.github.jadimatic.jadis_mended_progression.client.datagen.util.provider.ModBlockLootSubProvider;
-import io.github.jadimatic.jadis_mended_progression.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
-import net.minecraft.advancements.predicates.ItemPredicate;
-import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.entries.EntryGroup;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
-import net.minecraft.world.level.storage.loot.entries.SequentialEntry;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootPredicates;
-import net.minecraft.world.level.storage.loot.predicates.MatchTool;
-import net.minecraft.world.level.storage.loot.providers.number.floats.UniformGenerator;
-import net.minecraft.world.level.storage.loot.providers.number.ints.ConstantValue;
-import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.tags.ItemTags;
@@ -78,11 +56,11 @@ public class ModBlockLootTableProvider extends ModBlockLootSubProvider {
 		);
 
 		add(//Since the tool requirements are handled elsewhere for this one, it merely specifies what loot should be dropped.
-				ModBlocks.CHARCOAL_BLOCK,
+				JadisMendedBlocks.CHARCOAL_BLOCK,
 				LootTable.lootTable()
 						.withPool(
 							new LootPool.Builder()
-								.add(LootItem.lootTableItem(ModBlocks.CHARCOAL_BLOCK))
+								.add(LootItem.lootTableItem(JadisMendedBlocks.CHARCOAL_BLOCK))
 						)
 		);
 
