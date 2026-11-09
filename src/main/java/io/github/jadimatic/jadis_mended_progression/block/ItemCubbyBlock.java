@@ -1,6 +1,5 @@
 package io.github.jadimatic.jadis_mended_progression.block;
 
-import io.github.jadimatic.jadis_mended_progression.JadisMendedProgression;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -27,7 +26,6 @@ import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 import org.jspecify.annotations.NonNull;
-import org.lwjgl.system.ffm.mapping.Mapping;
 
 public class ItemCubbyBlock extends BaseEntityBlock  {
 	public static final EnumProperty<Direction> FACING;
