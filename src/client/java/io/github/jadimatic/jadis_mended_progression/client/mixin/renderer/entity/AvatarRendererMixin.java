@@ -1,7 +1,7 @@
 package io.github.jadimatic.jadis_mended_progression.client.mixin.renderer.entity;
 
 import io.github.jadimatic.jadis_mended_progression.client.JadisMendedProgressionClient;
-import io.github.jadimatic.jadis_mended_progression.references.ModTags;
+import io.github.jadimatic.jadis_mended_progression.references.JadisMendedTags;
 import net.minecraft.client.entity.ClientAvatarEntity;
 import net.minecraft.client.model.player.PlayerModel;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -29,9 +29,9 @@ public abstract class AvatarRendererMixin <AvatarlikeEntity extends Avatar & Cli
 	void setLanternRenderState(AvatarlikeEntity entity, AvatarRenderState state, float partialTicks, CallbackInfo ci) {
 		state.setData(JadisMendedProgressionClient.HOLDING_LANTERN_IN_RIGHT_ARM, entity
 			.getItemHeldByArm(HumanoidArm.RIGHT)
-			.is(ModTags.Items.LANTERNS));
+			.is(JadisMendedTags.Items.LANTERNS));
 		state.setData(JadisMendedProgressionClient.HOLDING_LANTERN_IN_LEFT_ARM, entity
 			.getItemHeldByArm(HumanoidArm.LEFT)
-			.is(ModTags.Items.LANTERNS));
+			.is(JadisMendedTags.Items.LANTERNS));
 	}
 }

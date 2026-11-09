@@ -1,7 +1,7 @@
 package io.github.jadimatic.jadis_mended_progression.mixin;
 
-import io.github.jadimatic.jadis_mended_progression.events.ModEvents;
-import io.github.jadimatic.jadis_mended_progression.references.ModTags;
+import io.github.jadimatic.jadis_mended_progression.events.JadisMendedEvents;
+import io.github.jadimatic.jadis_mended_progression.references.JadisMendedTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -30,7 +30,7 @@ public abstract class AnvilMixin extends FallingBlock {
 
 	@Override
 	protected @NonNull InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-		ModEvents.useAnvil(stack, state, level, pos, player, player.getUsedItemHand(), ModTags.Items.REPAIRS_IRON_ANVIL);
+		JadisMendedEvents.useAnvil(stack, state, level, pos, player, player.getUsedItemHand(), JadisMendedTags.Items.REPAIRS_IRON_ANVIL);
 		return InteractionResult.SUCCESS;
 	}
 }

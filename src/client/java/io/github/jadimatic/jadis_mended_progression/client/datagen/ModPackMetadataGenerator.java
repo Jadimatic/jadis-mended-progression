@@ -20,7 +20,6 @@ public class ModPackMetadataGenerator extends PackMetadataGenerator {
 
 
 
-		final var packMetadata = new PackMetadataGenerator(output);
 
 		this.add(
 			PackMetadataSection.SERVER_TYPE,
@@ -32,7 +31,7 @@ public class ModPackMetadataGenerator extends PackMetadataGenerator {
 
 
 
-		packMetadata.add(ResourceFilterSection.TYPE, new ResourceFilterSection(
+		this.add(ResourceFilterSection.TYPE, new ResourceFilterSection(
 			List.of(IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
 					Optional.of(Pattern.compile("minecraft")),
 					Optional.of(Pattern.compile("recipe/wooden_axe.json"))
@@ -658,7 +657,6 @@ public class ModPackMetadataGenerator extends PackMetadataGenerator {
 					Optional.of(Pattern.compile("advancement/recipes/building_blocks/pink_wool_stairs.json"))
 				),
 
-
 				//Concrete Stairs
 				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
 					Optional.of(Pattern.compile("minecraft")),
@@ -667,6 +665,118 @@ public class ModPackMetadataGenerator extends PackMetadataGenerator {
 				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
 					Optional.of(Pattern.compile("minecraft")),
 					Optional.of(Pattern.compile("advancement/recipes/building_blocks/white_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/light_gray_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/light_gray_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/gray_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/gray_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/black_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/black_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/brown_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/brown_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/red_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/red_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/orange_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/orange_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/yellow_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/yellow_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/lime_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/lime_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/green_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/green_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/cyan_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/cyan_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/light_blue_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/light_blue_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/purple_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/purple_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/magenta_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/magenta_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("recipe/pink_concrete_stairs.json"))
+				),
+				IdentifierPatternAccessor.jadis_mended_progression_datagen$construct(
+					Optional.of(Pattern.compile("minecraft")),
+					Optional.of(Pattern.compile("advancement/recipes/building_blocks/pink_concrete_stairs.json"))
 				)
 
 
