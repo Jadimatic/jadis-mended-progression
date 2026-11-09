@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "minecraft:oak_planks",
+    "minecraft:redstone"
+  ],
+  "result": {
+    "count": 8,
+    "id": "minecraft:oak_button"
+  }
+}

@@ -64,6 +64,15 @@ public class ModBlockLootTableProvider extends ModBlockLootSubProvider {
 						)
 		);
 
+		add(//Since the tool requirements are handled elsewhere for this one, it merely specifies what loot should be dropped.
+			JadisMendedBlocks.ITEM_CUBBY,
+			LootTable.lootTable()
+				.withPool(
+					new LootPool.Builder()
+						.add(LootItem.lootTableItem(JadisMendedBlocks.ITEM_CUBBY))
+				)
+		);
+
 
         //The following is just testing stuff, do not include these in the final mod!
         add(

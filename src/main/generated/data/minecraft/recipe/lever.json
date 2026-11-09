@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "C": "minecraft:cobblestone",
+    "R": "minecraft:redstone",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    "S",
+    "C",
+    "R"
+  ],
+  "result": {
+    "id": "minecraft:lever"
+  }
+}

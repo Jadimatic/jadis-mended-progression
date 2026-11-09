@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": "#minecraft:logs",
+    "T": "#minecraft:wooden_trapdoors"
+  },
+  "pattern": [
+    "T",
+    "L"
+  ],
+  "result": {
+    "id": "minecraft:barrel"
+  }
+}
