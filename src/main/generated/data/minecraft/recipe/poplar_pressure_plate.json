@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "P": "minecraft:poplar_planks",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    "PPR"
+  ],
+  "result": {
+    "count": 8,
+    "id": "minecraft:poplar_pressure_plate"
+  }
+}

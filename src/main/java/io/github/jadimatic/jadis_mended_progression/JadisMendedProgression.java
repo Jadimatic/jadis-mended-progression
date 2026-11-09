@@ -35,7 +35,6 @@ public class JadisMendedProgression implements ModInitializer {
 		JadisMendedBlockEntities.registerMendedBlockEntities();
 		JadisMendedDataComponents.registerMendedDataComponents();
 
-
 		DefaultItemComponentEvents.MODIFY.register(context -> {
 			/*context.modify(Items.STONE_PICKAXE, builder -> builder
 				.set(DataComponents.MAX_DAMAGE, 3)//This is the tool's durability

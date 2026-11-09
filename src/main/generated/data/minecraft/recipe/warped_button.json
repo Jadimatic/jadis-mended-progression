@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "minecraft:warped_planks",
+    "minecraft:redstone"
+  ],
+  "result": {
+    "count": 8,
+    "id": "minecraft:warped_button"
+  }
+}
