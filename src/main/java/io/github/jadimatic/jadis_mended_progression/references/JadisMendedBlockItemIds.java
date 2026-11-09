@@ -11,4 +11,5 @@ public class JadisMendedBlockItemIds {
 	}
 	public static final BlockItemId CHARCOAL_BLOCK = create("charcoal_block");
 	public static final BlockItemId ITEM_CUBBY = create("item_cubby");
+	public static final BlockItemId VACUUM = create("vacuum");
 }

@@ -38,7 +38,7 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 					.unlockedBy(ItemTags.LOGS.toString(), has(ItemTags.LOGS))
 					.save(output);
 
-				shaped(RecipeCategory.REDSTONE, Items.LEVER)
+				shaped(RecipeCategory.REDSTONE, Items.LEVER, 2)
 					.pattern("S")
 					.pattern("C")
 					.pattern("R")
@@ -102,7 +102,7 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 					//Loops through the list and obtains the values from the nested list to fill out the recipe
 					//Index 0 is the INPUT
 					//Index 1 is the OUTPUT
-					shaped(RecipeCategory.REDSTONE, gottenPressurePlateList.get(1), 8)
+					shaped(RecipeCategory.REDSTONE, gottenPressurePlateList.get(1), 4)
 						.pattern("PPR")
 						.define('P', gottenPressurePlateList.get(0))
 						.define('R', Items.REDSTONE)

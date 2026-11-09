@@ -80,7 +80,7 @@ public class ItemCubbyBlock extends BaseEntityBlock  {
 			} else {
 				if (checkFrontFace(state, hitResult.getDirection())) {
 					if (!player.getItemInHand(hand).isEmpty()) {
-						if (!itemCubby.isContainerFull()) {
+						if (!itemCubby.inventoryFull()) {
 							if (itemCubby.canInsert(itemStack)) {
 								if (!player.isShiftKeyDown()) {
 									int remainder = itemCubby.insert(itemStack);
@@ -153,7 +153,7 @@ public class ItemCubbyBlock extends BaseEntityBlock  {
 			} else {
 				if (checkFrontFace(state, context.getClickedFace())) {
 					if (!player.getItemInHand(player.getUsedItemHand()).isEmpty()) {
-						if (!itemCubby.isContainerFull()) {
+						if (!itemCubby.inventoryFull()) {
 							if (itemCubby.canInsert(itemStack)) {
 								itemCubby.insertOne(itemStack);
 								itemStack.shrink(1);

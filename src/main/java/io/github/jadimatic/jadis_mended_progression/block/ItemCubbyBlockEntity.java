@@ -140,7 +140,7 @@ public class ItemCubbyBlockEntity extends BlockEntity implements ImplementedCont
 		return false;
 	}
 
-	public boolean isContainerFull() {
+	public boolean inventoryFull() {
 		for (int i = 0; i < this.getContainerSize(); i++) {
 			ItemStack stack = this.getItem(i);
 
