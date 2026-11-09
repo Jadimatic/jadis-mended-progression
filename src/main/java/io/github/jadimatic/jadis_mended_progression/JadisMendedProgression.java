@@ -2,6 +2,7 @@ package io.github.jadimatic.jadis_mended_progression;
 
 import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlockEntities;
 import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlocks;
+import io.github.jadimatic.jadis_mended_progression.events.CubbyShiftClickEvent;
 import io.github.jadimatic.jadis_mended_progression.item.JadisMendedItems;
 import io.github.jadimatic.jadis_mended_progression.item.component.JadisMendedDataComponents;
 import net.fabricmc.api.ModInitializer;
@@ -34,6 +35,7 @@ public class JadisMendedProgression implements ModInitializer {
 		JadisMendedBlocks.registerMendedBlocks();
 		JadisMendedBlockEntities.registerMendedBlockEntities();
 		JadisMendedDataComponents.registerMendedDataComponents();
+		CubbyShiftClickEvent.register();
 
 		DefaultItemComponentEvents.MODIFY.register(context -> {
 			/*context.modify(Items.STONE_PICKAXE, builder -> builder
