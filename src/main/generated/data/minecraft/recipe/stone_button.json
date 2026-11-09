@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "minecraft:stone",
+    "minecraft:redstone"
+  ],
+  "result": {
+    "count": 8,
+    "id": "minecraft:stone_button"
+  }
+}

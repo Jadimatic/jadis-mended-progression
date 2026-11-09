@@ -65,6 +65,8 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 				createTwoItemList(Items.BAMBOO_PLANKS, Items.BAMBOO_BUTTON, buttonGenerateList);
 				createTwoItemList(Items.CRIMSON_PLANKS, Items.CRIMSON_BUTTON, buttonGenerateList);
 				createTwoItemList(Items.WARPED_PLANKS, Items.WARPED_BUTTON, buttonGenerateList);
+				createTwoItemList(Items.STONE, Items.STONE_BUTTON, buttonGenerateList);
+				createTwoItemList(Items.POLISHED_BLACKSTONE, Items.POLISHED_BLACKSTONE_BUTTON, buttonGenerateList);
 
 				//Loops through the list initialized above and mass registers the recipes
 				for (ArrayList<Item> gottenButtonList : buttonGenerateList) {
@@ -96,6 +98,11 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 				createTwoItemList(Items.BAMBOO_PLANKS, Items.BAMBOO_PRESSURE_PLATE, pressureplateGenerateList);
 				createTwoItemList(Items.CRIMSON_PLANKS, Items.CRIMSON_PRESSURE_PLATE, pressureplateGenerateList);
 				createTwoItemList(Items.WARPED_PLANKS, Items.WARPED_PRESSURE_PLATE, pressureplateGenerateList);
+				createTwoItemList(Items.STONE, Items.STONE_PRESSURE_PLATE, pressureplateGenerateList);
+				createTwoItemList(Items.POLISHED_BLACKSTONE, Items.POLISHED_BLACKSTONE_PRESSURE_PLATE, pressureplateGenerateList);
+				createTwoItemList(Items.IRON_INGOT, Items.HEAVY_WEIGHTED_PRESSURE_PLATE, pressureplateGenerateList);
+				createTwoItemList(Items.GOLD_INGOT, Items.LIGHT_WEIGHTED_PRESSURE_PLATE, pressureplateGenerateList);
+
 
 				//Loops through the list initialized above and mass registers the recipes
 				for (ArrayList<Item> gottenPressurePlateList : pressureplateGenerateList) {
