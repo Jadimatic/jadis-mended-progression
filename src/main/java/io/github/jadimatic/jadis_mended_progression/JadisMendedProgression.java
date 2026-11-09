@@ -3,6 +3,7 @@ package io.github.jadimatic.jadis_mended_progression;
 import com.mojang.serialization.DataResult;
 import io.github.jadimatic.jadis_mended_progression.block.ModBlockEntities;
 import io.github.jadimatic.jadis_mended_progression.block.ModBlocks;
+import io.github.jadimatic.jadis_mended_progression.events.CubbyShiftClickEvent;
 import io.github.jadimatic.jadis_mended_progression.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -51,6 +52,7 @@ public class JadisMendedProgression implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModBlockEntities.registerModBlockEntities();
+		CubbyShiftClickEvent.register();
 
 
 		DefaultItemComponentEvents.MODIFY.register(context -> {
