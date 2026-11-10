@@ -50,6 +50,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					.define('C', Items.CHARCOAL)
 					.unlockedBy(getHasName(Items.CHARCOAL), has(Items.CHARCOAL))
 					.save(output, "charcoal_block");
+
+				shaped(RecipeCategory.BUILDING_BLOCKS, Items.END_PORTAL_FRAME)
+					.pattern("P P")
+					.pattern("EOE")
+					.pattern("EEE")
+					.define('P', Items.PRISMARINE)
+					.define('O', Items.OBSIDIAN)
+					.define('E', Items.END_STONE)
+					.unlockedBy(getHasName(Items.END_STONE), has(Items.END_STONE))
+					.save(output);
 			}
         };
     }
