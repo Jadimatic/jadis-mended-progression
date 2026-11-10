@@ -51,15 +51,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					.unlockedBy(getHasName(Items.CHARCOAL), has(Items.CHARCOAL))
 					.save(output, "charcoal_block");
 
-				shaped(RecipeCategory.BUILDING_BLOCKS, Items.END_PORTAL_FRAME)
-					.pattern("P P")
-					.pattern("EOE")
-					.pattern("EEE")
-					.define('P', Items.PRISMARINE)
-					.define('O', Items.OBSIDIAN)
-					.define('E', Items.END_STONE)
-					.unlockedBy(getHasName(Items.END_STONE), has(Items.END_STONE))
+				shaped(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CUT_IRON, 16)
+					.pattern("II")
+					.pattern("II")
+					.define('I', Items.IRON_BLOCK)
+					.unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK))
 					.save(output);
+
+				shaped(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CHISELED_IRON, 2)
+					.pattern("I")
+					.pattern("I")
+					.define('I', JadisMendedBlocks.CUT_IRON)
+					.unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK))
+					.save(output);
+
+				stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CUT_IRON,Items.IRON_BLOCK, 4);
+				stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CHISELED_IRON,Items.IRON_BLOCK, 4);
+				stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CHISELED_IRON, JadisMendedBlocks.CUT_IRON, 1);
+				stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CUT_IRON, JadisMendedBlocks.CHISELED_IRON, 1);
 			}
         };
     }

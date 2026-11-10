@@ -2,6 +2,8 @@
   "jadis_mended_progression.pack.description": "This is a translation",
   "item.jadis_mended_progression.example_item": "Example Item",
   "block.jadis_mended_progression.charcoal_block": "Block of Charcoal",
-  "block.jadis_mended_progression.item_cubby": "Item Cubby"
-
+  "block.jadis_mended_progression.item_cubby": "Item Cubby",
+  "block.jadis_mended_progression.vacuum": "Vacuum",
+  "block.jadis_mended_progression.cut_iron": "Cut Iron",
+  "block.jadis_mended_progression.chiseled_iron": "Chiseled Iron"
 }

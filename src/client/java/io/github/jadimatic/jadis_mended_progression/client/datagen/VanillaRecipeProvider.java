@@ -13,9 +13,12 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.WeatheringCopperCollection;
 import org.jspecify.annotations.NonNull;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class VanillaRecipeProvider extends FabricRecipeProvider {
@@ -38,7 +41,7 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 					.unlockedBy(ItemTags.LOGS.toString(), has(ItemTags.LOGS))
 					.save(output);
 
-				shaped(RecipeCategory.REDSTONE, Items.LEVER)
+				shaped(RecipeCategory.REDSTONE, Items.LEVER, 2)
 					.pattern("S")
 					.pattern("C")
 					.pattern("R")
@@ -50,6 +53,8 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 
 				//region Generate Button Recipes
 				ArrayList<ArrayList<Item>> buttonGenerateList = new ArrayList<>();
+				//Argument one is the INPUT item, Argument 2 is the OUTPUT item
+				//Argument 3 is the list to add it to! This is important depending on the kind of recipe to be generated!
 				createTwoItemList(Items.OAK_PLANKS, Items.OAK_BUTTON, buttonGenerateList);
 				createTwoItemList(Items.SPRUCE_PLANKS, Items.SPRUCE_BUTTON, buttonGenerateList);
 				createTwoItemList(Items.BIRCH_PLANKS, Items.BIRCH_BUTTON, buttonGenerateList);
@@ -63,8 +68,14 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 				createTwoItemList(Items.BAMBOO_PLANKS, Items.BAMBOO_BUTTON, buttonGenerateList);
 				createTwoItemList(Items.CRIMSON_PLANKS, Items.CRIMSON_BUTTON, buttonGenerateList);
 				createTwoItemList(Items.WARPED_PLANKS, Items.WARPED_BUTTON, buttonGenerateList);
+				createTwoItemList(Items.STONE, Items.STONE_BUTTON, buttonGenerateList);
+				createTwoItemList(Items.POLISHED_BLACKSTONE, Items.POLISHED_BLACKSTONE_BUTTON, buttonGenerateList);
 
+				//Loops through the list initialized above and mass registers the recipes
 				for (ArrayList<Item> gottenButtonList : buttonGenerateList) {
+					//Loops through the list and obtains the values from the nested list to fill out the recipe
+					//Index 0 is the INPUT
+					//Index 1 is the OUTPUT
 					shapeless(RecipeCategory.REDSTONE, gottenButtonList.get(1), 8)
 						.requires(gottenButtonList.get(0))
 						.requires(Items.REDSTONE)
@@ -75,6 +86,8 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 
 				//region Generate Pressure Plate Recipes
 				ArrayList<ArrayList<Item>> pressureplateGenerateList = new ArrayList<>();
+				//Argument one is the INPUT item, Argument 2 is the OUTPUT item
+				//Argument 3 is the list to add it to! This is important depending on the kind of recipe to be generated!
 				createTwoItemList(Items.OAK_PLANKS, Items.OAK_PRESSURE_PLATE, pressureplateGenerateList);
 				createTwoItemList(Items.SPRUCE_PLANKS, Items.SPRUCE_PRESSURE_PLATE, pressureplateGenerateList);
 				createTwoItemList(Items.BIRCH_PLANKS, Items.BIRCH_PRESSURE_PLATE, pressureplateGenerateList);
@@ -88,13 +101,38 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 				createTwoItemList(Items.BAMBOO_PLANKS, Items.BAMBOO_PRESSURE_PLATE, pressureplateGenerateList);
 				createTwoItemList(Items.CRIMSON_PLANKS, Items.CRIMSON_PRESSURE_PLATE, pressureplateGenerateList);
 				createTwoItemList(Items.WARPED_PLANKS, Items.WARPED_PRESSURE_PLATE, pressureplateGenerateList);
+				createTwoItemList(Items.STONE, Items.STONE_PRESSURE_PLATE, pressureplateGenerateList);
+				createTwoItemList(Items.POLISHED_BLACKSTONE, Items.POLISHED_BLACKSTONE_PRESSURE_PLATE, pressureplateGenerateList);
+				createTwoItemList(Items.IRON_INGOT, Items.HEAVY_WEIGHTED_PRESSURE_PLATE, pressureplateGenerateList);
+				createTwoItemList(Items.GOLD_INGOT, Items.LIGHT_WEIGHTED_PRESSURE_PLATE, pressureplateGenerateList);
 
-				for (ArrayList<Item> gottenBarrelList : pressureplateGenerateList) {
-					shaped(RecipeCategory.REDSTONE, gottenBarrelList.get(1), 8)
+
+				//Loops through the list initialized above and mass registers the recipes
+				for (ArrayList<Item> gottenPressurePlateList : pressureplateGenerateList) {
+					//Loops through the list and obtains the values from the nested list to fill out the recipe
+					//Index 0 is the INPUT
+					//Index 1 is the OUTPUT
+					shaped(RecipeCategory.REDSTONE, gottenPressurePlateList.get(1), 4)
 						.pattern("PPR")
-						.define('P', gottenBarrelList.get(0))
+						.define('P', gottenPressurePlateList.get(0))
 						.define('R', Items.REDSTONE)
-						.unlockedBy(getHasName(gottenBarrelList.get(0)), has(gottenBarrelList.get(0)))
+						.unlockedBy(getHasName(gottenPressurePlateList.get(0)), has(gottenPressurePlateList.get(0)))
+						.save(output);
+				}
+				//endregion
+
+				//region Generate Cut Copper Recipes
+				List<Item> cutList =  Items.CUT_COPPER.asList();
+				List<Item> blockList =  Items.COPPER_BLOCK.asList();
+				for (int i = 0; i < cutList.size(); ++i) {
+					//Loops through the list and obtains the values from the nested list to fill out the recipe
+					//Index 0 is the INPUT
+					//Index 1 is the OUTPUT
+					shaped(RecipeCategory.BUILDING_BLOCKS, cutList.get(i), 16)
+						.pattern("CC")
+						.pattern("CC")
+						.define('C', blockList.get(i))
+						.unlockedBy(getHasName(blockList.get(i)), has(blockList.get(i)))
 						.save(output);
 				}
 				//endregion
@@ -102,10 +140,13 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 		};
 	}
 
-	public void createTwoItemList(Item plank, Item button, ArrayList<ArrayList<Item>> list) {
+	public void createTwoItemList(Item input, Item output, ArrayList<ArrayList<Item>> list) {
 		ArrayList<Item> twoitemlist = new ArrayList<>();
-		twoitemlist.add(plank);
-		twoitemlist.add(button);
+		//Adds an input to the list
+		twoitemlist.add(input);
+		//Adds an output to the list
+		twoitemlist.add(output);
+		//Adds the new list to the given list (nested)
 		list.add(twoitemlist);
 	}
 

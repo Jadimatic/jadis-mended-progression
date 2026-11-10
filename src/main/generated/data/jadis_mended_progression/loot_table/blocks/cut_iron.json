@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "jadis_mended_progression:cut_iron"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

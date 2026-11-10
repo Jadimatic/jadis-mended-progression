@@ -6,7 +6,8 @@
     "AnvilMixin",
     "ModMainMixin",
     "world.entity.monster.zombie.ZombieMixin",
-    "world.inventory.AnvilMenuMixin"
+    "world.inventory.AnvilMenuMixin",
+    "BlockBehaviorPropertiesMixin"
   ],
   "mixinextras": {
     "minVersion": "0.5.5"

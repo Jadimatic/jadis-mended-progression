@@ -73,16 +73,34 @@ public class ModBlockLootTableProvider extends ModBlockLootSubProvider {
 				)
 		);
 
+		add(//Since the tool requirements are handled elsewhere for this one, it merely specifies what loot should be dropped.
+			JadisMendedBlocks.CUT_IRON,
+			LootTable.lootTable()
+				.withPool(
+					new LootPool.Builder()
+						.add(LootItem.lootTableItem(JadisMendedBlocks.CUT_IRON))
+				)
+		);
+
+		add(//Since the tool requirements are handled elsewhere for this one, it merely specifies what loot should be dropped.
+			JadisMendedBlocks.CHISELED_IRON,
+			LootTable.lootTable()
+				.withPool(
+					new LootPool.Builder()
+						.add(LootItem.lootTableItem(JadisMendedBlocks.CHISELED_IRON))
+				)
+		);
+
 
         //The following is just testing stuff, do not include these in the final mod!
-        add(
+       /* add(
                 Blocks.SHORT_GRASS,
                 createShovelOnlyDrop(Items.EMERALD)
                         .withPool(//Adds an extra item to drop.
                                 new LootPool.Builder()
                                         .add(LootItem.lootTableItem(Items.DIAMOND)).when(hasItem(Items.STONE_SWORD))
                         )
-        );
+        );*/
 
 
             // Make condensed dirt drop its block item.

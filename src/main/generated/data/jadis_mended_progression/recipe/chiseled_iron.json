@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "I": "jadis_mended_progression:cut_iron"
+  },
+  "pattern": [
+    "I",
+    "I"
+  ],
+  "result": {
+    "count": 2,
+    "id": "jadis_mended_progression:chiseled_iron"
+  }
+}

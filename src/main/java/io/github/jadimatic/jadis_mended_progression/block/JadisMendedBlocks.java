@@ -4,7 +4,11 @@ import io.github.jadimatic.jadis_mended_progression.JadisMendedProgression;
 import io.github.jadimatic.jadis_mended_progression.references.JadisMendedBlockItemIds;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.references.BlockItemId;
+import net.minecraft.references.BlockItemIds;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -13,6 +17,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
+import org.spongepowered.asm.mixin.Mutable;
 
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
@@ -35,6 +40,34 @@ public class JadisMendedBlocks {
 			.strength(2.0f, 4.0f)
 			.mapColor(MapColor.COLOR_BROWN)
 			.sound(SoundType.WOOD)
+		), properties -> properties//Defines block item properties.
+	);
+
+	public static final Block VACUUM = registerBlock(JadisMendedBlockItemIds.VACUUM,
+		properties -> new ItemCubbyBlock(properties//Defines block properties.
+			.strength(2.0f, 4.0f)
+			.mapColor(MapColor.METAL)
+			.sound(SoundType.IRON)
+		), properties -> properties//Defines block item properties.
+	);
+
+	public static final Block CUT_IRON = registerBlock(JadisMendedBlockItemIds.CUT_IRON,
+		properties -> new Block(properties//Defines block properties.
+			.strength(5.0F, 6.0F)
+			.mapColor(MapColor.METAL)
+			.instrument(NoteBlockInstrument.IRON_XYLOPHONE)
+			.requiresCorrectToolForDrops()
+			.sound(SoundType.IRON)
+		), properties -> properties//Defines block item properties.
+	);
+
+	public static final Block CHISELED_IRON = registerBlock(JadisMendedBlockItemIds.CHISELED_IRON,
+		properties -> new Block(properties//Defines block properties.
+			.strength(5.0F, 6.0F)
+			.mapColor(MapColor.METAL)
+			.instrument(NoteBlockInstrument.IRON_XYLOPHONE)
+			.requiresCorrectToolForDrops()
+			.sound(SoundType.IRON)
 		), properties -> properties//Defines block item properties.
 	);
 

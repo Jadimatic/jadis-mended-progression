@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "P": "minecraft:stone",
+    "R": "minecraft:redstone"
+  },
+  "pattern": [
+    "PPR"
+  ],
+  "result": {
+    "count": 4,
+    "id": "minecraft:stone_pressure_plate"
+  }
+}
