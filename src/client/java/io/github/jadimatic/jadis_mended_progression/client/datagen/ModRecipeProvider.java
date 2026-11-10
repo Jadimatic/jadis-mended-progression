@@ -69,6 +69,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CHISELED_IRON,Items.IRON_BLOCK, 4);
 				stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CHISELED_IRON, JadisMendedBlocks.CUT_IRON, 1);
 				stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CUT_IRON, JadisMendedBlocks.CHISELED_IRON, 1);
+
+				shaped(RecipeCategory.BUILDING_BLOCKS, Items.END_PORTAL_FRAME)
+					.pattern("P P")
+					.pattern("EOE")
+					.pattern("EEE")
+					.define('P', Items.PRISMARINE)
+					.define('O', Items.OBSIDIAN)
+					.define('E', Items.END_STONE)
+					.unlockedBy(getHasName(Items.END_STONE), has(Items.END_STONE))
+					.save(output);
 			}
         };
     }
