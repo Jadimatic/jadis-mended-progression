@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": "minecraft:end_stone",
+    "O": "minecraft:obsidian",
+    "P": "minecraft:prismarine"
+  },
+  "pattern": [
+    "P P",
+    "EOE",
+    "EEE"
+  ],
+  "result": {
+    "id": "minecraft:end_portal_frame"
+  }
+}
