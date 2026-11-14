@@ -4,10 +4,12 @@
   "compatibilityLevel": "JAVA_25",
   "mixins": [
     "AnvilMixin",
+    "BlockBehaviorPropertiesMixin",
     "ModMainMixin",
     "world.entity.monster.zombie.ZombieMixin",
+    "world.flag.FeatureFlagsMixin",
     "world.inventory.AnvilMenuMixin",
-    "BlockBehaviorPropertiesMixin"
+    "world.level.gamerules.GameRulesMixin"
   ],
   "mixinextras": {
     "minVersion": "0.5.5"

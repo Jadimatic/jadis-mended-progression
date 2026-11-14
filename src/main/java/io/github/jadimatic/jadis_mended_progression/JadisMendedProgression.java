@@ -8,14 +8,29 @@ import io.github.jadimatic.jadis_mended_progression.item.component.JadisMendedDa
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.minecraft.advancements.predicates.ItemPredicate;
+import net.minecraft.advancements.predicates.entity.EntityEquipmentPredicate;
+import net.minecraft.advancements.predicates.entity.EntityPredicate;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.monster.spider.Spider;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.Tool;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.BuiltInLootTables;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootPool;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -96,33 +111,42 @@ public class JadisMendedProgression implements ModInitializer {
 
 
 
-
-		/*
-			LootTableEvents.MODIFY.register((key, tableBuilder, source, registries) -> {
-			// If the loot table is for a white sheep, and it is not overridden by a user:
-			if (source.isBuiltin() && BuiltInLootTables.   .equals(key)) {
-				// Create a new loot pool that will hold the diamonds.
-				LootPool.Builder pool = LootPool.lootPool()
-					// Add diamonds...
-					.add(LootItem.lootTableItem(Items.DIAMOND))
-					// ...only if the sheep was killed with a diamond sword.
-					.when(LootItemEntityPropertyCondition.hasProperties(
-						LootContext.EntityTarget.ATTACKER,
-						EntityPredicate.Builder.entity().equipment(
-							EntityEquipmentPredicate.Builder.equipment().mainhand(
-								ItemPredicate.Builder.item().of(
-									registries.lookupOrThrow(Registries.ITEM),
-									Items.DIAMOND_SWORD
-								)
-							)
-						)
-					));
-				// Add the loot pool to the loot table
-				tableBuilder.withPool(pool);
+		/* //WE PLAN TO REPLACE THIS WITH MODIFY + MIXINS LATER FOR COMPATIBILITY WITH OTHER MODS!!! Still use REPLACE for fish though, we don't want anyone adding items for killing them.
+		LootTableEvents.MODIFY_DROPS.register((holder, context, drops) -> {
+			// Change the maximum and minimum number of spider eyes and string dropped by spiders.
+			if (holder.is(EntityTypes.SPIDER.getDefaultLootTable().orElseThrow())) {
+				for(ItemStack item : drops){
+					if(item.is(Items.SPIDER_EYE)){
+						item.setCount(context.getRandom().nextIntBetweenInclusive(4, 8));//Drops 4-8 eyes.
+						// RNG is added here because this replaces the item being dropped rather than modifying the original loot table!
+					}
+					if(item.is(Items.STRING)){
+						item.setCount(context.getRandom().nextIntBetweenInclusive(4, 10));//Drops 4-10 string.
+					}
+				}
 			}
 		});
-		 */
+		*/
 
+
+
+
+
+
+		LootTableEvents.REPLACE.register((key, original, source, holder) -> {
+			// If the loot table is for a salmon, and it is not overridden by a user:
+			if (source.isBuiltin()){
+				if (EntityTypes.SALMON.getDefaultLootTable().orElseThrow().equals(key)) {
+					// Create a new loot pool that will hold the bone.
+					LootPool.Builder pool = LootPool.lootPool()
+						// Add the bone...
+						.add(LootItem.lootTableItem(Items.BONE));
+					// Create a new loot table with the loot pool
+					return LootTable.lootTable().withPool(pool).build();
+				}
+			}
+			return null;
+		});
 
 
 

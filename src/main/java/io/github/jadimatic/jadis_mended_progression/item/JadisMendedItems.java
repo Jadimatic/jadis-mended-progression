@@ -32,8 +32,12 @@ public class JadisMendedItems {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
 
             output.accept(EXAMPLE_ITEM);
-			output.accept(JadisMendedBlocks.CHARCOAL_BLOCK);
         });
+
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> {
+
+			output.insertAfter(Items.COAL_BLOCK, JadisMendedBlocks.CHARCOAL_BLOCK);
+		});
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(output -> {
             output.accept(Items.SPRUCE_DOOR);
