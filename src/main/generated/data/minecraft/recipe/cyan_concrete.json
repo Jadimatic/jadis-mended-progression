@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:cyan_concrete_slab",
+    "minecraft:cyan_concrete_slab"
+  ],
+  "result": {
+    "id": "minecraft:cyan_concrete"
+  }
+}

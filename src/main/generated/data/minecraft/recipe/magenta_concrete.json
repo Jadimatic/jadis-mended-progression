@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:magenta_concrete_slab",
+    "minecraft:magenta_concrete_slab"
+  ],
+  "result": {
+    "id": "minecraft:magenta_concrete"
+  }
+}

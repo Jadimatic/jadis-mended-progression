@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:purple_concrete_slab",
+    "minecraft:purple_concrete_slab"
+  ],
+  "result": {
+    "id": "minecraft:purple_concrete"
+  }
+}

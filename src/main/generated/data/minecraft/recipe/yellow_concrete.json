@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:yellow_concrete_slab",
+    "minecraft:yellow_concrete_slab"
+  ],
+  "result": {
+    "id": "minecraft:yellow_concrete"
+  }
+}

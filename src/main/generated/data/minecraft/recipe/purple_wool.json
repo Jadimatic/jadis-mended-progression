@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:purple_wool_slab",
+    "minecraft:purple_wool_slab"
+  ],
+  "result": {
+    "id": "minecraft:purple_wool"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:brown_concrete_slab",
+    "minecraft:brown_concrete_slab"
+  ],
+  "result": {
+    "id": "minecraft:brown_concrete"
+  }
+}

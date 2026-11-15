@@ -6,7 +6,9 @@ import net.minecraft.world.level.DataPackConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
+import org.spongepowered.include.com.google.common.collect.ImmutableList;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Mixin(DataPackConfig.class)
@@ -16,5 +18,16 @@ public abstract class DataPackConfigMixin {
 	@Definition(id = "DataPackConfig", type = DataPackConfig.class)
 	@Expression("DEFAULT = @(new DataPackConfig(?, ?))")
 	@ModifyArg(method = "<clinit>", index = 0, at = @At("MIXINEXTRAS:EXPRESSION"))
-	private static List<String> enableMinecartImprovementsDataPack(List<String> enabled){return enabled;}
+	private static List<String> enableMinecartImprovementsDataPack(List<String> enabled){
+
+		if(enabled.contains("minecart_improvements")){
+			return enabled;
+		}
+		else{
+			ArrayList<String> updatedEnabled = new ArrayList<>(enabled);
+			updatedEnabled.add("minecart_improvements");
+			return updatedEnabled;
+		}
+
+	}
 }

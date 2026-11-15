@@ -10,10 +10,14 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.HoneycombItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.WeatheringCopperCollection;
 import org.jspecify.annotations.NonNull;
 
@@ -205,31 +209,130 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 
 
 				//region Generate Copper Recipes
-				List<Item> cutList =  Items.CUT_COPPER.asList();
-				List<Item> stairList =  Items.CUT_COPPER_STAIRS.asList();
-				List<Item> blockList =  Items.COPPER_BLOCK.asList();
-				for (int i = 0; i < blockList.size(); ++i) {
+				List<Block> cutCopperList =  Blocks.CUT_COPPER.asList();
+				List<Item> cutCopperSlabList =  Items.CUT_COPPER_SLAB.asList();
+				List<Item> cutCopperStairList =  Items.CUT_COPPER_STAIRS.asList();
+				List<Item> copperBlockList =  Items.COPPER_BLOCK.asList();
+				for (int i = 0; i < copperBlockList.size(); ++i) {
 					//Loops through the list and obtains the values from the nested list to fill out the recipe
 					//Index 0 is the INPUT
 					//Index 1 is the OUTPUT
-					shaped(RecipeCategory.BUILDING_BLOCKS, cutList.get(i), 16)
+					shaped(RecipeCategory.BUILDING_BLOCKS, cutCopperList.get(i).asItem(), 16)
 						.pattern("CC")
 						.pattern("CC")
-						.define('C', blockList.get(i))
-						.unlockedBy(getHasName(blockList.get(i)), has(blockList.get(i)))
+						.define('C', copperBlockList.get(i))
+						.unlockedBy(getHasName(copperBlockList.get(i)), has(copperBlockList.get(i)))
 						.save(output);
 
-					shaped(RecipeCategory.BUILDING_BLOCKS, stairList.get(i), 4)
+					shapeless(RecipeCategory.BUILDING_BLOCKS, cutCopperSlabList.get(i), 2)
+						.requires(cutCopperList.get(i).asItem())
+						.unlockedBy(getHasName(cutCopperList.get(i).asItem()), has(cutCopperList.get(i).asItem()))
+						.save(output);
+
+
+					shapeless(RecipeCategory.BUILDING_BLOCKS, cutCopperList.get(i).asItem())//Return to block
+						.requires(cutCopperSlabList.get(i), 2)
+						.unlockedBy(getHasName(cutCopperSlabList.get(i)), has(cutCopperSlabList.get(i)))
+						.save(output,getWeatheringName(cutCopperList.get(i)) + "_" + "cut_copper_from_slabs");//This needs to add the weathering prefix to the name each time or else you get duplicates
+
+					shaped(RecipeCategory.BUILDING_BLOCKS, cutCopperStairList.get(i), 4)
 						.pattern("C ")
 						.pattern("CC")
-						.define('C', cutList.get(i))
-						.unlockedBy(getHasName(cutList.get(i)), has(cutList.get(i)))
+						.define('C', cutCopperList.get(i).asItem())
+						.unlockedBy(getHasName(cutCopperList.get(i).asItem()), has(cutCopperList.get(i).asItem()))
+						.save(output);
+				}
+				//endregion
+
+				//region Generate Wool Recipes
+				List<Item> woolSlabList =  Items.WOOL_SLAB.asList();
+				List<Item> woolStairList =  Items.WOOL_STAIRS.asList();
+				List<Item> woolBlockList =  Items.WOOL.asList();
+				for (int i = 0; i < woolBlockList.size(); ++i) {
+					//Loops through the list and obtains the values from the nested list to fill out the recipe
+					//Index 0 is the INPUT
+					//Index 1 is the OUTPUT
+					shapeless(RecipeCategory.BUILDING_BLOCKS, woolSlabList.get(i), 2)
+						.requires(woolBlockList.get(i))
+						.unlockedBy(getHasName(woolBlockList.get(i)), has(woolBlockList.get(i)))
+						.save(output);
+
+					shapeless(RecipeCategory.BUILDING_BLOCKS, woolBlockList.get(i))
+						.requires(woolSlabList.get(i), 2)
+						.unlockedBy(getHasName(woolSlabList.get(i)), has(woolSlabList.get(i)))
+						.save(output);
+
+
+					shaped(RecipeCategory.BUILDING_BLOCKS, woolStairList.get(i), 4)
+						.pattern("W ")
+						.pattern("WW")
+						.define('W', woolBlockList.get(i))
+						.unlockedBy(getHasName(woolBlockList.get(i)), has(woolBlockList.get(i)))
+						.save(output);
+				}
+				//endregion
+
+				//region Generate Concrete Recipes
+				List<Item> concreteSlabList =  Items.CONCRETE_SLAB.asList();
+				List<Item> concreteStairList =  Items.CONCRETE_STAIRS.asList();
+				List<Item> concreteBlockList =  Items.CONCRETE.asList();
+				for (int i = 0; i < concreteBlockList.size(); ++i) {
+					//Loops through the list and obtains the values from the nested list to fill out the recipe
+					//Index 0 is the INPUT
+					//Index 1 is the OUTPUT
+					shapeless(RecipeCategory.BUILDING_BLOCKS, concreteSlabList.get(i), 2)
+						.requires(concreteBlockList.get(i))
+						.unlockedBy(getHasName(concreteBlockList.get(i)), has(concreteBlockList.get(i)))
+						.save(output);
+
+					shapeless(RecipeCategory.BUILDING_BLOCKS, concreteBlockList.get(i))
+						.requires(concreteSlabList.get(i), 2)
+						.unlockedBy(getHasName(concreteSlabList.get(i)), has(concreteSlabList.get(i)))
+						.save(output);
+
+
+					shaped(RecipeCategory.BUILDING_BLOCKS, concreteStairList.get(i), 4)
+						.pattern("C ")
+						.pattern("CC")
+						.define('C', concreteBlockList.get(i))
+						.unlockedBy(getHasName(concreteBlockList.get(i)), has(concreteBlockList.get(i)))
 						.save(output);
 				}
 				//endregion
 			}
 		};
 	}
+	private static String getWeatheringName(Block copper) {
+		return switch (copper) {
+			case WeatheringCopper weathering -> weathering.getAge().getSerializedName();//If not waxed, just return the age SerializedName.
+			case Block block when HoneycombItem.WAX_OFF_BY_BLOCK.get().get(block) instanceof WeatheringCopper weathering -> "waxed_" + weathering.getAge().getSerializedName();//If waxed, add "waxed_" before the SerializedName.
+			default -> throw new IllegalArgumentException("not a copper block: " + copper);//If the block passed into the method is not copper, throw an error.
+		};
+	}
+
+
+	//private static String getWeatheringName(Block copper) {
+	//  final WeatheringCopper weathering;
+	//  final String prefix;
+	//  if (copper instanceof WeatheringCopper weatheringCopper) {
+	//    weathering = weatheringCopper;
+	//    prefix = "";
+	//  } else {
+	//    weathering = ((WeatheringCopper) HoneycombItem.WAX_OFF_BY_BLOCK.get().get(copper));
+	//    if (weathering == null) {
+	//      throw new IllegalArgumentException("not a copper block: " + copper);
+	//    }
+	//
+	//    prefix = "waxed_";
+	//  }
+	//
+	//  return prefix + weathering.getAge().getSerializedName();
+	//}
+
+
+
+
+
 
 	public void createTwoItemList(Item input, Item output, ArrayList<ArrayList<Item>> list) {
 		ArrayList<Item> twoitemlist = new ArrayList<>();

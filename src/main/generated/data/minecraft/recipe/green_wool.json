@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:green_wool_slab",
+    "minecraft:green_wool_slab"
+  ],
+  "result": {
+    "id": "minecraft:green_wool"
+  }
+}
