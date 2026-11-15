@@ -7,8 +7,8 @@
     "BlockBehaviorPropertiesMixin",
     "ModMainMixin",
     "world.entity.monster.zombie.ZombieMixin",
-    "world.flag.FeatureFlagsMixin",
     "world.inventory.AnvilMenuMixin",
+    "world.level.DataPackConfigMixin",
     "world.level.gamerules.GameRulesMixin"
   ],
   "mixinextras": {
