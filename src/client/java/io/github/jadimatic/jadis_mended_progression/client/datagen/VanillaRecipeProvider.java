@@ -204,10 +204,11 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 
 
 
-				//region Generate Cut Copper Recipes
+				//region Generate Copper Recipes
 				List<Item> cutList =  Items.CUT_COPPER.asList();
+				List<Item> stairList =  Items.CUT_COPPER_STAIRS.asList();
 				List<Item> blockList =  Items.COPPER_BLOCK.asList();
-				for (int i = 0; i < cutList.size(); ++i) {
+				for (int i = 0; i < blockList.size(); ++i) {
 					//Loops through the list and obtains the values from the nested list to fill out the recipe
 					//Index 0 is the INPUT
 					//Index 1 is the OUTPUT
@@ -217,13 +218,7 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 						.define('C', blockList.get(i))
 						.unlockedBy(getHasName(blockList.get(i)), has(blockList.get(i)))
 						.save(output);
-				}
 
-				List<Item> stairList =  Items.CUT_COPPER_STAIRS.asList();
-				for (int i = 0; i < stairList.size(); ++i) {
-					//Loops through the list and obtains the values from the nested list to fill out the recipe
-					//Index 0 is the INPUT
-					//Index 1 is the OUTPUT
 					shaped(RecipeCategory.BUILDING_BLOCKS, stairList.get(i), 4)
 						.pattern("C ")
 						.pattern("CC")
