@@ -31,5 +31,11 @@ public abstract class GameRulesMixin {
 	@Definition(id = "registerBoolean", method = "Lnet/minecraft/world/level/gamerules/GameRules;registerBoolean(Ljava/lang/String;Lnet/minecraft/world/level/gamerules/GameRuleCategory;Z)Lnet/minecraft/world/level/gamerules/GameRule;")
 	@Expression("MOB_EXPLOSION_DROP_DECAY = @(registerBoolean(?, ?, ?))")
 	@ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
-	private static boolean modifyMobExplosionDropDecay(boolean original){return false;}//Makes mob explosions always drop the blocks destroyed.
+	private static boolean modifyMobExplosionDropDecayGameRule(boolean original){return false;}//Makes mob explosions always drop the blocks destroyed.
+
+	@Definition(id = "KEEP_INVENTORY", field = "Lnet/minecraft/world/level/gamerules/GameRules;KEEP_INVENTORY:Lnet/minecraft/world/level/gamerules/GameRule;")
+	@Definition(id = "registerBoolean", method = "Lnet/minecraft/world/level/gamerules/GameRules;registerBoolean(Ljava/lang/String;Lnet/minecraft/world/level/gamerules/GameRuleCategory;Z)Lnet/minecraft/world/level/gamerules/GameRule;")
+	@Expression("KEEP_INVENTORY = @(registerBoolean(?, ?, ?))")
+	@ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
+	private static boolean modifyKeepInventoryGameRule(boolean original){return true;}
 }

@@ -74,7 +74,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					.pattern("P P")
 					.pattern("EOE")
 					.pattern("EEE")
-					.define('P', Items.PRISMARINE)
+					.define('P', Items.PRISMARINE)//Only change if we can find out what the weird blue stuff seen in the End in Dungeons 1 is and if it makes sense.
 					.define('O', Items.OBSIDIAN)
 					.define('E', Items.END_STONE)
 					.unlockedBy(getHasName(Items.END_STONE), has(Items.END_STONE))
