@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:bamboo_mosaic_slab",
+    "minecraft:bamboo_mosaic_slab"
+  ],
+  "result": {
+    "id": "minecraft:bamboo_mosaic"
+  }
+}

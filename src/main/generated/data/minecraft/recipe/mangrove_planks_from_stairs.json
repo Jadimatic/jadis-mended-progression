@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:mangrove_stairs",
+    "minecraft:mangrove_stairs",
+    "minecraft:mangrove_stairs",
+    "minecraft:mangrove_stairs"
+  ],
+  "result": {
+    "count": 3,
+    "id": "minecraft:mangrove_planks"
+  }
+}

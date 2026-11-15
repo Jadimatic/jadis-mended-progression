@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:stone_slab",
+    "minecraft:stone_slab"
+  ],
+  "result": {
+    "id": "minecraft:stone"
+  }
+}

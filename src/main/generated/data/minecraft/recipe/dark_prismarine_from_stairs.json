@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:dark_prismarine_stairs",
+    "minecraft:dark_prismarine_stairs",
+    "minecraft:dark_prismarine_stairs",
+    "minecraft:dark_prismarine_stairs"
+  ],
+  "result": {
+    "count": 3,
+    "id": "minecraft:dark_prismarine"
+  }
+}

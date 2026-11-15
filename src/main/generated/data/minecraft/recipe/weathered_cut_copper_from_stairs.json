@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:weathered_cut_copper_stairs",
+    "minecraft:weathered_cut_copper_stairs",
+    "minecraft:weathered_cut_copper_stairs",
+    "minecraft:weathered_cut_copper_stairs"
+  ],
+  "result": {
+    "count": 3,
+    "id": "minecraft:weathered_cut_copper"
+  }
+}

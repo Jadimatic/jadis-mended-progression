@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:resin_brick_stairs",
+    "minecraft:resin_brick_stairs",
+    "minecraft:resin_brick_stairs",
+    "minecraft:resin_brick_stairs"
+  ],
+  "result": {
+    "count": 3,
+    "id": "minecraft:resin_bricks"
+  }
+}

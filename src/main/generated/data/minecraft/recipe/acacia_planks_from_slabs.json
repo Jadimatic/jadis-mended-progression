@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:acacia_slab",
+    "minecraft:acacia_slab"
+  ],
+  "result": {
+    "id": "minecraft:acacia_planks"
+  }
+}

@@ -125,10 +125,7 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 				}
 				//endregion
 
-
-
-
-				//region Generate Stair Recipes
+				//region Generate Most Stair Recipes
 				ArrayList<ArrayList<Item>> stairGenerateList = new ArrayList<>();
 				//Argument one is the INPUT item, Argument 2 is the OUTPUT item
 				//Argument 3 is the list to add it to! This is important depending on the kind of recipe to be generated!
@@ -196,17 +193,103 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 					//Loops through the list and obtains the values from the nested list to fill out the recipe
 					//Index 0 is the INPUT
 					//Index 1 is the OUTPUT
+
 					shaped(RecipeCategory.BUILDING_BLOCKS, gottenStairList.get(1), 4)
 						.pattern("B ")
 						.pattern("BB")
 						.define('B', gottenStairList.get(0))
 						.unlockedBy(getHasName(gottenStairList.get(0)), has(gottenStairList.get(0)))
 						.save(output);
+
+					shapeless(RecipeCategory.BUILDING_BLOCKS, gottenStairList.get(0), 3)//Reverse recipe.
+						.requires(gottenStairList.get(1), 4)
+						.unlockedBy(getHasName(gottenStairList.get(1)), has(gottenStairList.get(1)))
+						.save(output, gottenStairList.get(0).toString() + "_from_stairs");
+
 				}
 				//endregion
 
+				//region Generate Most Slab Recipes
+				ArrayList<ArrayList<Item>> slabGenerateList = new ArrayList<>();
+				//Argument one is the INPUT item, Argument 2 is the OUTPUT item
+				//Argument 3 is the list to add it to! This is important depending on the kind of recipe to be generated!
+				createTwoItemList(Items.OAK_PLANKS, Items.OAK_SLAB, slabGenerateList);
+				createTwoItemList(Items.SPRUCE_PLANKS, Items.SPRUCE_SLAB, slabGenerateList);
+				createTwoItemList(Items.BIRCH_PLANKS, Items.BIRCH_SLAB, slabGenerateList);
+				createTwoItemList(Items.JUNGLE_PLANKS, Items.JUNGLE_SLAB, slabGenerateList);
+				createTwoItemList(Items.ACACIA_PLANKS, Items.ACACIA_SLAB, slabGenerateList);
+				createTwoItemList(Items.DARK_OAK_PLANKS, Items.DARK_OAK_SLAB, slabGenerateList);
+				createTwoItemList(Items.MANGROVE_PLANKS, Items.MANGROVE_SLAB, slabGenerateList);
+				createTwoItemList(Items.CHERRY_PLANKS, Items.CHERRY_SLAB, slabGenerateList);
+				createTwoItemList(Items.PALE_OAK_PLANKS, Items.PALE_OAK_SLAB, slabGenerateList);
+				createTwoItemList(Items.POPLAR_PLANKS, Items.POPLAR_SLAB, slabGenerateList);
+				createTwoItemList(Items.BAMBOO_PLANKS, Items.BAMBOO_SLAB, slabGenerateList);
+				createTwoItemList(Items.CRIMSON_PLANKS, Items.CRIMSON_SLAB, slabGenerateList);
+				createTwoItemList(Items.WARPED_PLANKS, Items.WARPED_SLAB, slabGenerateList);
+				createTwoItemList(Items.BAMBOO_MOSAIC, Items.BAMBOO_MOSAIC_SLAB, slabGenerateList);
+				createTwoItemList(Items.STONE, Items.STONE_SLAB, slabGenerateList);
+				createTwoItemList(Items.COBBLESTONE, Items.COBBLESTONE_SLAB, slabGenerateList);
+				createTwoItemList(Items.MOSSY_COBBLESTONE, Items.MOSSY_COBBLESTONE_SLAB, slabGenerateList);
+				createTwoItemList(Items.STONE_BRICKS, Items.STONE_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.MOSSY_STONE_BRICKS, Items.MOSSY_STONE_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.GRANITE, Items.GRANITE_SLAB, slabGenerateList);
+				createTwoItemList(Items.POLISHED_GRANITE, Items.POLISHED_GRANITE_SLAB, slabGenerateList);
+				createTwoItemList(Items.DIORITE, Items.DIORITE_SLAB, slabGenerateList);
+				createTwoItemList(Items.POLISHED_DIORITE, Items.POLISHED_DIORITE_SLAB, slabGenerateList);
+				createTwoItemList(Items.ANDESITE, Items.ANDESITE_SLAB, slabGenerateList);
+				createTwoItemList(Items.POLISHED_ANDESITE, Items.POLISHED_ANDESITE_SLAB, slabGenerateList);
+				createTwoItemList(Items.COBBLED_DEEPSLATE, Items.COBBLED_DEEPSLATE_SLAB, slabGenerateList);
+				createTwoItemList(Items.POLISHED_DEEPSLATE, Items.POLISHED_DEEPSLATE_SLAB, slabGenerateList);
+				createTwoItemList(Items.DEEPSLATE_BRICKS, Items.DEEPSLATE_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.DEEPSLATE_TILES, Items.DEEPSLATE_TILE_SLAB, slabGenerateList);
+				createTwoItemList(Items.TUFF, Items.TUFF_SLAB, slabGenerateList);
+				createTwoItemList(Items.POLISHED_TUFF, Items.POLISHED_TUFF_SLAB, slabGenerateList);
+				createTwoItemList(Items.TUFF_BRICKS, Items.TUFF_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.BRICKS, Items.BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.MUD_BRICKS, Items.MUD_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.RESIN_BRICKS, Items.RESIN_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.SANDSTONE, Items.SANDSTONE_SLAB, slabGenerateList);
+				createTwoItemList(Items.SMOOTH_SANDSTONE, Items.SMOOTH_SANDSTONE_SLAB, slabGenerateList);
+				createTwoItemList(Items.RED_SANDSTONE, Items.RED_SANDSTONE_SLAB, slabGenerateList);
+				createTwoItemList(Items.SMOOTH_RED_SANDSTONE, Items.SMOOTH_RED_SANDSTONE_SLAB, slabGenerateList);
+				createTwoItemList(Items.CINNABAR, Items.CINNABAR_SLAB, slabGenerateList);
+				createTwoItemList(Items.POLISHED_CINNABAR, Items.POLISHED_CINNABAR_SLAB, slabGenerateList);
+				createTwoItemList(Items.CINNABAR_BRICKS, Items.CINNABAR_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.SULFUR, Items.SULFUR_SLAB, slabGenerateList);
+				createTwoItemList(Items.POLISHED_SULFUR, Items.POLISHED_SULFUR_SLAB, slabGenerateList);
+				createTwoItemList(Items.SULFUR_BRICKS, Items.SULFUR_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.PRISMARINE, Items.PRISMARINE_SLAB, slabGenerateList);
+				createTwoItemList(Items.PRISMARINE_BRICKS, Items.PRISMARINE_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.DARK_PRISMARINE, Items.DARK_PRISMARINE_SLAB, slabGenerateList);
+				createTwoItemList(Items.NETHER_BRICKS, Items.NETHER_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.RED_NETHER_BRICKS, Items.RED_NETHER_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.BLACKSTONE, Items.BLACKSTONE_SLAB, slabGenerateList);
+				createTwoItemList(Items.POLISHED_BLACKSTONE, Items.POLISHED_BLACKSTONE_SLAB, slabGenerateList);
+				createTwoItemList(Items.POLISHED_BLACKSTONE_BRICKS, Items.POLISHED_BLACKSTONE_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.END_STONE_BRICKS, Items.END_STONE_BRICK_SLAB, slabGenerateList);
+				createTwoItemList(Items.PURPUR_BLOCK, Items.PURPUR_SLAB, slabGenerateList);
+				createTwoItemList(Items.QUARTZ_BLOCK, Items.QUARTZ_SLAB, slabGenerateList);
+				createTwoItemList(Items.SMOOTH_QUARTZ, Items.SMOOTH_QUARTZ_SLAB, slabGenerateList);
 
 
+				//Loops through the list initialized above and mass registers the recipes
+				for (ArrayList<Item> gottenSlabList : slabGenerateList) {
+					//Loops through the list and obtains the values from the nested list to fill out the recipe
+					//Index 0 is the INPUT
+					//Index 1 is the OUTPUT
+
+					shapeless(RecipeCategory.BUILDING_BLOCKS, gottenSlabList.get(1), 2)
+						.requires(gottenSlabList.get(0))
+						.unlockedBy(getHasName(gottenSlabList.get(0)), has(gottenSlabList.get(0)))
+						.save(output);
+
+					shapeless(RecipeCategory.BUILDING_BLOCKS, gottenSlabList.get(0))//Reverse recipe.
+						.requires(gottenSlabList.get(1), 2)
+						.unlockedBy(getHasName(gottenSlabList.get(1)), has(gottenSlabList.get(1)))
+						.save(output, gottenSlabList.get(0).toString() + "_from_slabs");
+
+				}
+				//endregion
 
 				//region Generate Copper Recipes
 				List<Block> cutCopperList =  Blocks.CUT_COPPER.asList();
@@ -230,10 +313,17 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 						.save(output);
 
 
-					shapeless(RecipeCategory.BUILDING_BLOCKS, cutCopperList.get(i).asItem())//Return to block
+					shapeless(RecipeCategory.BUILDING_BLOCKS, cutCopperList.get(i).asItem())
 						.requires(cutCopperSlabList.get(i), 2)
 						.unlockedBy(getHasName(cutCopperSlabList.get(i)), has(cutCopperSlabList.get(i)))
-						.save(output,getWeatheringName(cutCopperList.get(i)) + "_" + "cut_copper_from_slabs");//This needs to add the weathering prefix to the name each time or else you get duplicates
+						.save(output,getWeatheringName(cutCopperList.get(i)) + "_" + "cut_copper_from_slabs");
+
+					shapeless(RecipeCategory.BUILDING_BLOCKS, cutCopperList.get(i).asItem(), 3)//Return to block
+						.requires(cutCopperStairList.get(i), 4)
+						.unlockedBy(getHasName(cutCopperStairList.get(i)), has(cutCopperStairList.get(i)))
+						.save(output,getWeatheringName(cutCopperList.get(i)) + "_" + "cut_copper_from_stairs");
+
+
 
 					shaped(RecipeCategory.BUILDING_BLOCKS, cutCopperStairList.get(i), 4)
 						.pattern("C ")
@@ -260,8 +350,12 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 					shapeless(RecipeCategory.BUILDING_BLOCKS, woolBlockList.get(i))
 						.requires(woolSlabList.get(i), 2)
 						.unlockedBy(getHasName(woolSlabList.get(i)), has(woolSlabList.get(i)))
-						.save(output);
+						.save(output, woolBlockList.get(i) + "_from_slabs");
 
+					shapeless(RecipeCategory.BUILDING_BLOCKS, woolBlockList.get(i), 3)
+						.requires(woolStairList.get(i), 4)
+						.unlockedBy(getHasName(woolStairList.get(i)), has(woolStairList.get(i)))
+						.save(output, woolBlockList.get(i) + "_from_stairs");
 
 					shaped(RecipeCategory.BUILDING_BLOCKS, woolStairList.get(i), 4)
 						.pattern("W ")
@@ -288,8 +382,12 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 					shapeless(RecipeCategory.BUILDING_BLOCKS, concreteBlockList.get(i))
 						.requires(concreteSlabList.get(i), 2)
 						.unlockedBy(getHasName(concreteSlabList.get(i)), has(concreteSlabList.get(i)))
-						.save(output);
+						.save(output, concreteBlockList.get(i) + "_from_slabs");
 
+					shapeless(RecipeCategory.BUILDING_BLOCKS, concreteBlockList.get(i), 3)
+						.requires(concreteStairList.get(i), 4)
+						.unlockedBy(getHasName(concreteStairList.get(i)), has(concreteStairList.get(i)))
+						.save(output, concreteBlockList.get(i) + "_from_stairs");
 
 					shaped(RecipeCategory.BUILDING_BLOCKS, concreteStairList.get(i), 4)
 						.pattern("C ")

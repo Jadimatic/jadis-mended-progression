@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:polished_tuff_slab",
+    "minecraft:polished_tuff_slab"
+  ],
+  "result": {
+    "id": "minecraft:polished_tuff"
+  }
+}

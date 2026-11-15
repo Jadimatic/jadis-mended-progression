@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:dark_prismarine_slab",
+    "minecraft:dark_prismarine_slab"
+  ],
+  "result": {
+    "id": "minecraft:dark_prismarine"
+  }
+}

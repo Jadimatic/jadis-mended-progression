@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:warped_stairs",
+    "minecraft:warped_stairs",
+    "minecraft:warped_stairs",
+    "minecraft:warped_stairs"
+  ],
+  "result": {
+    "count": 3,
+    "id": "minecraft:warped_planks"
+  }
+}

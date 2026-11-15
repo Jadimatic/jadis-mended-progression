@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:jungle_stairs",
+    "minecraft:jungle_stairs",
+    "minecraft:jungle_stairs",
+    "minecraft:jungle_stairs"
+  ],
+  "result": {
+    "count": 3,
+    "id": "minecraft:jungle_planks"
+  }
+}
