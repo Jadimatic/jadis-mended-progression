@@ -32,7 +32,7 @@ public abstract class ZombieMixin extends Monster {
 		}
 		else {selectedHand = EquipmentSlot.OFFHAND;}//Defaults to OFFHAND when MAINHAND is full.
 
-		if (random.nextFloat() < (this.level().getDifficulty() == Difficulty.HARD ? 0.5F : 1.0F)) {// 50% chance on HARD difficulty and 100% chance on anything else.
+		if (random.nextFloat() < (this.level().getDifficulty() == Difficulty.HARD ? 0.005F : 0.01F)) {// 5% chance on HARD difficulty and 10% chance on anything else.
 			int rand = random.nextInt(6);
 			if (rand == 0) {
 			this.setItemSlot(selectedHand, new ItemStack(Items.COPPER_LANTERN.weathering().weathered()));

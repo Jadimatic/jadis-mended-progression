@@ -79,6 +79,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					.define('E', Items.END_STONE)
 					.unlockedBy(getHasName(Items.END_STONE), has(Items.END_STONE))
 					.save(output);
+
+				shaped(RecipeCategory.BUILDING_BLOCKS, Items.SOUL_SOIL)
+					.pattern("SS")
+					.pattern("SS")
+					.define('S', Items.SOUL_SAND)
+					.unlockedBy(getHasName(Items.SOUL_SAND), has(Items.SOUL_SAND))
+					.save(output);
 			}
         };
     }
