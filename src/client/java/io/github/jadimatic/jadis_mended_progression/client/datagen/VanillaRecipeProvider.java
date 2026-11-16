@@ -37,6 +37,51 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 			public void buildRecipes() {
 				HolderLookup.RegistryLookup<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
 
+				shaped(RecipeCategory.TOOLS, Items.STONE_PICKAXE)
+					.pattern("FFF")
+					.pattern(" S ")
+					.pattern(" S ")
+					.define('S', Items.STICK)
+					.define('F', Items.FLINT)
+					.unlockedBy(Items.FLINT.toString(), has(Items.FLINT))
+					.save(output);
+
+				shaped(RecipeCategory.TOOLS, Items.STONE_SWORD)
+					.pattern(" F ")
+					.pattern(" F ")
+					.pattern(" S ")
+					.define('S', Items.STICK)
+					.define('F', Items.FLINT)
+					.unlockedBy(Items.FLINT.toString(), has(Items.FLINT))
+					.save(output);
+
+				shaped(RecipeCategory.TOOLS, Items.STONE_SHOVEL)
+					.pattern(" F ")
+					.pattern(" S ")
+					.pattern(" S ")
+					.define('S', Items.STICK)
+					.define('F', Items.FLINT)
+					.unlockedBy(Items.FLINT.toString(), has(Items.FLINT))
+					.save(output);
+
+				shaped(RecipeCategory.TOOLS, Items.STONE_AXE)
+					.pattern("FF ")
+					.pattern("FS ")
+					.pattern(" S ")
+					.define('S', Items.STICK)
+					.define('F', Items.FLINT)
+					.unlockedBy(Items.FLINT.toString(), has(Items.FLINT))
+					.save(output);
+
+				shaped(RecipeCategory.TOOLS, Items.STONE_HOE)
+					.pattern("FF ")
+					.pattern(" S ")
+					.pattern(" S ")
+					.define('S', Items.STICK)
+					.define('F', Items.FLINT)
+					.unlockedBy(Items.FLINT.toString(), has(Items.FLINT))
+					.save(output);
+
 				shaped(RecipeCategory.DECORATIONS, Items.BARREL)
 					.pattern("T")
 					.pattern("L")
@@ -407,30 +452,6 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 			default -> throw new IllegalArgumentException("not a copper block: " + copper);//If the block passed into the method is not copper, throw an error.
 		};
 	}
-
-
-	//private static String getWeatheringName(Block copper) {
-	//  final WeatheringCopper weathering;
-	//  final String prefix;
-	//  if (copper instanceof WeatheringCopper weatheringCopper) {
-	//    weathering = weatheringCopper;
-	//    prefix = "";
-	//  } else {
-	//    weathering = ((WeatheringCopper) HoneycombItem.WAX_OFF_BY_BLOCK.get().get(copper));
-	//    if (weathering == null) {
-	//      throw new IllegalArgumentException("not a copper block: " + copper);
-	//    }
-	//
-	//    prefix = "waxed_";
-	//  }
-	//
-	//  return prefix + weathering.getAge().getSerializedName();
-	//}
-
-
-
-
-
 
 	public void createTwoItemList(Item input, Item output, ArrayList<ArrayList<Item>> list) {
 		ArrayList<Item> twoitemlist = new ArrayList<>();
