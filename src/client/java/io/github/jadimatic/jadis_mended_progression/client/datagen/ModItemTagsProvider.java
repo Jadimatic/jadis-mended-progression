@@ -29,11 +29,10 @@ public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
 		this.builder(ItemTags.HORSE_TEMPT_ITEMS)//Specifies what tag to register the items to.
 			.add(ItemIds.SUGAR)
 			.add(ItemIds.APPLE)
-			.add(BlockItemIds.CARROT_CROP)//For some reason the block and item share the same id, so this is fine.
-			.setReplace(true);
+			.add(BlockItemIds.CARROT_CROP);//For some reason the block and item share the same id, so this is fine.
 
 		this.builder(ItemTags.HORSE_FOOD)//Specifies what tag to register the items to.
-			.add(BlockItemIds.BEETROOT_CROP);//Mojang probably just forgot to add this when they added the crop to the game.
+			.add(ItemIds.BEETROOT);//Mojang probably just forgot to add this when they added the crop to the game.
 
 	}
 }

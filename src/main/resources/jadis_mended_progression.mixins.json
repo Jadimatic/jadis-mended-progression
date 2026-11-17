@@ -6,7 +6,9 @@
     "AnvilMixin",
     "BlockBehaviorPropertiesMixin",
     "ModMainMixin",
+    "world.entity.animal.equine.AbstractHorseMixin",
     "world.entity.monster.zombie.ZombieMixin",
+    "world.entity.player.PlayerMixin",
     "world.inventory.AnvilMenuMixin",
     "world.level.DataPackConfigMixin",
     "world.level.gamerules.GameRulesMixin"
