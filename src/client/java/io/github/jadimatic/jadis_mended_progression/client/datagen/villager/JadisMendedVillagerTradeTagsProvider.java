@@ -29,9 +29,9 @@ public class JadisMendedVillagerTradeTagsProvider extends FabricTagsProvider<Vil
 
 	@Override
 	protected void addTags(HolderLookup.@NonNull Provider registries) {//Registers trades to the specified tags.
-		this.builder(VillagerTradeTags.FISHERMAN_LEVEL_1)//Specifies what trade tag to register the trades to.
-			.add(JadisMendedVillagerTradesProvider.FISHERMAN_1_FLINT_FLINT)
-			.add(VillagerTrades.FISHERMAN_1_STRING_EMERALD)//Adds a trade from the original tag. This will stay even if everything else gets replaced.
+		builder(VillagerTradeTags.WEAPONSMITH_LEVEL_1)//Specifies what trade tag to register the trades to.
+			.add(JadisMendedVillagerTradesProvider.WEAPONSMITH_1_LAVA_BUCKET_RAW_IRON)
+			.add(VillagerTrades.WEAPONSMITH_1_EMERALD_IRON_AXE)//Adds a trade from the original tag. This will stay even if everything else gets replaced.
 			.setReplace(true);//This makes the mod trades for this tag replace everything from the original.
 
 	}

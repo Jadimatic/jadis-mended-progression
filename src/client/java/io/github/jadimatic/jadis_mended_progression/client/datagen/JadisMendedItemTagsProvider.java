@@ -1,6 +1,5 @@
 package io.github.jadimatic.jadis_mended_progression.client.datagen;
 
-import io.github.jadimatic.jadis_mended_progression.client.datagen.villager.JadisMendedVillagerTradesProvider;
 import io.github.jadimatic.jadis_mended_progression.references.JadisMendedTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
@@ -9,14 +8,11 @@ import net.minecraft.references.BlockItemIds;
 import net.minecraft.references.ItemIds;
 import net.minecraft.tags.BlockItemTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.VillagerTradeTags;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.trading.VillagerTrades;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
-	public ModItemTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+public class JadisMendedItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
+	public JadisMendedItemTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
 		super(output, registryLookupFuture);
 	}
 

@@ -1,5 +1,6 @@
 {
   "fabric:remove": [
     "minecraft:mending"
-  ]
+  ],
+  "values": []
 }

@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 public class PlayerMixin {
 
 	@ModifyReturnValue(method = "createAttributes", at = @At("RETURN"))
-	private static AttributeSupplier.Builder test(AttributeSupplier.Builder original){
+	private static AttributeSupplier.Builder modifyPlayerAttributes(AttributeSupplier.Builder original){
 		return original
 			.add(Attributes.STEP_HEIGHT, 1)
 			/*Might add more here*/;

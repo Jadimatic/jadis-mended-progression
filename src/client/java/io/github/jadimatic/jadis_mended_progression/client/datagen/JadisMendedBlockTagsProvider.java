@@ -10,8 +10,8 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
-    public ModBlockTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+public class JadisMendedBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
+    public JadisMendedBlockTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
         super(output, registryLookupFuture);
     }
 

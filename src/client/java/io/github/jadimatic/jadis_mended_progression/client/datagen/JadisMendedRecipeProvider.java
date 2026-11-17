@@ -1,8 +1,6 @@
 package io.github.jadimatic.jadis_mended_progression.client.datagen;
 
 import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlocks;
-import io.github.jadimatic.jadis_mended_progression.item.JadisMendedItems;
-import io.github.jadimatic.jadis_mended_progression.references.JadisMendedBlockItemIds;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.advancements.Advancement;
@@ -18,8 +16,8 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModRecipeProvider extends FabricRecipeProvider {
-    public ModRecipeProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+public class JadisMendedRecipeProvider extends FabricRecipeProvider {
+    public JadisMendedRecipeProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 

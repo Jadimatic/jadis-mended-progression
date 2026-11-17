@@ -16,6 +16,7 @@ public class JadisMendedRegistryDataProvider extends FabricDynamicRegistryProvid
 	@Override
 	protected void configure(HolderLookup.Provider registries, Entries entries) {
 		entries.addAll(registries.lookupOrThrow(Registries.VILLAGER_TRADE));
+		entries.addAll(registries.lookupOrThrow(Registries.ENCHANTMENT));
 
 	}
 

@@ -1,11 +1,13 @@
 package io.github.jadimatic.jadis_mended_progression.mixin.world.entity.animal.equine;
 
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef;
 import com.llamalad7.mixinextras.sugar.ref.LocalFloatRef;
 import com.llamalad7.mixinextras.sugar.ref.LocalIntRef;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.equine.AbstractHorse;
 import net.minecraft.world.entity.player.Player;
@@ -20,6 +22,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AbstractHorse.class)
 public abstract class AbstractHorseMixin extends Animal {
+
+	@ModifyReturnValue(method = "createBaseHorseAttributes", at = @At("RETURN"))
+	private static AttributeSupplier.Builder modifyHorseAttributes(AttributeSupplier.Builder original){
+		return original
+			.add(Attributes.STEP_HEIGHT, 2);
+	}
+
+
 	@Shadow
 	public abstract boolean isTamed();
 

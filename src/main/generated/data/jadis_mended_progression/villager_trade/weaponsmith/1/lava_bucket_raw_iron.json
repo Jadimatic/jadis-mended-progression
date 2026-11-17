@@ -1,0 +1,12 @@
+{
+  "gives": {
+    "count": 7,
+    "id": "minecraft:raw_iron"
+  },
+  "max_uses": 12,
+  "reputation_discount": 0.05,
+  "wants": {
+    "id": "minecraft:lava_bucket"
+  },
+  "xp": 3
+}

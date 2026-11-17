@@ -1,0 +1,7 @@
+{
+  "replace": true,
+  "values": [
+    "jadis_mended_progression:weaponsmith/1/lava_bucket_raw_iron",
+    "minecraft:weaponsmith/1/emerald_iron_axe"
+  ]
+}
