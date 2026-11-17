@@ -37,6 +37,7 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 			public void buildRecipes() {
 				HolderLookup.RegistryLookup<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
 
+
 				shaped(RecipeCategory.TOOLS, Items.STONE_PICKAXE)
 					.pattern("FFF")
 					.pattern(" S ")
@@ -81,6 +82,7 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 					.define('F', Items.FLINT)
 					.unlockedBy(Items.FLINT.toString(), has(Items.FLINT))
 					.save(output);
+
 
 				shaped(RecipeCategory.DECORATIONS, Items.BARREL)
 					.pattern("T")

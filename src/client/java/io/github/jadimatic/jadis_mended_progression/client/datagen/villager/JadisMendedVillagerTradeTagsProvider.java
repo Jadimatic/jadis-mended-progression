@@ -11,7 +11,7 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
-public class JadisMendedTradeTagsProvider extends FabricTagsProvider<VillagerTrade>{
+public class JadisMendedVillagerTradeTagsProvider extends FabricTagsProvider<VillagerTrade>{
 
 
 	/**
@@ -23,7 +23,7 @@ public class JadisMendedTradeTagsProvider extends FabricTagsProvider<VillagerTra
 	 * @param output               the {@link FabricPackOutput} instance
 	 * @param registryLookupFuture the backing registry for the tag type
 	 */
-	public JadisMendedTradeTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+	public JadisMendedVillagerTradeTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
 		super(output, Registries.VILLAGER_TRADE, registryLookupFuture);
 	}
 
