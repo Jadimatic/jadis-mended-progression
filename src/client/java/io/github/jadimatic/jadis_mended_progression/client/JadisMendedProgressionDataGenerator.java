@@ -22,6 +22,7 @@ public class JadisMendedProgressionDataGenerator implements DataGeneratorEntrypo
 		pack.addProvider(ModItemTagsProvider::new);
 		pack.addProvider(ModPackMetadataGenerator::new);
 		pack.addProvider(JadisMendedVillagerTradeTagsProvider::new);
+		pack.addProvider(JadisMendedRegistryDataProvider::new);
 
 
 	}

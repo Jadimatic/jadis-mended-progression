@@ -38,4 +38,10 @@ public abstract class GameRulesMixin {
 	@Expression("KEEP_INVENTORY = @(registerBoolean(?, ?, ?))")
 	@ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
 	private static boolean modifyKeepInventoryGameRule(boolean original){return true;}
+
+	@Definition(id = "SPECTATORS_GENERATE_CHUNKS", field = "Lnet/minecraft/world/level/gamerules/GameRules;SPECTATORS_GENERATE_CHUNKS:Lnet/minecraft/world/level/gamerules/GameRule;")
+	@Definition(id = "registerBoolean", method = "Lnet/minecraft/world/level/gamerules/GameRules;registerBoolean(Ljava/lang/String;Lnet/minecraft/world/level/gamerules/GameRuleCategory;Z)Lnet/minecraft/world/level/gamerules/GameRule;")
+	@Expression("SPECTATORS_GENERATE_CHUNKS = @(registerBoolean(?, ?, ?))")
+	@ModifyArg(method = "<clinit>", at = @At("MIXINEXTRAS:EXPRESSION"))
+	private static boolean modifySpectatorsGenerateChunksGameRule(boolean original){return false;}
 }
