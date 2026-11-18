@@ -33,5 +33,6 @@ public class JadisMendedEnchantmentTagsProvider extends FabricTagsProvider<Encha
 		builder(EnchantmentTags.TRADEABLE).remove(Enchantments.MENDING);//Removes the Mending enchantment from being traded by villagers.
 		builder(EnchantmentTags.ON_RANDOM_LOOT).remove(Enchantments.MENDING);//Removes it from random loot.
 		builder(EnchantmentTags.TREASURE).remove(Enchantments.MENDING);//Removes it from treasure items.
+		builder(EnchantmentTags.IN_ENCHANTING_TABLE).remove(Enchantments.MENDING);//Removes it from the enchanting table.
 	}
 }

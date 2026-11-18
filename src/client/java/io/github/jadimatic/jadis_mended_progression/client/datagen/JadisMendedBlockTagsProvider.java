@@ -1,6 +1,7 @@
 package io.github.jadimatic.jadis_mended_progression.client.datagen;
 
 import io.github.jadimatic.jadis_mended_progression.references.JadisMendedBlockItemIds;
+import io.github.jadimatic.jadis_mended_progression.references.JadisMendedTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
@@ -17,9 +18,17 @@ public class JadisMendedBlockTagsProvider extends FabricTagsProvider.BlockTagsPr
 
     @Override
     protected void addTags(HolderLookup.@NonNull Provider registries) {
+
 		builder(BlockTags.MINEABLE_WITH_PICKAXE)
-				.add(JadisMendedBlockItemIds.CHARCOAL_BLOCK.block());
-		builder(BlockTags.NEEDS_STONE_TOOL).add(JadisMendedBlockItemIds.CHARCOAL_BLOCK.block());
+			.add(JadisMendedBlockItemIds.CHARCOAL_BLOCK.block())
+			.add(JadisMendedBlockItemIds.TIN_ORE);
+		builder(BlockTags.NEEDS_STONE_TOOL)
+			.add(JadisMendedBlockItemIds.CHARCOAL_BLOCK.block());
+
+		builder(JadisMendedTags.Blocks.NEEDS_COPPER_TOOL)
+			.add(JadisMendedBlockItemIds.TIN_ORE.block());
+
+		builder(BlockTags.INCORRECT_FOR_COPPER_TOOL);//Just in case we need to remove or add anything.
 
 		builder(BlockTags.MINEABLE_WITH_PICKAXE).add(JadisMendedBlockItemIds.CUT_IRON.block());
 		builder(BlockTags.NEEDS_STONE_TOOL).add(JadisMendedBlockItemIds.CUT_IRON.block());
@@ -29,10 +38,10 @@ public class JadisMendedBlockTagsProvider extends FabricTagsProvider.BlockTagsPr
 
 
         builder(BlockTags.SUPPORTS_CROPS)
-                .add(BlockItemIds.FARMLAND)
-                .add(BlockItemIds.GRASS_BLOCK);
+			.add(BlockItemIds.FARMLAND)
+			.add(BlockItemIds.GRASS_BLOCK);
         builder(BlockTags.GROWS_CROPS)
-                .add(BlockItemIds.FARMLAND)
-                .add(BlockItemIds.GRASS_BLOCK);
+			.add(BlockItemIds.FARMLAND)
+			.add(BlockItemIds.GRASS_BLOCK);
     }
 }

@@ -11,17 +11,18 @@ public class JadisMendedTags {
 
 	public static class Blocks {
 		private static TagKey<Block> createTag(String name) {
-			return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(JadisMendedProgression.MOD_ID, name));
+			return TagKey.create(Registries.BLOCK,//Specifies that these will be block tags.
+				Identifier.fromNamespaceAndPath(JadisMendedProgression.MOD_ID, name));
 		}
+		public static final TagKey<Block> NEEDS_COPPER_TOOL = createTag("needs_copper_tool");
 	}
 
 	public static class Items {
-		public static final TagKey<Item> LANTERNS = createTag("lanterns");
-
-		public static final TagKey<Item> REPAIRS_IRON_ANVIL = createTag("repairs_iron_anvil");
-
 		private static TagKey<Item> createTag(String name){
 			return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(JadisMendedProgression.MOD_ID, name));
 		}
+
+		public static final TagKey<Item> LANTERNS = createTag("lanterns");
+		public static final TagKey<Item> REPAIRS_IRON_ANVIL = createTag("repairs_iron_anvil");
 	}
 }

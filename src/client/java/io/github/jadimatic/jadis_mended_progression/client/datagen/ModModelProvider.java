@@ -19,6 +19,8 @@ public class ModModelProvider extends FabricModelProvider {
 		blockModelGenerators.createTrivialCube(JadisMendedBlocks.CHARCOAL_BLOCK);
 		blockModelGenerators.createTrivialCube(JadisMendedBlocks.CUT_IRON);
 		blockModelGenerators.createTrivialCube(JadisMendedBlocks.CHISELED_IRON);
+		blockModelGenerators.createTrivialCube(JadisMendedBlocks.TIN_ORE);
+
     }
 
     @Override

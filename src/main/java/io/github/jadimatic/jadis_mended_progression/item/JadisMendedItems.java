@@ -37,6 +37,7 @@ public class JadisMendedItems {
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> {
 
 			output.insertAfter(Items.COAL_BLOCK, JadisMendedBlocks.CHARCOAL_BLOCK);
+			output.insertAfter(Items.COPPER_ORE, JadisMendedBlocks.TIN_ORE);
 		});
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(output -> {

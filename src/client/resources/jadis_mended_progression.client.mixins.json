@@ -22,6 +22,7 @@
     "requireAnnotations": true
   },
   "mixins": [
+    "model.monster.creeper.CreeperModelMixin",
     "IdentifierPatternAccessor"
   ]
 }

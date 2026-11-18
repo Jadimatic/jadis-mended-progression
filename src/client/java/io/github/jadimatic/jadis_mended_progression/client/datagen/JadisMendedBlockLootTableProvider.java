@@ -2,6 +2,7 @@ package io.github.jadimatic.jadis_mended_progression.client.datagen;
 
 import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlocks;
 import io.github.jadimatic.jadis_mended_progression.client.datagen.util.provider.ModBlockLootSubProvider;
+import io.github.jadimatic.jadis_mended_progression.item.JadisMendedItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.Items;
@@ -16,14 +17,15 @@ import net.minecraft.tags.ItemTags;
 
 import static net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition.randomChance;
 
-public class ModBlockLootTableProvider extends ModBlockLootSubProvider {
-    public ModBlockLootTableProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
+public class JadisMendedBlockLootTableProvider extends ModBlockLootSubProvider {
+    public JadisMendedBlockLootTableProvider(FabricPackOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, registryLookup);
     }
 
     @Override
     public void generate() {
 
+		add(JadisMendedBlocks.TIN_ORE, createOreDrop(JadisMendedBlocks.TIN_ORE, JadisMendedItems.EXAMPLE_ITEM));
 
 
         add(//Contains instructions to generate a block loot table. This one specifically gives gravel a 10% chance to drop itself when not using a shovel, and is always guaranteed to drop 1 flint.

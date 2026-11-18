@@ -1,6 +1,8 @@
 package io.github.jadimatic.jadis_mended_progression.mixin.world.entity.animal.equine;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.ref.LocalBooleanRef;
 import com.llamalad7.mixinextras.sugar.ref.LocalFloatRef;
@@ -37,10 +39,14 @@ public abstract class AbstractHorseMixin extends Animal {
 		super(type, level);
 	}
 
+	/*@WrapOperation(method = "handleEating", at = @At(value = "INVOKE", target = "setInLove"))
+	void dontLetGoldBreed(AbstractHorse instance, Player player, Operation<Void> original) {
+		//code to remove items from breeding
+	}*/ //Not quite functional yet.
+
 	@Inject(method = "handleEating", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/animal/equine/AbstractHorse;getHealth()F"))
 	void modifyFoodResults(Player player, ItemStack itemStack, CallbackInfoReturnable<Boolean> cir, @Local(name = "itemUsed") LocalBooleanRef itemUsed, @Local(name = "heal") LocalFloatRef heal, @Local(name = "ageUp") LocalIntRef ageUp, @Local(name = "temper") LocalIntRef temper) {
-		/*@WrapOperation(method = "handleEating", at = @At(value = "INVOKE", target = "setInLove"))//Finish later we guess. This is to remove an item from breeding.
-		void dontLetGoldBreed(Player instance, Operation<Void> original) {}*/
+
 
 		if (itemStack.is(Items.BEETROOT)) {//Makes the item function as food but doesn't add it as a breeding item.
 			heal.set(3F);

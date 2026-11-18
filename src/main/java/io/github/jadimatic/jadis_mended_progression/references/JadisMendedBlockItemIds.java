@@ -9,9 +9,10 @@ public class JadisMendedBlockItemIds {
 		Identifier id = JadisMendedProgression.id(name);
 		return BlockItemId.create(id, id);
 	}
-	public static final BlockItemId CHARCOAL_BLOCK = create("charcoal_block");
 	public static final BlockItemId ITEM_CUBBY = create("item_cubby");
 	public static final BlockItemId VACUUM = create("vacuum");
 	public static final BlockItemId CUT_IRON = create("cut_iron");
 	public static final BlockItemId CHISELED_IRON = create("chiseled_iron");
+	public static final BlockItemId CHARCOAL_BLOCK = create("charcoal_block");
+	public static final BlockItemId TIN_ORE = create("tin_ore");
 }
