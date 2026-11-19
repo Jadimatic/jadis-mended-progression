@@ -1,5 +1,7 @@
 // 26.3	-999999999-01-01T00:00:00	Jadi's Mended Progression/Tags for minecraft:block
+355dc703c8657a55d69f0aad31cbd9cba593d037 data/jadis_mended_progression/tags/block/needs_copper_tool.json
 9cfc2c3ed67037afe4268edeefe6986037c00912 data/minecraft/tags/block/grows_crops.json
-5afe12d655677341aa9f4fbefc03cf783da3934a data/minecraft/tags/block/mineable/pickaxe.json
+c4c16347e2ee10e207d25400fc4c0655ecffcb29 data/minecraft/tags/block/incorrect_for_stone_tool.json
+7461bd54151e0bc74cd3f158bd9a466a5d583fb5 data/minecraft/tags/block/mineable/pickaxe.json
 5afe12d655677341aa9f4fbefc03cf783da3934a data/minecraft/tags/block/needs_stone_tool.json
 9cfc2c3ed67037afe4268edeefe6986037c00912 data/minecraft/tags/block/supports_crops.json

@@ -28,7 +28,12 @@ public class JadisMendedBlockTagsProvider extends FabricTagsProvider.BlockTagsPr
 		builder(JadisMendedTags.Blocks.NEEDS_COPPER_TOOL)
 			.add(JadisMendedBlockItemIds.TIN_ORE.block());
 
-		builder(BlockTags.INCORRECT_FOR_COPPER_TOOL);//Just in case we need to remove or add anything.
+		//builder(BlockTags.INCORRECT_FOR_COPPER_TOOL);
+
+
+		//builder(BlockTags.INCORRECT_FOR_WOODEN_TOOL).addTag(JadisMendedTags.Blocks.NEEDS_COPPER_TOOL);//Should make wooden tools invalid for blocks in the NEEDS_COPPER_TOOL tag.
+		builder(BlockTags.INCORRECT_FOR_STONE_TOOL).addTag(JadisMendedTags.Blocks.NEEDS_COPPER_TOOL);//Should make stone tools invalid for blocks in the NEEDS_COPPER_TOOL tag.
+
 
 		builder(BlockTags.MINEABLE_WITH_PICKAXE).add(JadisMendedBlockItemIds.CUT_IRON.block());
 		builder(BlockTags.NEEDS_STONE_TOOL).add(JadisMendedBlockItemIds.CUT_IRON.block());

@@ -39,10 +39,10 @@ public abstract class AbstractHorseMixin extends Animal {
 		super(type, level);
 	}
 
-	/*@WrapOperation(method = "handleEating", at = @At(value = "INVOKE", target = "setInLove"))
+	@WrapOperation(method = "handleEating", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/animal/equine/AbstractHorse;setInLove(Lnet/minecraft/world/entity/player/Player;)V"))
 	void dontLetGoldBreed(AbstractHorse instance, Player player, Operation<Void> original) {
-		//code to remove items from breeding
-	}*/ //Not quite functional yet.
+		//By not calling original.call() after wrapping the operation, it gets removed from the original code and never added back, in this case causing the two lines using setInLove to be erased, removing the vanilla breeding item entries.
+		}
 
 	@Inject(method = "handleEating", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/animal/equine/AbstractHorse;getHealth()F"))
 	void modifyFoodResults(Player player, ItemStack itemStack, CallbackInfoReturnable<Boolean> cir, @Local(name = "itemUsed") LocalBooleanRef itemUsed, @Local(name = "heal") LocalFloatRef heal, @Local(name = "ageUp") LocalIntRef ageUp, @Local(name = "temper") LocalIntRef temper) {
