@@ -12,18 +12,22 @@ import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.advancements.predicates.ItemPredicate;
 import net.minecraft.advancements.predicates.entity.EntityEquipmentPredicate;
 import net.minecraft.advancements.predicates.entity.EntityPredicate;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.monster.spider.Spider;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.Tool;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootContext;
@@ -31,17 +35,41 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 import static net.minecraft.core.component.DataComponents.REPAIR_COST;
+import static net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition.randomChance;
 
 public class JadisMendedProgression implements ModInitializer {
 	public static final String MOD_ID = "jadis_mended_progression";
 
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+
+	/*private LootTable fishLootTable (ResourceKey<LootTable> key, HolderLookup.Provider holder, ItemLike fishItem, ItemLike skeletalItem){
+		if (EntityTypes.SALMON.getDefaultLootTable().orElseThrow().equals(key)) {// And if the entity is the specified fish...
+			LootPool.Builder pool = LootPool.lootPool()// Create a new loot pool that will hold the bone.
+				.add(LootItem.lootTableItem(fishItem)//Add the fish as an item...
+					.when(LootItemEntityPropertyCondition.hasProperties(
+							LootContext.EntityTarget.ATTACKER,
+							EntityPredicate.Builder.entity().equipment(
+								EntityEquipmentPredicate.Builder.equipment().mainhand(
+									ItemPredicate.Builder.item().of(
+										holder.lookupOrThrow(Registries.ITEM),
+										ItemTags.SPEARS// When the weapon is a spear...
+									)
+								)
+							)
+						).and(randomChance(0.25f))// And this roll succeeds.(~1 in every 4 fish.)
+					)
+					.otherwise(LootItem.lootTableItem(skeletalItem)));// Otherwise, always drop a bone.
+			return LootTable.lootTable().withPool(pool).build();// Create a new loot table with the loot pool.
+		}
+	}*/
 
 	@Override
 	public void onInitialize() {
@@ -110,37 +138,121 @@ public class JadisMendedProgression implements ModInitializer {
 
 
 
-
-		/* //WE PLAN TO REPLACE THIS WITH MODIFY + MIXINS LATER FOR COMPATIBILITY WITH OTHER MODS!!! Still use REPLACE for fish though, we don't want anyone adding items for killing them.
 		LootTableEvents.MODIFY_DROPS.register((holder, context, drops) -> {
-			// Change the maximum and minimum number of spider eyes and string dropped by spiders.
-			if (holder.is(EntityTypes.SPIDER.getDefaultLootTable().orElseThrow())) {
-				for(ItemStack item : drops){
-					if(item.is(Items.SPIDER_EYE)){
-						item.setCount(context.getRandom().nextIntBetweenInclusive(4, 8));//Drops 4-8 eyes.
-						// RNG is added here because this replaces the item being dropped rather than modifying the original loot table!
-					}
-					if(item.is(Items.STRING)){
-						item.setCount(context.getRandom().nextIntBetweenInclusive(4, 10));//Drops 4-10 string.
+			// Replace the coal dropped by wither skeletons with charcoal.
+			if (holder.is(EntityTypes.WITHER_SKELETON.getDefaultLootTable().orElseThrow())) {//If the entity is a wither skeleton...
+				for (int i = 0; i < drops.size(); i++) {//Run an indexed for loop of the drops list.
+					ItemStack item = drops.get(i);//Get the currently selected ItemStack from the drops list.
+					if(item.is(Items.COAL)){//And if the ItemStack is coal...
+						drops.set(i, new ItemStack(Items.CHARCOAL, item.count()));//Replace it with an ItemStack of charcoal, inheriting the count of the original.
 					}
 				}
 			}
 		});
+
+
+
+
+
+
+		/* Data for the cave spider and normal spider loot tables, which we will be completely replacing with a new version and modified drops.
+		this.add(
+			EntityTypes.CAVE_SPIDER,
+			LootTable.lootTable()
+				.withPool(
+					LootPool.lootPool()
+						.setRolls(ContextIntProviders.exactly(1))
+						.add(
+							LootItem.lootTableItem(Items.STRING)
+								.apply(SetItemCountFunction.setCount(ContextIntProviders.between(0, 2)))
+								.apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, ContextFloatProviders.between(0.0F, 1.0F)))
+						)
+				)
+				.withPool(
+					LootPool.lootPool()
+						.setRolls(ContextIntProviders.exactly(1))
+						.add(
+							LootItem.lootTableItem(Items.SPIDER_EYE)
+								.apply(SetItemCountFunction.setCount(ContextIntProviders.between(-1, 1)))
+								.apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, ContextFloatProviders.between(0.0F, 1.0F)))
+						)
+						.when(LootItemKilledByPlayerCondition.killedByPlayer())
+				)
+		);
+
+
+
+		this.add(
+			EntityTypes.SPIDER,
+			LootTable.lootTable()
+				.withPool(
+					LootPool.lootPool()
+						.setRolls(ContextIntProviders.exactly(1))
+						.add(
+							LootItem.lootTableItem(Items.STRING)
+								.apply(SetItemCountFunction.setCount(ContextIntProviders.between(0, 2)))
+								.apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, ContextFloatProviders.between(0.0F, 1.0F)))
+						)
+				)
+				.withPool(
+					LootPool.lootPool()
+						.setRolls(ContextIntProviders.exactly(1))
+						.add(
+							LootItem.lootTableItem(Items.SPIDER_EYE)
+								.apply(SetItemCountFunction.setCount(ContextIntProviders.between(-1, 1)))
+								.apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, ContextFloatProviders.between(0.0F, 1.0F)))
+						)
+						.when(LootItemKilledByPlayerCondition.killedByPlayer())
+				)
+		);
+
+
+
 		*/
 
 
+		LootTableEvents.REPLACE.register((key, original, source, holder) -> {
+			// If the loot table is for an <EntityType>, and it is not overridden by a user...
+			if (source.isBuiltin()){// Check that the source is a vanilla loot table...
+				if (EntityTypes.SALMON.getDefaultLootTable().orElseThrow().equals(key)) {// And if the entity is a salmon...
+					LootPool.Builder pool = LootPool.lootPool()// Create a new loot pool that will hold the bone.
+						.add(LootItem.lootTableItem(Items.SALMON)//Add the fish as an item...
+						.when(LootItemEntityPropertyCondition.hasProperties(
+							LootContext.EntityTarget.ATTACKER,
+								EntityPredicate.Builder.entity().equipment(
+									EntityEquipmentPredicate.Builder.equipment().mainhand(
+										ItemPredicate.Builder.item().of(
+											holder.lookupOrThrow(Registries.ITEM),
+												ItemTags.SPEARS// When the weapon is a spear...
+										)
+									)
+								)
+							).and(randomChance(0.25f))// And this roll succeeds.(~1 in every 4 fish.)
+						)
+						.otherwise(LootItem.lootTableItem(Items.BONE)));// Otherwise, always drop a bone.
+					return LootTable.lootTable().withPool(pool).build();// Create a new loot table with the loot pool.
+				}
 
 
 
+
+
+
+
+
+
+			}
+			return null;
+		});
 
 		LootTableEvents.REPLACE.register((key, original, source, holder) -> {
-			// If the loot table is for a salmon, and it is not overridden by a user:
+			// If the loot table is for a wither skeleton, and it is not overridden by a user:
 			if (source.isBuiltin()){
-				if (EntityTypes.SALMON.getDefaultLootTable().orElseThrow().equals(key)) {
-					// Create a new loot pool that will hold the bone.
+				if (EntityTypes.WITHER_SKELETON.getDefaultLootTable().orElseThrow().equals(key)) {
+					// Create a new loot pool that will hold the charcoal.
 					LootPool.Builder pool = LootPool.lootPool()
-						// Add the bone...
-						.add(LootItem.lootTableItem(Items.BONE));
+						// Add the charcoal...
+						.add(LootItem.lootTableItem(Items.CHARCOAL));
 					// Create a new loot table with the loot pool
 					return LootTable.lootTable().withPool(pool).build();
 				}
