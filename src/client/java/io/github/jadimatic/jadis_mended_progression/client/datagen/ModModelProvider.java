@@ -26,5 +26,7 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(JadisMendedItems.EXAMPLE_ITEM, ModelTemplates.FLAT_ITEM);
+		itemModelGenerators.generateFlatItem(JadisMendedItems.RAW_TIN, ModelTemplates.FLAT_ITEM);
+		itemModelGenerators.generateFlatItem(JadisMendedItems.TIN_INGOT, ModelTemplates.FLAT_ITEM);
     }
 }

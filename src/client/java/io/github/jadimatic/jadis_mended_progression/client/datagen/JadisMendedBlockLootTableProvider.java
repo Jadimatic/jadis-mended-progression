@@ -25,7 +25,7 @@ public class JadisMendedBlockLootTableProvider extends ModBlockLootSubProvider {
     @Override
     public void generate() {
 
-		add(JadisMendedBlocks.TIN_ORE, createOreDrop(JadisMendedBlocks.TIN_ORE, JadisMendedItems.EXAMPLE_ITEM));
+		add(JadisMendedBlocks.TIN_ORE, createOreDrop(JadisMendedBlocks.TIN_ORE, JadisMendedItems.RAW_TIN));
 
 
         add(//Contains instructions to generate a block loot table. This one specifically gives gravel a 10% chance to drop itself when not using a shovel, and is always guaranteed to drop 1 flint.

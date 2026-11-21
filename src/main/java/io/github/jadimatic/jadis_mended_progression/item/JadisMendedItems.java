@@ -19,6 +19,7 @@ public class JadisMendedItems {
 
     public static final Item EXAMPLE_ITEM = registerItem("example_item", Item::new);
 	public static final Item RAW_TIN = registerItem("raw_tin", Item::new);
+	public static final Item TIN_INGOT = registerItem("tin_ingot", Item::new);
 
     /** Registers items under this mod's namespace with an assigned name and properties. */
     private  static Item registerItem(String name, Function<Item.Properties, Item> function){
@@ -34,6 +35,7 @@ public class JadisMendedItems {
 
             output.accept(EXAMPLE_ITEM);
 			output.insertAfter(Items.RAW_COPPER, RAW_TIN);
+			output.insertAfter(Items.COPPER_INGOT, TIN_INGOT);
         });
 
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> {

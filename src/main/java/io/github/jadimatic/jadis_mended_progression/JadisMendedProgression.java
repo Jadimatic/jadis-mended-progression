@@ -50,7 +50,7 @@ public class JadisMendedProgression implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 
-	/*private LootTable fishLootTable (ResourceKey<LootTable> key, HolderLookup.Provider holder, ItemLike fishItem, ItemLike skeletalItem){
+	/*private LootTable fishLootTable (EntityTypes test, ResourceKey<LootTable> key, HolderLookup.Provider holder, ItemLike fishItem, ItemLike skeletalItem){
 		if (EntityTypes.SALMON.getDefaultLootTable().orElseThrow().equals(key)) {// And if the entity is the specified fish...
 			LootPool.Builder pool = LootPool.lootPool()// Create a new loot pool that will hold the bone.
 				.add(LootItem.lootTableItem(fishItem)//Add the fish as an item...

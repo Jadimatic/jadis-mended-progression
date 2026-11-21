@@ -10,15 +10,37 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.model.monster.creeper.CreeperModel;
 import net.minecraft.client.renderer.entity.state.CreeperRenderState;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(CreeperModel.class)
 public class CreeperModelMixin extends EntityModel<CreeperRenderState> {
-	protected CreeperModelMixin(ModelPart root) {
-		super(root);
+	@Shadow
+	public static LayerDefinition createBodyLayer(CubeDeformation g) {
+		throw new UnsupportedOperationException("Implemented via mixin");
 	}
+
+
+	///WE THINK THIS IS NO LONGER NECESSARY, SO WE WILL DO NOTHING IN HERE UNLESS IT BECOMES NECESSARY, IF IT ISN'T THIS FILE WILL BE DELETED.
+
+	protected CreeperModelMixin(ModelPart root, CreeperModel model)
+	{super(root);
+	}
+
+	@Unique
+	LayerDefinition test = CreeperModel.createBodyLayer(new CubeDeformation(2.0F));
+
+
+
+
+
+
+
+
+
+
 
 
 
