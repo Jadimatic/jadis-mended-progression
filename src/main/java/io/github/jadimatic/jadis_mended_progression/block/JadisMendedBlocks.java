@@ -97,6 +97,8 @@ public class JadisMendedBlocks {
 	}
 	*/
 
+	public static ResourceKey<Block> getResourceKey(Block block){return BuiltInRegistries.BLOCK.getResourceKey(block).get();}
+
 	///Delegates to the original and lacks the blockProperties parameter.
 	private static Block registerBlock(BlockItemId id, Function<BlockBehaviour.Properties, Block> blockFunction, UnaryOperator<Item.Properties> itemFunction){
 		return registerBlock(id, blockFunction, itemFunction, BlockBehaviour.Properties.of());

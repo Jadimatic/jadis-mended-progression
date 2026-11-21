@@ -13,7 +13,7 @@ public class JadisMendedProgressionDataGenerator implements DataGeneratorEntrypo
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		var pack = fabricDataGenerator.createPack();
-		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(JadisMendedModelProvider::new);
 		pack.addProvider(JadisMendedBlockLootTableProvider::new);
 		pack.addProvider(ModChestLootTableProvider::new);
 		pack.addProvider(JadisMendedBlockTagsProvider::new);

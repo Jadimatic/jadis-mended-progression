@@ -1,7 +1,8 @@
 {
   "values": [
     "jadis_mended_progression:charcoal_block",
-    "jadis_mended_progression:cut_iron",
-    "jadis_mended_progression:chiseled_iron"
+    "jadis_mended_progression:tin_ore",
+    "jadis_mended_progression:chiseled_iron",
+    "jadis_mended_progression:cut_iron"
   ]
 }

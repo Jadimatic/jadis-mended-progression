@@ -20,6 +20,22 @@ public class JadisMendedItems {
     public static final Item EXAMPLE_ITEM = registerItem("example_item", Item::new);
 	public static final Item RAW_TIN = registerItem("raw_tin", Item::new);
 	public static final Item TIN_INGOT = registerItem("tin_ingot", Item::new);
+	public static final Item BRONZE_PICKAXE = registerItem("bronze_pickaxe",
+		properties -> new Item(properties.pickaxe(JadisMendedToolMaterials.BRONZE_TOOL_MATERIAL, 3.0F, -2.4F)));
+	public static final Item BRONZE_SHOVEL = registerItem("bronze_shovel",
+		properties -> new Item(properties.shovel(JadisMendedToolMaterials.BRONZE_TOOL_MATERIAL, 3.0F, -2.4F)));
+	public static final Item BRONZE_HOE = registerItem("bronze_hoe",
+		properties -> new Item(properties.hoe(JadisMendedToolMaterials.BRONZE_TOOL_MATERIAL, 3.0F, -2.4F)));
+	public static final Item BRONZE_AXE = registerItem("bronze_axe",
+		properties -> new Item(properties.axe(JadisMendedToolMaterials.BRONZE_TOOL_MATERIAL, 3.0F, -2.4F)));
+	public static final Item BRONZE_SWORD = registerItem("bronze_sword",
+		properties -> new Item(properties.sword(JadisMendedToolMaterials.BRONZE_TOOL_MATERIAL, 3.0F, -2.4F)));
+	public static final Item BRONZE_SPEAR = registerItem("bronze_spear",
+		properties -> new Item(properties.spear(JadisMendedToolMaterials.BRONZE_TOOL_MATERIAL, 0.95F, 0.95F,
+			0.6F, 2.5F, 11.0F, 6.75F, 5.1F, 11.25F, 4.6F)));
+
+
+	public static ResourceKey<Item> getResourceKey(Item item){return BuiltInRegistries.ITEM.getResourceKey(item).get();}
 
     /** Registers items under this mod's namespace with an assigned name and properties. */
     private  static Item registerItem(String name, Function<Item.Properties, Item> function){
@@ -37,6 +53,20 @@ public class JadisMendedItems {
 			output.insertAfter(Items.RAW_COPPER, RAW_TIN);
 			output.insertAfter(Items.COPPER_INGOT, TIN_INGOT);
         });
+
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT).register(output -> {
+
+			output.insertAfter(Items.COPPER_SWORD, BRONZE_SWORD);
+			output.insertAfter(Items.COPPER_SPEAR, BRONZE_SPEAR);
+		});
+
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {
+
+			output.insertAfter(Items.COPPER_HOE, BRONZE_SHOVEL);
+			output.insertAfter(JadisMendedItems.BRONZE_SHOVEL, BRONZE_PICKAXE);
+			output.insertAfter(JadisMendedItems.BRONZE_PICKAXE, BRONZE_AXE);
+			output.insertAfter(JadisMendedItems.BRONZE_AXE, BRONZE_HOE);
+		});
 
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(output -> {
 
