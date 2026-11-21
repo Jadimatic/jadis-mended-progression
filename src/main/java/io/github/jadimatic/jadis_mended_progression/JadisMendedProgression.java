@@ -21,27 +21,24 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityTypes;
-import net.minecraft.world.entity.monster.spider.Spider;
+import net.minecraft.world.entity.animal.fish.Salmon;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.item.component.Tool;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-import static net.minecraft.core.component.DataComponents.REPAIR_COST;
 import static net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition.randomChance;
 
 public class JadisMendedProgression implements ModInitializer {
@@ -50,26 +47,24 @@ public class JadisMendedProgression implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 
-	/*private LootTable fishLootTable (EntityTypes test, ResourceKey<LootTable> key, HolderLookup.Provider holder, ItemLike fishItem, ItemLike skeletalItem){
-		if (EntityTypes.SALMON.getDefaultLootTable().orElseThrow().equals(key)) {// And if the entity is the specified fish...
-			LootPool.Builder pool = LootPool.lootPool()// Create a new loot pool that will hold the bone.
-				.add(LootItem.lootTableItem(fishItem)//Add the fish as an item...
-					.when(LootItemEntityPropertyCondition.hasProperties(
-							LootContext.EntityTarget.ATTACKER,
-							EntityPredicate.Builder.entity().equipment(
-								EntityEquipmentPredicate.Builder.equipment().mainhand(
-									ItemPredicate.Builder.item().of(
-										holder.lookupOrThrow(Registries.ITEM),
-										ItemTags.SPEARS// When the weapon is a spear...
-									)
+	private LootTable fishLootTable (/*EntityType<?> entityType, */ItemLike fishItem, ItemLike skeletalItem, ResourceKey<LootTable> key, HolderLookup.Provider holder){
+		LootPool.Builder pool = LootPool.lootPool()// Create a new loot pool that will hold the bone.
+			.add(LootItem.lootTableItem(fishItem)//Add the fish as an item...
+				.when(LootItemEntityPropertyCondition.hasProperties(
+						LootContext.EntityTarget.ATTACKER,
+						EntityPredicate.Builder.entity().equipment(
+							EntityEquipmentPredicate.Builder.equipment().mainhand(
+								ItemPredicate.Builder.item().of(
+									holder.lookupOrThrow(Registries.ITEM),
+									ItemTags.SPEARS// When the weapon is a spear...
 								)
 							)
-						).and(randomChance(0.25f))// And this roll succeeds.(~1 in every 4 fish.)
-					)
-					.otherwise(LootItem.lootTableItem(skeletalItem)));// Otherwise, always drop a bone.
-			return LootTable.lootTable().withPool(pool).build();// Create a new loot table with the loot pool.
-		}
-	}*/
+						)
+					).and(randomChance(0.25f))// And this roll succeeds.(~1 in every 4 fish.)
+				)
+				.otherwise(LootItem.lootTableItem(skeletalItem)));// Otherwise, always drop a bone.
+		return LootTable.lootTable().withPool(pool).build();// Create a new loot table with the loot pool.
+	}
 
 	@Override
 	public void onInitialize() {
@@ -214,40 +209,21 @@ public class JadisMendedProgression implements ModInitializer {
 		LootTableEvents.REPLACE.register((key, original, source, holder) -> {
 			// If the loot table is for an <EntityType>, and it is not overridden by a user...
 			if (source.isBuiltin()){// Check that the source is a vanilla loot table...
-				if (EntityTypes.SALMON.getDefaultLootTable().orElseThrow().equals(key)) {// And if the entity is a salmon...
-					LootPool.Builder pool = LootPool.lootPool()// Create a new loot pool that will hold the bone.
-						.add(LootItem.lootTableItem(Items.SALMON)//Add the fish as an item...
-						.when(LootItemEntityPropertyCondition.hasProperties(
-							LootContext.EntityTarget.ATTACKER,
-								EntityPredicate.Builder.entity().equipment(
-									EntityEquipmentPredicate.Builder.equipment().mainhand(
-										ItemPredicate.Builder.item().of(
-											holder.lookupOrThrow(Registries.ITEM),
-												ItemTags.SPEARS// When the weapon is a spear...
-										)
-									)
-								)
-							).and(randomChance(0.25f))// And this roll succeeds.(~1 in every 4 fish.)
-						)
-						.otherwise(LootItem.lootTableItem(Items.BONE)));// Otherwise, always drop a bone.
-					return LootTable.lootTable().withPool(pool).build();// Create a new loot table with the loot pool.
+
+
+				if (EntityTypes.COD.getDefaultLootTable().orElseThrow().equals(key)) {// And if the entity is a cod, then drop the appropriate loot.
+					return fishLootTable(Items.COD, Items.BONE, key, holder);
+				}
+				if (EntityTypes.SALMON.getDefaultLootTable().orElseThrow().equals(key)) {// And if the entity is a cod, then drop the appropriate loot.
+					return fishLootTable(Items.SALMON, Items.BONE, key, holder);
+				}
+				if (EntityTypes.TROPICAL_FISH.getDefaultLootTable().orElseThrow().equals(key)) {// And if the entity is a cod, then drop the appropriate loot.
+					return fishLootTable(Items.TROPICAL_FISH, Items.BONE, key, holder);
+				}
+				if (EntityTypes.PUFFERFISH.getDefaultLootTable().orElseThrow().equals(key)) {// And if the entity is a cod, then drop the appropriate loot.
+					return fishLootTable(Items.PUFFERFISH, Items.PUFFERFISH, key, holder);//Pufferfish have more sturdy bodies so the body survives more easily.
 				}
 
-
-
-
-
-
-
-
-
-			}
-			return null;
-		});
-
-		LootTableEvents.REPLACE.register((key, original, source, holder) -> {
-			// If the loot table is for a wither skeleton, and it is not overridden by a user:
-			if (source.isBuiltin()){
 				if (EntityTypes.WITHER_SKELETON.getDefaultLootTable().orElseThrow().equals(key)) {
 					// Create a new loot pool that will hold the charcoal.
 					LootPool.Builder pool = LootPool.lootPool()
@@ -256,11 +232,16 @@ public class JadisMendedProgression implements ModInitializer {
 					// Create a new loot table with the loot pool
 					return LootTable.lootTable().withPool(pool).build();
 				}
+
+
+
+
+
+
+
 			}
 			return null;
 		});
-
-
 
 
 

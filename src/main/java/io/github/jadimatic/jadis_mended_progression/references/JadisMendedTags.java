@@ -14,7 +14,7 @@ public class JadisMendedTags {
 			return TagKey.create(Registries.BLOCK,//Specifies that these will be block tags.
 				Identifier.fromNamespaceAndPath(JadisMendedProgression.MOD_ID, name));
 		}
-		public static final TagKey<Block> NEEDS_COPPER_TOOL = createTag("needs_copper_tool");
+		public static final TagKey<Block> NEEDS_BRONZE_TOOL = createTag("needs_copper_tool");
 	}
 
 	public static class Items {

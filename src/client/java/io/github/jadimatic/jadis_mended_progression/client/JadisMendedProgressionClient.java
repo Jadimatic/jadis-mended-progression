@@ -1,11 +1,13 @@
 package io.github.jadimatic.jadis_mended_progression.client;
 
 import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlockEntities;
-import io.github.jadimatic.jadis_mended_progression.client.model.geom.JadisMendedModelLayers;
+import io.github.jadimatic.jadis_mended_progression.client.model.geom.CreeperOuterLayer;
 import io.github.jadimatic.jadis_mended_progression.client.renderer.block.ItemCubbyBlockRenderer;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityRenderLayerRegistrationCallback;
 import net.fabricmc.fabric.api.client.rendering.v1.RenderStateDataKey;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.entity.CreeperRenderer;
 
 public class JadisMendedProgressionClient implements ClientModInitializer {
 	public static final RenderStateDataKey<Boolean> HOLDING_LANTERN_IN_LEFT_ARM = RenderStateDataKey.create(() -> "holding_lantern_in_left_arm");
@@ -16,6 +18,15 @@ public class JadisMendedProgressionClient implements ClientModInitializer {
 		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
 
 		BlockEntityRenderers.register(JadisMendedBlockEntities.ITEM_CUBBY_ENTITY, ItemCubbyBlockRenderer::new);
-		JadisMendedModelLayers.registerModelLayers();
+
+
+
+		//Get this working later.
+		/*LivingEntityRenderLayerRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper) -> {
+			if (entityRenderer instanceof CreeperRenderer creeperRenderer) {
+
+				registrationHelper.register(new CreeperOuterLayer(creeperRenderer, context.getModelSet()));
+			}
+		});*/
 	}
 }
