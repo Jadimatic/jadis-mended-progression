@@ -1,5 +1,7 @@
 package io.github.jadimatic.jadis_mended_progression.client.datagen;
 
+import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlocks;
+import io.github.jadimatic.jadis_mended_progression.item.JadisMendedItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.advancements.Advancement;
@@ -13,6 +15,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.HoneycombItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
@@ -36,6 +39,8 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 			@Override
 			public void buildRecipes() {
 				HolderLookup.RegistryLookup<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
+
+
 
 
 				shaped(RecipeCategory.TOOLS, Items.STONE_PICKAXE)

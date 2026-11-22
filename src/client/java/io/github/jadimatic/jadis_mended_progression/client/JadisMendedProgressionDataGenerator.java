@@ -3,6 +3,8 @@ package io.github.jadimatic.jadis_mended_progression.client;
 import io.github.jadimatic.jadis_mended_progression.client.datagen.*;
 import io.github.jadimatic.jadis_mended_progression.client.datagen.villager.JadisMendedVillagerTradeTagsProvider;
 import io.github.jadimatic.jadis_mended_progression.client.datagen.villager.JadisMendedVillagerTradesProvider;
+import io.github.jadimatic.jadis_mended_progression.worldgen.JadisMendedFeatures;
+import io.github.jadimatic.jadis_mended_progression.worldgen.JadisMendedPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
@@ -30,6 +32,9 @@ public class JadisMendedProgressionDataGenerator implements DataGeneratorEntrypo
 	@Override
 	public void buildRegistry(@NonNull RegistrySetBuilder registryBuilder){
 		registryBuilder.add(Registries.VILLAGER_TRADE, JadisMendedVillagerTradesProvider::bootstrap);
+
+		registryBuilder.add(Registries.FEATURE, JadisMendedFeatures::bootstrap);
+		registryBuilder.add(Registries.PLACED_FEATURE, JadisMendedPlacedFeatures::bootstrap);
 	}
 
 }

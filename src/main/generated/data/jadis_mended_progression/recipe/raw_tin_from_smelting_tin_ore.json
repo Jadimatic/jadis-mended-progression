@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "group": "tin",
+  "ingredient": "jadis_mended_progression:tin_ore",
+  "result": {
+    "id": "jadis_mended_progression:raw_tin"
+  }
+}

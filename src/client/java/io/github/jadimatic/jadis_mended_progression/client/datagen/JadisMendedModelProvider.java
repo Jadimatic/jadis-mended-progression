@@ -20,6 +20,7 @@ public class JadisMendedModelProvider extends FabricModelProvider {
 		blockModelGenerators.createTrivialCube(JadisMendedBlocks.CUT_IRON);
 		blockModelGenerators.createTrivialCube(JadisMendedBlocks.CHISELED_IRON);
 		blockModelGenerators.createTrivialCube(JadisMendedBlocks.TIN_ORE);
+		blockModelGenerators.createTrivialCube(JadisMendedBlocks.DEEPSLATE_TIN_ORE);
 
     }
 

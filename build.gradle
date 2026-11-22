@@ -20,6 +20,7 @@ loom {
 			sourceSet sourceSets.client
 		}
 	}
+	accessWidenerPath = file("src/main/resources/jadis_mended_progression.classtweaker")
 }
 
 fabricApi {

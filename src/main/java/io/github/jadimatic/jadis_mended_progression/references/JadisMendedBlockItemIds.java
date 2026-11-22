@@ -15,4 +15,5 @@ public class JadisMendedBlockItemIds {
 	public static final BlockItemId CHISELED_IRON = create("chiseled_iron");
 	public static final BlockItemId CHARCOAL_BLOCK = create("charcoal_block");
 	public static final BlockItemId TIN_ORE = create("tin_ore");
+	public static final BlockItemId DEEPSLATE_TIN_ORE = create("deepslate_tin_ore");
 }

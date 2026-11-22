@@ -1,6 +1,7 @@
 package io.github.jadimatic.jadis_mended_progression.client.datagen;
 
 import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlocks;
+import io.github.jadimatic.jadis_mended_progression.item.JadisMendedItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.advancements.Advancement;
@@ -11,9 +12,12 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.CookingBookCategory;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.level.ItemLike;
 import org.jspecify.annotations.NonNull;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class JadisMendedRecipeProvider extends FabricRecipeProvider {
@@ -27,6 +31,13 @@ public class JadisMendedRecipeProvider extends FabricRecipeProvider {
             @Override
             public void buildRecipes() {
                 HolderLookup.RegistryLookup<Item> itemLookup = registries.lookupOrThrow(Registries.ITEM);
+
+
+				List<ItemLike> TIN_SMELTABLES = List.of(JadisMendedItems.RAW_TIN, JadisMendedBlocks.TIN_ORE);
+				oreSmelting(TIN_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.BLOCKS, JadisMendedItems.RAW_TIN, 0f, 200, "tin");
+
+
+
 
                 shapeless(RecipeCategory.MISC, Items.FLINT) // You can also specify an int to produce more than one
                         .requires(Items.FLINT) // You can also specify an int to require more than one, or a tag to accept multiple things

@@ -81,6 +81,12 @@ public class JadisMendedBlocks {
 		BlockBehaviour.Properties.ofLegacyCopy(Blocks.IRON_ORE)
 
 	);
+	public static final Block DEEPSLATE_TIN_ORE = registerBlock(JadisMendedBlockItemIds.DEEPSLATE_TIN_ORE,
+		properties -> new DropExperienceBlock(ConstantInt.of(0), properties),
+		properties -> properties,//Defines block item properties. This is currently just here by necessity.
+		BlockBehaviour.Properties.ofLegacyCopy(Blocks.IRON_ORE)
+
+	);
 
 
 

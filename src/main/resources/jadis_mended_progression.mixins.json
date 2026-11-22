@@ -11,7 +11,7 @@
     "world.entity.player.PlayerMixin",
     "world.inventory.AnvilMenuMixin",
     "world.level.DataPackConfigMixin",
-    "world.level.block.LeavesBlockMixin",
+    "world.level.block.BlockMixin",
     "world.level.gamerules.GameRulesMixin"
   ],
   "mixinextras": {

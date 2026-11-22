@@ -32,6 +32,7 @@
 			"environment": "client"
 		}
 	],
+  "accessWidener": "jadis_mended_progression.classtweaker",
 	"depends": {
 		"fabricloader": ">=0.19.5",
 		"minecraft": "~26.3",
