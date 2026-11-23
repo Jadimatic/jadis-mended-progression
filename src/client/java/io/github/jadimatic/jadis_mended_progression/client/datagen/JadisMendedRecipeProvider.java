@@ -2,6 +2,7 @@ package io.github.jadimatic.jadis_mended_progression.client.datagen;
 
 import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlocks;
 import io.github.jadimatic.jadis_mended_progression.item.JadisMendedItems;
+import io.github.jadimatic.jadis_mended_progression.references.JadisMendedTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.advancements.Advancement;
@@ -9,7 +10,9 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CookingBookCategory;
@@ -35,7 +38,6 @@ public class JadisMendedRecipeProvider extends FabricRecipeProvider {
 
 				List<ItemLike> TIN_SMELTABLES = List.of(JadisMendedItems.RAW_TIN, JadisMendedBlocks.TIN_ORE);
 				oreSmelting(TIN_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.BLOCKS, JadisMendedItems.RAW_TIN, 0f, 200, "tin");
-
 
 
 
@@ -95,9 +97,26 @@ public class JadisMendedRecipeProvider extends FabricRecipeProvider {
 					.define('S', Items.SOUL_SAND)
 					.unlockedBy(getHasName(Items.SOUL_SAND), has(Items.SOUL_SAND))
 					.save(output);
+
+				buildPickaxeRecipe(Items.STICK, JadisMendedTags.Items.BRONZE_INGOTS, JadisMendedItems.BRONZE_PICKAXE).save(output);
+			}
+
+			///Generates a generic pickaxe recipe.
+			private ShapedRecipeBuilder buildPickaxeRecipe(Item handleMaterial, TagKey<Item> headMaterial, Item pickaxe){
+				return shaped(RecipeCategory.TOOLS, pickaxe)
+					.pattern("MMM")
+					.pattern(" H ")
+					.pattern(" H ")
+					.define('M', headMaterial)
+					.define('H', handleMaterial)
+					.unlockedBy("has_needed_materials", has(headMaterial));// "has_needed_materials" exists purely so the advancement doesn't break.
+
 			}
         };
     }
+
+
+
 
     @Override
     public @NonNull String getName() {

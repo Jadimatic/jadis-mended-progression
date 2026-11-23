@@ -20,6 +20,7 @@ public class JadisMendedItems {
     public static final Item EXAMPLE_ITEM = registerItem("example_item", Item::new);
 	public static final Item RAW_TIN = registerItem("raw_tin", Item::new);
 	public static final Item TIN_INGOT = registerItem("tin_ingot", Item::new);
+	public static final Item BRONZE_INGOT = registerItem("bronze_ingot", Item::new);
 	public static final Item BRONZE_PICKAXE = registerItem("bronze_pickaxe",
 		properties -> new Item(properties.pickaxe(JadisMendedToolMaterials.BRONZE_TOOL_MATERIAL, 3.0F, -2.4F)));
 	public static final Item BRONZE_SHOVEL = registerItem("bronze_shovel",
@@ -52,6 +53,7 @@ public class JadisMendedItems {
             output.accept(EXAMPLE_ITEM);
 			output.insertAfter(Items.RAW_COPPER, RAW_TIN);
 			output.insertAfter(Items.COPPER_INGOT, TIN_INGOT);
+			output.insertAfter(TIN_INGOT, BRONZE_INGOT);
         });
 
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT).register(output -> {

@@ -24,6 +24,8 @@ public class JadisMendedTags {
 		}
 
 		public static final TagKey<Item> LANTERNS = createTag("lanterns");
+		public static final TagKey<Item> BRONZE_INGOTS = createTag("ingots/bronze");//Exists for mod compatibility uses.
+		public static final TagKey<Item> STEEL_INGOTS = createTag("ingots/steel");//Exists for mod compatibility uses.
 		public static final TagKey<Item> REPAIRS_BRONZE_GEAR = createTag("repairs_bronze_gear");
 		public static final TagKey<Item> REPAIRS_IRON_ANVIL = createTag("repairs_iron_anvil");
 	}

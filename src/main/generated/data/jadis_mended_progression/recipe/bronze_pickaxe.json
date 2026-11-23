@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "H": "minecraft:stick",
+    "M": "#jadis_mended_progression:ingots/bronze"
+  },
+  "pattern": [
+    "MMM",
+    " H ",
+    " H "
+  ],
+  "result": {
+    "id": "jadis_mended_progression:bronze_pickaxe"
+  }
+}

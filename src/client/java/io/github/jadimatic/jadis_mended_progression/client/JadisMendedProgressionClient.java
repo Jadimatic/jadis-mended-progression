@@ -2,10 +2,12 @@ package io.github.jadimatic.jadis_mended_progression.client;
 
 import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlockEntities;
 import io.github.jadimatic.jadis_mended_progression.client.model.geom.CreeperOuterLayer;
+import io.github.jadimatic.jadis_mended_progression.client.model.geom.JadisMendedModelLayers;
 import io.github.jadimatic.jadis_mended_progression.client.renderer.block.ItemCubbyBlockRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityRenderLayerRegistrationCallback;
 import net.fabricmc.fabric.api.client.rendering.v1.RenderStateDataKey;
+import net.minecraft.client.model.monster.creeper.CreeperModel;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.CreeperRenderer;
 
@@ -25,7 +27,7 @@ public class JadisMendedProgressionClient implements ClientModInitializer {
 		/*LivingEntityRenderLayerRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper) -> {
 			if (entityRenderer instanceof CreeperRenderer creeperRenderer) {
 
-				registrationHelper.register(new CreeperOuterLayer(creeperRenderer, context.getModelSet()));
+				registrationHelper.register(new CreeperOuterLayer(this, context.getModelSet()));
 			}
 		});*/
 	}

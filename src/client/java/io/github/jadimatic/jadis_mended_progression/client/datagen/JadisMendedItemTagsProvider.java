@@ -23,6 +23,8 @@ public class JadisMendedItemTagsProvider extends FabricTagsProvider.ItemTagsProv
 		builder(JadisMendedTags.Items.LANTERNS)
 			.addTag(BlockItemTags.LANTERNS.item());//Adds #minecraft:lanterns to the #jadis_mended_progression:lanterns tag.
 
+		builder(JadisMendedTags.Items.BRONZE_INGOTS).add(JadisMendedItems.getResourceKey(JadisMendedItems.BRONZE_INGOT));
+
 		builder(ItemTags.PICKAXES)
 			.add(JadisMendedItems.getResourceKey(JadisMendedItems.BRONZE_PICKAXE));
 		builder(ItemTags.SHOVELS)

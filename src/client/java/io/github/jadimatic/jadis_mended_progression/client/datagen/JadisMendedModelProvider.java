@@ -29,6 +29,7 @@ public class JadisMendedModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(JadisMendedItems.EXAMPLE_ITEM, ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(JadisMendedItems.RAW_TIN, ModelTemplates.FLAT_ITEM);
 		itemModelGenerators.generateFlatItem(JadisMendedItems.TIN_INGOT, ModelTemplates.FLAT_ITEM);
+		itemModelGenerators.generateFlatItem(JadisMendedItems.BRONZE_INGOT, ModelTemplates.FLAT_ITEM);
 
 		itemModelGenerators.generateFlatItem(JadisMendedItems.BRONZE_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
 		itemModelGenerators.generateFlatItem(JadisMendedItems.BRONZE_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);

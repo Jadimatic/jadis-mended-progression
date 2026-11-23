@@ -28,10 +28,10 @@ public class CreeperModelMixin extends EntityModel<CreeperRenderState> {
 	protected CreeperModelMixin(ModelPart root, CreeperModel model)
 	{super(root);
 	}
-
+/*
 	@Unique
 	LayerDefinition test = CreeperModel.createBodyLayer(new CubeDeformation(2.0F));
-
+*/
 
 
 

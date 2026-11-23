@@ -1,16 +1,20 @@
-package io.github.jadimatic.jadis_mended_progression.mixin.world.level.block;
+package io.github.jadimatic.jadis_mended_progression.mixin.world.level.block.state;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
 
-@Mixin(Block.class)
-abstract class BlockMixin {
+@Mixin(BlockBehaviour.class)
+abstract class BlockBehaviorMixin {
 
 	//Find a way to inject the below method into this class and use it.
 
-	//@ModifyReturnValue(method = "")
+	@ModifyReturnValue(method = "getCollisionShape", at = @At("RETURN"))
+	private VoxelShape overrideLeafBlockCollision(VoxelShape original){
+		return original;//change this once we know how to properly return a new value for leaves.
+	}
 
 
 

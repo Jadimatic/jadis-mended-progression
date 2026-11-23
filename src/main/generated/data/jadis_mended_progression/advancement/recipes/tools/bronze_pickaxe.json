@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_needed_materials": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#jadis_mended_progression:ingots/bronze"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "jadis_mended_progression:bronze_pickaxe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_needed_materials"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "jadis_mended_progression:bronze_pickaxe"
+    ]
+  }
+}
