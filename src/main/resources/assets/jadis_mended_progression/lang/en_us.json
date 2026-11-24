@@ -15,5 +15,6 @@
   "block.jadis_mended_progression.vacuum": "Vacuum",
   "block.jadis_mended_progression.cut_iron": "Cut Iron",
   "block.jadis_mended_progression.chiseled_iron": "Chiseled Iron",
-  "block.jadis_mended_progression.tin_ore": "Tin Ore"
+  "block.jadis_mended_progression.tin_ore": "Tin Ore",
+  "jadis_mended_progression.midnightconfig.fallOutOfTrees.label.tooltip" : "Description"
 }

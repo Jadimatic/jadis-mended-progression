@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.references.BlockItemIds;
+import net.minecraft.tags.BlockItemTags;
 import net.minecraft.tags.BlockTags;
 import org.jspecify.annotations.NonNull;
 
@@ -53,5 +54,9 @@ public class JadisMendedBlockTagsProvider extends FabricTagsProvider.BlockTagsPr
         builder(BlockTags.GROWS_CROPS)
 			.add(BlockItemIds.FARMLAND.block())
 			.add(BlockItemIds.GRASS_BLOCK.block());
+
+		builder(BlockItemTags.LEAVES.block());//Adds a reference to #minecraft:leaves(without this it fails to add this tag to #minecraft:climbable).
+		builder(JadisMendedTags.Blocks.CLIMBABLE_LEAVES).addTag(BlockTags.LEAVES);
+		builder(BlockTags.CLIMBABLE).addTag(JadisMendedTags.Blocks.CLIMBABLE_LEAVES);
     }
 }

@@ -37,7 +37,7 @@ public class JadisMendedRecipeProvider extends FabricRecipeProvider {
 
 
 				List<ItemLike> TIN_SMELTABLES = List.of(JadisMendedItems.RAW_TIN, JadisMendedBlocks.TIN_ORE);
-				oreSmelting(TIN_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.BLOCKS, JadisMendedItems.RAW_TIN, 0f, 200, "tin");
+				oreSmelting(TIN_SMELTABLES, RecipeCategory.MISC, CookingBookCategory.BLOCKS, JadisMendedItems.TIN_INGOT, 0f, 200, "tin");
 
 
 

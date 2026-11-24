@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipes": "jadis_mended_progression:raw_tin_from_smelting_raw_tin"
+        "recipes": "jadis_mended_progression:tin_ingot_from_smelting_raw_tin"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "jadis_mended_progression:raw_tin_from_smelting_raw_tin"
+      "jadis_mended_progression:tin_ingot_from_smelting_raw_tin"
     ]
   }
 }

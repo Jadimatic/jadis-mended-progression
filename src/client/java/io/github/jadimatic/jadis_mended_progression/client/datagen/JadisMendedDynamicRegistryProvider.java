@@ -8,8 +8,8 @@ import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
-public class JadisMendedRegistryDataProvider extends FabricDynamicRegistryProvider {
-	public JadisMendedRegistryDataProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+public class JadisMendedDynamicRegistryProvider extends FabricDynamicRegistryProvider {
+	public JadisMendedDynamicRegistryProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
 		super(output, registriesFuture);
 	}
 
@@ -17,6 +17,9 @@ public class JadisMendedRegistryDataProvider extends FabricDynamicRegistryProvid
 	protected void configure(HolderLookup.Provider registries, Entries entries) {
 		entries.addAll(registries.lookupOrThrow(Registries.VILLAGER_TRADE));
 		entries.addAll(registries.lookupOrThrow(Registries.ENCHANTMENT));
+		entries.addAll(registries.lookupOrThrow(Registries.FEATURE));
+		entries.addAll(registries.lookupOrThrow(Registries.PLACED_FEATURE));
+
 
 	}
 

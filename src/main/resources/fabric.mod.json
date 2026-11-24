@@ -23,7 +23,10 @@
 		],
 		"fabric-datagen": [
 			"io.github.jadimatic.jadis_mended_progression.client.JadisMendedProgressionDataGenerator"
-		]
+		],
+    "modmenu": [
+      "io.github.jadimatic.jadis_mended_progression.client.JadisMendedProgressionModMenu"
+    ]
 	},
 	"mixins": [
 		"jadis_mended_progression.mixins.json",

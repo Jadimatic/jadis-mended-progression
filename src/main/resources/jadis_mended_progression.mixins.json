@@ -6,6 +6,8 @@
     "AnvilMixin",
     "BlockBehaviorPropertiesMixin",
     "ModMainMixin",
+    "ReferenceAccessor",
+    "world.entity.LivingEntityMixin",
     "world.entity.animal.equine.AbstractHorseMixin",
     "world.entity.monster.zombie.ZombieMixin",
     "world.entity.player.PlayerMixin",

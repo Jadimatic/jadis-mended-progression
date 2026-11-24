@@ -11,7 +11,7 @@ import net.minecraft.client.model.monster.creeper.CreeperModel;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.CreeperRenderer;
 
-public class JadisMendedProgressionClient implements ClientModInitializer {
+public class JadisMendedProgressionClient implements ClientModInitializer{
 	public static final RenderStateDataKey<Boolean> HOLDING_LANTERN_IN_LEFT_ARM = RenderStateDataKey.create(() -> "holding_lantern_in_left_arm");
 	public static final RenderStateDataKey<Boolean> HOLDING_LANTERN_IN_RIGHT_ARM = RenderStateDataKey.create(() -> "holding_lantern_in_right_arm");
 

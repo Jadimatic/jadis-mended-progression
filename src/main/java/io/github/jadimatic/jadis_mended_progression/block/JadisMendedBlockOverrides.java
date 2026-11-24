@@ -2,7 +2,9 @@ package io.github.jadimatic.jadis_mended_progression.block;
 
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
 
 public class JadisMendedBlockOverrides {
 	public static void modifyVanillaBlocks(ResourceKey<Block> id, BlockBehaviour.Properties properties) {

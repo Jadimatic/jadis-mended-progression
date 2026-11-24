@@ -1,10 +1,12 @@
 package io.github.jadimatic.jadis_mended_progression;
 
+import eu.midnightdust.lib.config.MidnightConfig;
 import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlockEntities;
 import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlocks;
 import io.github.jadimatic.jadis_mended_progression.events.CubbyShiftClickEvent;
 import io.github.jadimatic.jadis_mended_progression.item.JadisMendedItems;
 import io.github.jadimatic.jadis_mended_progression.item.component.JadisMendedDataComponents;
+import io.github.jadimatic.jadis_mended_progression.worldgen.gen.JadisMendedWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
@@ -73,7 +75,10 @@ public class JadisMendedProgression implements ModInitializer {
 		JadisMendedBlocks.registerMendedBlocks();
 		JadisMendedBlockEntities.registerMendedBlockEntities();
 		JadisMendedDataComponents.registerMendedDataComponents();
+		JadisMendedWorldGeneration.generateMendedWorldGen();
 		CubbyShiftClickEvent.register();
+		MidnightConfig.init(MOD_ID, JadisMendedProgressionConfig.class);
+
 
 		DefaultItemComponentEvents.MODIFY.register(context -> {
 			/*context.modify(Items.STONE_PICKAXE, builder -> builder

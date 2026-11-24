@@ -3,8 +3,8 @@
   "category": "blocks",
   "cookingtime": 200,
   "group": "tin",
-  "ingredient": "jadis_mended_progression:tin_ore",
+  "ingredient": "jadis_mended_progression:raw_tin",
   "result": {
-    "id": "jadis_mended_progression:raw_tin"
+    "id": "jadis_mended_progression:tin_ingot"
   }
 }
