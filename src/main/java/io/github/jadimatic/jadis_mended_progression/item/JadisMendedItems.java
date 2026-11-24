@@ -60,6 +60,7 @@ public class JadisMendedItems {
 
 			output.insertAfter(Items.COPPER_SWORD, BRONZE_SWORD);
 			output.insertAfter(Items.COPPER_SPEAR, BRONZE_SPEAR);
+			output.insertAfter(Items.COPPER_AXE, BRONZE_AXE);
 		});
 
 		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(output -> {

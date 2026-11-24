@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "C": "minecraft:amethyst_cluster"
+  },
+  "pattern": [
+    "C",
+    "C"
+  ],
+  "result": {
+    "id": "minecraft:amethyst_block"
+  }
+}

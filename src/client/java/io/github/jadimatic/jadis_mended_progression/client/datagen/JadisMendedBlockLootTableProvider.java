@@ -14,6 +14,8 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import static net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition.randomChance;
 
@@ -44,6 +46,23 @@ public class JadisMendedBlockLootTableProvider extends ModBlockLootSubProvider {
                                         .add(LootItem.lootTableItem(Items.GRAVEL)).when(randomChance(0.1f))//randomChance randomizes whether this loot will drop.
                         )
         );
+
+		add(
+			Blocks.AMETHYST_CLUSTER,
+			LootTable.lootTable()
+				.withPool(
+					new LootPool.Builder().when(hasItemTag(ItemTags.PICKAXES))//Using a pickaxe drops the cluster block to reward smart thinking.
+						.add(LootItem.lootTableItem(Items.AMETHYST_CLUSTER))
+				)
+				.withPool(
+					new LootPool.Builder().when(hasItemTag(ItemTags.PICKAXES).invert())//Using bare hands always drops two shards.
+						.add(LootItem.lootTableItem(Items.AMETHYST_SHARD).apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(2))))
+				)
+		);
+
+
+
+
 		add(//Makes grass blocks drop themselves when using a shovel and dirt when not.
 			Blocks.GRASS_BLOCK,
 			LootTable.lootTable()

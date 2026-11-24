@@ -16,5 +16,6 @@
   "block.jadis_mended_progression.cut_iron": "Cut Iron",
   "block.jadis_mended_progression.chiseled_iron": "Chiseled Iron",
   "block.jadis_mended_progression.tin_ore": "Tin Ore",
-  "jadis_mended_progression.midnightconfig.fallOutOfTrees.label.tooltip" : "Description"
+  "jadis_mended_progression.midnightconfig.fallOutOfTrees": "Fall out of trees",
+  "jadis_mended_progression.midnightconfig.fallOutOfTrees.label.tooltip" : "Whether the player can fall through the bottom of leaf blocks while descending."
 }

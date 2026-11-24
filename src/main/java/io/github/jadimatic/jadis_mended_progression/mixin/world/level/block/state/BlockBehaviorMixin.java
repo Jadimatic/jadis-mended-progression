@@ -69,7 +69,7 @@ abstract class BlockBehaviorMixin {
 		}
 		else {return original;}
 	}
-
+	///Makes this method also apply to every block in the climbable leaves tag.
 	@ModifyExpressionValue(method = "getCollisionShape", at = @At(value = "FIELD:ONE", target = "Lnet/minecraft/world/level/block/state/BlockBehaviour;hasCollision:Z", opcode = Opcodes.GETFIELD))
 	private boolean overrideGetCollisionShape (boolean original){
 		return original && !(BuiltInRegistries.BLOCK.wrapAsHolder(this.asBlock()) instanceof Holder.Reference<Block> reference && ((ReferenceAccessor<Block>) reference).jadisMended$getTags() != null && reference.is(JadisMendedTags.Blocks.CLIMBABLE_LEAVES));

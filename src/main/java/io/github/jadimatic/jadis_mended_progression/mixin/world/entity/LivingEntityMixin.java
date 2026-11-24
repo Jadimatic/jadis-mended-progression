@@ -24,13 +24,13 @@ public abstract class LivingEntityMixin extends Entity{
 		super(type, level);
 	}
 
+	///Fixes awkward behavior where the sneaking function of ladders conflicts with descending.
 	@Definition(id = "getInBlockState", method = "Lnet/minecraft/world/entity/LivingEntity;getInBlockState()Lnet/minecraft/world/level/block/state/BlockState;")
 	@Definition(id = "is", method = "Lnet/minecraft/world/level/block/state/BlockState;is(Ljava/lang/Object;)Z")
 	@Definition(id = "SCAFFOLDING", field = "Lnet/minecraft/world/level/block/Blocks;SCAFFOLDING:Lnet/minecraft/world/level/block/Block;")
 	@Expression("@(this.getInBlockState().is(SCAFFOLDING))")
 	@ModifyExpressionValue(method = "handleOnClimbable", at = @At("MIXINEXTRAS:EXPRESSION"))
-	boolean test (boolean original){
-
+	boolean overrideHandleOnClimbable (boolean original){
 		return original || this.getInBlockState().is(BlockTags.LEAVES);
 	}
 }

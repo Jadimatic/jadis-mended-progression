@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "C": "minecraft:amethyst_shard"
+  },
+  "pattern": [
+    "CC"
+  ],
+  "result": {
+    "id": "minecraft:amethyst_cluster"
+  }
+}

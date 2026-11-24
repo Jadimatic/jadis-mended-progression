@@ -107,6 +107,13 @@ public class VanillaRecipeProvider extends FabricRecipeProvider {
 					.unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
 					.save(output);
 
+				shaped(RecipeCategory.BUILDING_BLOCKS, Items.AMETHYST_BLOCK)
+					.pattern("C")
+					.pattern("C")
+					.define('C', Items.AMETHYST_CLUSTER)
+					.unlockedBy(getHasName(Items.AMETHYST_CLUSTER), has(Items.AMETHYST_CLUSTER))
+					.save(output);
+
 				//region Generate Button Recipes
 				ArrayList<ArrayList<Item>> buttonGenerateList = new ArrayList<>();
 				//Argument one is the INPUT item, Argument 2 is the OUTPUT item

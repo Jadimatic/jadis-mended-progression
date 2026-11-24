@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:amethyst_block"
+  ],
+  "result": {
+    "count": 2,
+    "id": "minecraft:amethyst_cluster"
+  }
+}

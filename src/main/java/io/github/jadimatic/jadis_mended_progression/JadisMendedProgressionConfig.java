@@ -9,6 +9,6 @@ public class JadisMendedProgressionConfig extends MidnightConfig {
 
 
 
-	@Entry(category = CONDITIONS, name = "Fall out of trees")
+	@Entry(category = CONDITIONS)
 	public static boolean fallOutOfTrees = true;
 }

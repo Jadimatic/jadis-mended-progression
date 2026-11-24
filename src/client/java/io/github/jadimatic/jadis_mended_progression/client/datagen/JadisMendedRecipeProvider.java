@@ -54,13 +54,18 @@ public class JadisMendedRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Items.FLINT), has(Items.FLINT))
                         .save(output, "flint_from_cobblestone");//This is to test alternate recipes for the same item in the recipe book.
 
+				shapeless(RecipeCategory.MISC, Items.STICK, 7)
+					.requires(Items.LADDER)
+					.unlockedBy(getHasName(Items.LADDER), has(Items.LADDER))
+					.save(output, "sticks_from_ladder");
+
 				shaped(RecipeCategory.MISC, JadisMendedBlocks.CHARCOAL_BLOCK)
 					.pattern("CCC")
 					.pattern("CCC")
 					.pattern("CCC")
 					.define('C', Items.CHARCOAL)
 					.unlockedBy(getHasName(Items.CHARCOAL), has(Items.CHARCOAL))
-					.save(output, "charcoal_block");
+					.save(output);
 
 				shaped(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CUT_IRON, 16)
 					.pattern("II")
@@ -80,6 +85,22 @@ public class JadisMendedRecipeProvider extends FabricRecipeProvider {
 				stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CHISELED_IRON,Items.IRON_BLOCK, 4);
 				stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CHISELED_IRON, JadisMendedBlocks.CUT_IRON, 1);
 				stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, JadisMendedBlocks.CUT_IRON, JadisMendedBlocks.CHISELED_IRON, 1);
+
+				shaped(RecipeCategory.BUILDING_BLOCKS, Items.AMETHYST_CLUSTER)
+					.pattern("CC")
+					.define('C', Items.AMETHYST_SHARD)
+					.unlockedBy(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
+					.save(output);
+
+				shapeless(RecipeCategory.MISC, Items.AMETHYST_SHARD, 2)
+					.requires(Items.AMETHYST_CLUSTER)
+					.unlockedBy(getHasName(Items.AMETHYST_CLUSTER), has(Items.AMETHYST_CLUSTER))
+					.save(output, "amethyst_shards_from_amethyst_cluster");
+
+				shapeless(RecipeCategory.MISC, Items.AMETHYST_CLUSTER, 2)
+					.requires(Items.AMETHYST_BLOCK)
+					.unlockedBy(getHasName(Items.AMETHYST_BLOCK), has(Items.AMETHYST_BLOCK))
+					.save(output, "amethyst_cluster_from_amethyst_block");
 
 				shaped(RecipeCategory.BUILDING_BLOCKS, Items.END_PORTAL_FRAME)
 					.pattern("P P")
