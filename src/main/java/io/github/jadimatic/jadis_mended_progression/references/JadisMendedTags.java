@@ -17,6 +17,7 @@ public class JadisMendedTags {
 		public static final TagKey<Block> NEEDS_BRONZE_TOOL = createTag("needs_bronze_tool");
 		public static final TagKey<Block> INCORRECT_FOR_BRONZE_TOOL = createTag("incorrect_for_bronze_tool");
 		public static final TagKey<Block> CLIMBABLE_LEAVES = createTag("climbable_leaves");
+		public static final TagKey<Block> VALID_FOR_CREEPER_SPAWN = createTag("valid_for_creeper_spawn");
 	}
 
 	public static class Items {

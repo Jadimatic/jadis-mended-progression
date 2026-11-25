@@ -47,6 +47,24 @@ public class JadisMendedBlockTagsProvider extends FabricTagsProvider.BlockTagsPr
 			.add(JadisMendedBlockItemIds.CHISELED_IRON.block())
 			.add(JadisMendedBlockItemIds.CUT_IRON.block());
 
+		builder(JadisMendedTags.Blocks.VALID_FOR_CREEPER_SPAWN)
+			.add(BlockItemIds.TUFF.block())
+			.add(BlockItemIds.STONE.block())
+			.add(BlockItemIds.GRAVEL.block())
+			.add(BlockItemIds.SUSPICIOUS_GRAVEL.block())
+			.add(BlockItemIds.COBBLESTONE.block())
+			.add(BlockItemIds.MOSSY_COBBLESTONE.block())
+			.add(BlockItemIds.CRACKED_STONE_BRICKS.block())
+			.add(BlockItemIds.DEEPSLATE.block())
+			.add(BlockItemIds.COBBLED_DEEPSLATE.block())
+			.add(BlockItemIds.CRACKED_DEEPSLATE_BRICKS.block())
+			.add(BlockItemIds.CRACKED_DEEPSLATE_TILES.block())
+			.add(BlockItemIds.INFESTED_STONE.block())
+			.add(BlockItemIds.INFESTED_COBBLESTONE.block())
+			.add(BlockItemIds.INFESTED_CRACKED_STONE_BRICKS.block())
+			.add(BlockItemIds.INFESTED_DEEPSLATE.block())
+			.add(BlockItemIds.COARSE_DIRT.block());
+
 
         builder(BlockTags.SUPPORTS_CROPS)
 			.add(BlockItemIds.FARMLAND.block())

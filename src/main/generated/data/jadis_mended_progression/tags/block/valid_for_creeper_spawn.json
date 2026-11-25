@@ -1,0 +1,20 @@
+{
+  "values": [
+    "minecraft:tuff",
+    "minecraft:stone",
+    "minecraft:gravel",
+    "minecraft:suspicious_gravel",
+    "minecraft:cobblestone",
+    "minecraft:mossy_cobblestone",
+    "minecraft:cracked_stone_bricks",
+    "minecraft:deepslate",
+    "minecraft:cobbled_deepslate",
+    "minecraft:cracked_deepslate_bricks",
+    "minecraft:cracked_deepslate_tiles",
+    "minecraft:infested_stone",
+    "minecraft:infested_cobblestone",
+    "minecraft:infested_cracked_stone_bricks",
+    "minecraft:infested_deepslate",
+    "minecraft:coarse_dirt"
+  ]
+}

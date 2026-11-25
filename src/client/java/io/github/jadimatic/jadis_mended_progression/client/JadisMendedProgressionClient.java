@@ -11,7 +11,9 @@ import net.minecraft.client.model.monster.creeper.CreeperModel;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.CreeperRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.RenderLayerParent;
+import net.minecraft.world.entity.EntityTypes;
 
 public class JadisMendedProgressionClient implements ClientModInitializer{
 	public static final RenderStateDataKey<Boolean> HOLDING_LANTERN_IN_LEFT_ARM = RenderStateDataKey.create(() -> "holding_lantern_in_left_arm");
@@ -22,7 +24,6 @@ public class JadisMendedProgressionClient implements ClientModInitializer{
 		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
 		BlockEntityRenderers.register(JadisMendedBlockEntities.ITEM_CUBBY_ENTITY, ItemCubbyBlockRenderer::new);
 		JadisMendedModelLayers.registerModelLayers();
-
 
 		//Still not working for some reason. Maybe we're missing something?
 		LivingEntityRenderLayerRegistrationCallback.EVENT.register((entityType, entityRenderer, registrationHelper, context) -> {
