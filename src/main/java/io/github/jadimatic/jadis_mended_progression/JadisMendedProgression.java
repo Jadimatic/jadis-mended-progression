@@ -6,6 +6,7 @@ import io.github.jadimatic.jadis_mended_progression.block.JadisMendedBlocks;
 import io.github.jadimatic.jadis_mended_progression.events.CubbyShiftClickEvent;
 import io.github.jadimatic.jadis_mended_progression.item.JadisMendedItems;
 import io.github.jadimatic.jadis_mended_progression.item.component.JadisMendedDataComponents;
+import io.github.jadimatic.jadis_mended_progression.references.JadisMendedTags;
 import io.github.jadimatic.jadis_mended_progression.worldgen.gen.JadisMendedWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -23,13 +24,15 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityTypes;
-import net.minecraft.world.entity.animal.fish.Salmon;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.component.Tool;
+import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -45,9 +48,13 @@ import static net.minecraft.world.level.storage.loot.predicates.LootItemRandomCh
 
 public class JadisMendedProgression implements ModInitializer {
 	public static final String MOD_ID = "jadis_mended_progression";
-
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+
+	public static boolean shouldBreak(ItemStack stack){
+		return stack.is(JadisMendedTags.Items.BREAKABLE_ITEMS);
+		//return !stack.is(JadisMendedTags.Items.BROKEN_BLACKLIST) && stack.getDamageValue() > 0 && stack.getDamageValue() >= stack.getMaxDamage() - (stack.getComponents().has(DataComponents.GLIDER) ? 1 : 0/*If the item is a glider return 1, if not return 0. this will tell isBroken that the item is 1 damage away from breaking if the item is a glider.*/);
+	}
 
 	private LootTable fishLootTable (/*EntityType<?> entityType, */ItemLike fishItem, ItemLike skeletalItem, ResourceKey<LootTable> key, HolderLookup.Provider holder){
 		LootPool.Builder pool = LootPool.lootPool()// Create a new loot pool that will hold the bone.
@@ -133,8 +140,35 @@ public class JadisMendedProgression implements ModInitializer {
 			context.modify(Items.NETHERITE_SHOVEL, builder -> builder
 				.set(JadisMendedDataComponents.REPAIR_AMOUNT, 1f)
 			);
+
+
+			//region Food Effects
+			context.modify(Items.CARROT, builder -> builder.set(DataComponents.CONSUMABLE, Consumables.defaultFood().onConsume(//Gives fifteen seconds of night vision.
+				new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 300, 0), 0.75F)//NOTE: Duration is in ticks, not seconds.
+			).build()));
+			context.modify(Items.GLOW_BERRIES, builder -> builder.set(DataComponents.CONSUMABLE, Consumables.defaultFood().onConsume(//Gives fifteen seconds of the glowing effect.
+				new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.GLOWING, 300, 0), 0.90F)
+			).build()));
+			context.modify(Items.BEETROOT, builder -> builder.set(DataComponents.CONSUMABLE, Consumables.defaultFood().onConsume(//Regenerates half a heart over three seconds.
+				new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 0))
+			).build()));
+			context.modify(Items.BEETROOT_SOUP, builder -> builder.set(DataComponents.CONSUMABLE, Consumables.defaultFood().onConsume(//Regenerates three hearts over fifteen seconds.
+				new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.REGENERATION, 300, 0))
+			).build()));
+			//endregion
+
+
 		});
 
+
+		//region Creeper Spawn Biome Bias
+		/*Predicate<BiomeSelectionContext> creeperBiomeBiasPredicate = (
+			biomeSelectionContext) -> biomeSelectionContext.getBiomeKey().equals(Biomes.LUSH_CAVES);
+		Consumer<BiomeModificationContext> testo = (wooba) -> wooba.getMobSpawnSettings().getMobs(1);
+
+		BiomeModifications.create(Identifier.fromNamespaceAndPath(JadisMendedProgression.MOD_ID, "lush_cave_creeper_bias"))
+			.add(ModificationPhase.REPLACEMENTS, creeperBiomeBiasPredicate, );*/
+		//endregion
 
 
 

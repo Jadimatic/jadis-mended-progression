@@ -3,10 +3,13 @@ package io.github.jadimatic.jadis_mended_progression.mixin.world.entity;
 import com.llamalad7.mixinextras.expression.Definition;
 import com.llamalad7.mixinextras.expression.Expression;
 import io.github.jadimatic.jadis_mended_progression.references.JadisMendedTags;
+import net.fabricmc.fabric.api.biome.v1.BiomeModificationContext;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.SpawnData;
 import net.minecraft.world.level.levelgen.Heightmap;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -33,7 +36,7 @@ public class SpawnPlacementsMixin {
 				blockPos,
 				randomSource);
 			if(entitySpawnReason.equals(EntitySpawnReason.NATURAL) || entitySpawnReason.equals(EntitySpawnReason.CHUNK_GENERATION)){
-				return original && serverLevelAccessor.getBlockState(blockPos).is(JadisMendedTags.Blocks.VALID_FOR_CREEPER_SPAWN);
+				return original && serverLevelAccessor.getBlockState(blockPos.below()).is(JadisMendedTags.Blocks.VALID_FOR_CREEPER_SPAWN);
 			}
 			else{
 				return original;

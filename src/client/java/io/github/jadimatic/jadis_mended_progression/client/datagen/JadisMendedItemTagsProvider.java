@@ -44,5 +44,8 @@ public class JadisMendedItemTagsProvider extends FabricTagsProvider.ItemTagsProv
 		builder(ItemTags.HORSE_FOOD)//Specifies what tag to register the items to.
 			.add(ItemIds.BEETROOT);//Mojang probably just forgot to add this when they added the crop to the game.
 
+		builder(JadisMendedTags.Items.BREAKABLE_ITEMS)
+			.add(ItemIds.CARROT_ON_A_STICK)
+			.add(ItemIds.WARPED_FUNGUS_ON_A_STICK);
 	}
 }

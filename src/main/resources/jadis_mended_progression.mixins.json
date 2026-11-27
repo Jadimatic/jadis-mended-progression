@@ -13,6 +13,7 @@
     "world.entity.monster.zombie.ZombieMixin",
     "world.entity.player.PlayerMixin",
     "world.inventory.AnvilMenuMixin",
+    "world.item.ItemStackMixin",
     "world.level.DataPackConfigMixin",
     "world.level.block.state.BlockBehaviorMixin",
     "world.level.gamerules.GameRulesMixin"
